@@ -1,0 +1,93 @@
+{% extends 'admin/layout_admin.html.twig' %}
+
+{% block title %}Pemesanan{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('assets/admin/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+{# begin:: head #}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-7 align-self-center">
+            <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">{{ halaman }}</h2>
+        </div>
+    </div>
+</div>
+{# end:: head #}
+
+{# begin:: body #}
+<div class="container-fluid">
+    {# begin:: tabel #}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Tabel</h3>
+                    <hr>
+                    <div class="table-responsive">
+                        <table id="tabel_pemesanan" class="table table-striped table-bordered display no-wrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Aksi</th>
+                                    <th>Kode Order</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal Pemesanan</th>
+                                    <th>Jam Pemesanan</th>
+                                    <th>Metode Pembayaran</th>
+                                    <th>Status Pembayaran</th>
+                                    <th>Total</th>
+                                    <th>Jumlah Transfer</th>
+                                    <th>Jumlah Bayar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rows in pemesanan %}
+                                <tr>
+                                    <td>{{ loop.index }} </td>
+                                    <td>
+                                        <a class="btn btn-outline-info btn-sm btn-rounded" style="width: 100%" href="pemesanan/detail/{{ rows.kd_pemesanan }}" target="_blank"><i class="fas fa-info-circle"></i>&nbsp;Detail</a>
+                                    </td>
+                                    <td>{{ rows.kd_pemesanan }}</td>
+                                    <td>{{ rows.nama }}</td>
+                                    <td>{{ rows.tgl_pemesanan|date('d-m-Y') }}</td>
+                                    <td>{{ rows.tgl_pemesanan|date('H:m:s') }}</td>
+                                    <td>{{ (rows.metode_pembayaran == 'c') ? 'COD' : 'Transfer' }}</td>
+                                    <td>
+                                        {% if rows.status_pembayaran == 0 %}
+                                        Menunggu Pembayaran
+                                        {% elseif rows.status_pembayaran == 1 %}
+                                        Telah Melakukan Pembayaran
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    <td>{{ rows.total|format_rp }}</td>
+                                    <td>{{ rows.transfer|format_rp }}</td>
+                                    <td>{{ rows.bayar|format_rp }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# end:: tabel #}
+</div>
+{# end:: body #}
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('assets/admin/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/admin/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+
+<script>
+    // untuk datatable
+    var untukDataTabel = function() {
+        $('#tabel_pemesanan').DataTable();
+    }();
+</script>
+{% endblock %}

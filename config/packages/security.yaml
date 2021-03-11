@@ -1,0 +1,59 @@
+security:
+    # untuk redirect apa bila role tidak sesuai
+    access_denied_url: /home
+
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+        
+    # role_hierarchy:
+    #     ROLE_ADMIN: ROLE_USER
+    #     ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        admin:
+            entity:
+                class: App\Entity\User
+                property: username
+        user:
+            entity:
+                class: App\Entity\User
+                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        admin_secured_area:
+            pattern: /admin
+            anonymous: ~
+            provider: admin
+            form_login:
+                login_path: login_admin
+                check_path: login_admin
+                default_target_path: admin
+            logout:
+                path: app_logout
+        user_secured_area:
+            pattern: /
+            anonymous: ~
+            provider: user
+            form_login:
+                login_path: login_user
+                check_path: login_user
+                default_target_path: home
+            logout:
+                path: app_logout
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN } # untuk admin
+        - { path: ^/user, roles: ROLE_USER } # untuk user

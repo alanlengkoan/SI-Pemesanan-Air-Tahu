@@ -1,0 +1,88 @@
+{% extends 'admin/layout_admin.html.twig' %}
+
+{% block title %}Pembelian{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('assets/admin/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+{# begin:: head #}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-7 align-self-center">
+            <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">{{ halaman }}</h2>
+        </div>
+    </div>
+</div>
+{# end:: head #}
+
+{# begin:: body #}
+<div class="container-fluid">
+    {# begin:: tabel #}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Tabel</h3>
+                    <hr>
+                    <div class="table-responsive">
+                        <table id="tabel_pembelian" class="table table-striped table-bordered display no-wrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Kode Order</th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Jam Pembelian</th>
+                                    <th>Total Pembelian</th>
+                                    <th>Total Bayar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set sum = 0 %}
+                                {% set tot = 0 %}
+
+                                {% for rows in pembelian %}
+
+                                {% set transfer = (rows.transfer == null) ? 0 : rows.transfer %}
+                                {% set bayar = (rows.bayar == null) ? 0 : rows.bayar %}
+                                {% set total = transfer + bayar  %}
+                                {% set sum = sum + rows.total  %}
+                                {% set tot = tot + total  %}
+
+                                <tr>
+                                    <td>{{ loop.index }} </td>
+                                    <td>{{ rows.kd_pemesanan }}</td>
+                                    <td>{{ rows.tgl_pemesanan|date('d-m-Y') }}</td>
+                                    <td>{{ rows.tgl_pemesanan|date('H:m:s') }}</td>
+                                    <td align="center">{{ rows.total|format_rp }}</td>
+                                    <td align="center">{{ (total == 0) ? 0 : total|format_rp }}</td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td colspan="4" align="center">
+                                        Total
+                                    </td>
+                                    <td align="center">
+                                        {{ sum|format_rp }}
+                                    </td>
+                                    <td align="center">
+                                        {{ tot|format_rp }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# end:: tabel #}
+</div>
+{# end:: body #}
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('assets/admin/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/admin/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+{% endblock %}
