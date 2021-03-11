@@ -1,0 +1,116 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Transfer{% endblock %}
+
+{% block body %}
+{# begin:: background #}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('assets/user/images/tahu.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate mb-5 text-center">
+                <h2 class="mb-0 bread">Transfer</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{# end:: background #}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 ftco-animate">
+                <p><i>Note :</i> Silahkan transfer sesuai dengan total yang tertera!</p>
+
+                <form class="billing-form" id="form-add" action="/user/pembayaran" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('submit') }}">
+                    <input type="hidden" id="inpkkorder" name="inpkkorder" value="{{ kd_order }}" />
+
+                    {# begin:: form #}
+                    <h3 class="mb-4 billing-heading">Detail Pembayaran</h3>
+                    <div class="row align-items-end">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <h5>Bank</h5>
+                                <input type="text" class="form-control-plaintext" placeholder="{{ data_pembayaran_detail.nama }}" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <h5>Nomor Rekening</h5>
+                                <input type="text" class="form-control-plaintext" placeholder="{{ data_pembayaran_detail.rekening }}" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <h5>Total</h5>
+                                <input type="text" class="form-control-plaintext" placeholder="{{ total|format_rp }}" readonly>
+                                <input type="hidden" name="inptotal" value="{{ total }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inpnamapenyetor">Nama Penyetor</label>
+                                <input type="text" class="form-control" name="inpnamapenyetor" id="inpnamapenyetor" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inpatasnama">Atas Nama</label>
+                                <input type="text" class="form-control" name="inpatasnama" id="inpatasnama" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inpbukti">Bukti Pembayaran</label>
+                                <input type="file" class="form-control" name="inpbukti" id="inpbukti" />
+                            </div>
+                        </div>
+                    </div>
+                    {# end:: form #}
+
+                    <button type="submit" class="btn btn-primary py-3 px-4">
+                        Proses
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+
+<script>
+    // untuk tambah data
+    var untukTambahData = function () {
+        $('#form-add').submit(function (e) {
+            e.preventDefault();
+
+            $('#inpnamapenyetor').attr('required', 'required');
+            $('#inpatasnama').attr('required', 'required');
+            $('#inpbukti').attr('required', 'required');
+
+            if ($('#form-add').parsley().isValid() == true) {
+                $.ajax({
+                    method: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('#add').attr('disabled', 'disabled');
+                        $('#add').html('Waiting...');
+                    },
+                    success: function (data) {
+                        alert(data.msg);
+                        window.location = '/user/nota/'+$('#inpkkorder').val();
+                    }
+                })
+            }
+        });
+    }();
+</script>
+{% endblock %}

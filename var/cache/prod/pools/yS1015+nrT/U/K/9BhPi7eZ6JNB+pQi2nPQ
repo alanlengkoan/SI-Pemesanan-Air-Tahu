@@ -1,0 +1,176 @@
+<?php //%255BApp%255CEntity%255CTbPembayaran%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\TbPembayaran',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\TbPembayaran',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\TbPembayaranRepository',
+            ],
+            'identifier' => [
+                [
+                    'id_pembayaran',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id_pembayaran' => [
+                        'fieldName' => 'id_pembayaran',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id_pembayaran',
+                    ],
+                    'kd_pemesanan' => [
+                        'fieldName' => 'kd_pemesanan',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 10,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'kd_pemesanan',
+                    ],
+                    'id_bank' => [
+                        'fieldName' => 'id_bank',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'id_bank',
+                    ],
+                    'nama_penyetor' => [
+                        'fieldName' => 'nama_penyetor',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'nama_penyetor',
+                    ],
+                    'atas_nama' => [
+                        'fieldName' => 'atas_nama',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'atas_nama',
+                    ],
+                    'jumlah_transfer' => [
+                        'fieldName' => 'jumlah_transfer',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'jumlah_transfer',
+                    ],
+                    'tanggal_transfer' => [
+                        'fieldName' => 'tanggal_transfer',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'tanggal_transfer',
+                    ],
+                    'bukti' => [
+                        'fieldName' => 'bukti',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'bukti',
+                    ],
+                    'ins' => [
+                        'fieldName' => 'ins',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'ins',
+                    ],
+                    'upd' => [
+                        'fieldName' => 'upd',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'upd',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id_pembayaran' => 'id_pembayaran',
+                    'kd_pemesanan' => 'kd_pemesanan',
+                    'id_bank' => 'id_bank',
+                    'nama_penyetor' => 'nama_penyetor',
+                    'atas_nama' => 'atas_nama',
+                    'jumlah_transfer' => 'jumlah_transfer',
+                    'tanggal_transfer' => 'tanggal_transfer',
+                    'bukti' => 'bukti',
+                    'ins' => 'ins',
+                    'upd' => 'upd',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id_pembayaran' => 'id_pembayaran',
+                    'kd_pemesanan' => 'kd_pemesanan',
+                    'id_bank' => 'id_bank',
+                    'nama_penyetor' => 'nama_penyetor',
+                    'atas_nama' => 'atas_nama',
+                    'jumlah_transfer' => 'jumlah_transfer',
+                    'tanggal_transfer' => 'tanggal_transfer',
+                    'bukti' => 'bukti',
+                    'ins' => 'ins',
+                    'upd' => 'upd',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'tb_pembayaran',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

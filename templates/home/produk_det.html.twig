@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Detail Produk{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .product-details button,
+    .product-details .form-control {
+        height: 70px !important;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+  .product-details button:hover,
+  .product-details button:focus,
+  .product-details .form-control:hover,
+  .product-details .form-control:focus {
+      text-decoration: none;
+      outline: none;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+{# begin:: background #}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('assets/user/images/tahu.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate mb-5 text-center">
+                <h2 class="mb-0 bread">Detail Produk</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{# end:: background #}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5 ftco-animate">
+                <a href="{{ asset('uploads/produk/'~produk.gambar) }}" class="image-popup prod-img-bg">
+                    <img src="{{ asset('uploads/produk/'~produk.gambar) }}" class="img-fluid" alt="Colorlib Template">
+                </a>
+            </div>
+            <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                <h3>{{ produk.nama }}</h3>
+                <p class="price"><span>Rp. {{ produk.harga|format_rp }}</span></p>
+                {{ produk.tentang|raw }}
+                {% set stock_terjual = (produk.stock - produk.jumlah) %}
+                {% set stock = (produk.jumlah_keranjang == null) ? produk.stock - produk.jumlah : stock_terjual - produk.jumlah_keranjang %}
+                {% if stock > 0 %}
+                    <form action="/user/keranjang/add" method="post">
+                        <input type="hidden" name="inpidusers" value="{{ (app.user) ? app.user.id_users : null }}" />
+                        <input type="hidden" name="inpkdproduk" value="{{ produk.kd_produk }}" />
+                        <button type="submit" class="btn btn-primary btn-keranjang py-3 px-5 mr-2">Pesan</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

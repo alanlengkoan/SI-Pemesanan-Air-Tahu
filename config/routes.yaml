@@ -1,0 +1,9 @@
+# untuk landing page
+index:
+   path: /
+   controller: App\Controller\HomeController::index
+
+# untuk user
+user:
+   path: /user
+   controller: App\Controller\HomeController::index

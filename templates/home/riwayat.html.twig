@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Riwayat{% endblock %}
+
+{% block body %}
+{# begin:: background #}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('assets/user/images/tahu.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate mb-5 text-center">
+                <h2 class="mb-0 bread">{{ halaman }}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{# end:: background #}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="table-wrap">
+                <table class="table">
+                    <thead class="thead-primary">
+                        <tr>
+                            <th>No.</th>
+                            <th>Kode Order</th>
+                            <th>Nama</th>
+                            <th>Tanggal Pemesanan</th>
+                            <th>Jam Pemesanan</th>
+                            <th>Metode Pembayaran</th>
+                            <th>Status Pembayaran</th>
+                            <th>Total</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rows in pemesanan %}
+                        <tr>
+                            <td>{{ loop.index }} </td>
+                            <td>{{ rows.kd_pemesanan }}</td>
+                            <td>{{ rows.nama }}</td>
+                            <td>{{ rows.tgl_pemesanan|date('d-m-Y') }}</td>
+                            <td>{{ rows.tgl_pemesanan|date('H:m:s') }}</td>
+                            <td>{{ (rows.metode_pembayaran == 'c') ? 'COD' : 'Transfer' }}</td>
+                            <td>
+                                {% if rows.status_pembayaran == 0 %}
+                                Menunggu Pembayaran
+                                {% elseif rows.status_pembayaran == 1 %}
+                                Telah Melakukan Pembayaran
+                                {% else %}
+                                -
+                                {% endif %}
+                            </td>
+                            <td>{{ rows.total|format_rp }}</>
+                            <td>
+                                <a href="nota/{{ rows.kd_pemesanan }}"><span aria-hidden="true"><i class="fa fa-info"></i></span></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
