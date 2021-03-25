@@ -64,9 +64,9 @@ class RegisterController extends AbstractController
             $pelanggan->setIdUsers($user->id_users);
             $pelanggan->setIns(date_create());
             $pelanggan->setUpd(date_create());
-
-            $this->mng->persist($user);
+            
             $this->mng->persist($pelanggan);
+            $this->mng->persist($user);
             $this->mng->flush();
 
             // untuk redirect

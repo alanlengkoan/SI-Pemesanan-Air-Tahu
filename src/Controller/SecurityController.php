@@ -42,6 +42,22 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * @Route("/login/kurir", name="login_kurir")
+     */
+    public function login_kurir(AuthenticationUtils $authenticationUtils): Response
+    {
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        $data = [
+            'halaman' => 'Login Kurir',
+            'error'   => $error,
+        ];
+
+        return $this->render('kurir/login.html.twig', $data);
+    }
+
+    /**
      * @Route("/logout", name="app_logout")
      */
     public function logout()

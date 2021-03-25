@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\TbPelanggan;
 use App\Entity\User;
 use App\Service\MyfunctionHelper;
 use Doctrine\ORM\EntityManagerInterface;
@@ -32,7 +33,7 @@ class ProfilController extends AbstractController
 
         $data = [
             'halaman' => "Profil",
-            'data'    => $this->mng->getRepository(User::class)->getDetail($idu),
+            'data'    => $this->mng->getRepository(User::class)->getDetailPelanggan($idu),
         ];
 
         return $this->render('home/profil.html.twig', $data);
@@ -109,6 +110,14 @@ class ProfilController extends AbstractController
                     $user->setEmail($post->request->get('inpemail'));
                     $user->setUsername($post->request->get('inpusername'));
                     $user->setUpd(date_create());
+
+                    $pelanggan = $this->mng->getRepository(TbPelanggan::class)->findOneBy(['id_users' => $idu]);
+                    $pelanggan->setKelamin($post->request->get('inpkelamin'));
+                    $pelanggan->setTelepon($post->request->get('inptelepon'));
+                    $pelanggan->setAlamat($post->request->get('inpalamat'));
+                    $pelanggan->setUpd(date_create());
+
+                    $this->mng->persist($pelanggan);
 
                     $this->mng->persist($user);
                     $this->mng->flush();

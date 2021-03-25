@@ -32,7 +32,7 @@ class ProfilController extends AbstractController
 
         $data = [
             'halaman' => "Profil",
-            'data'    => $this->mng->getRepository(User::class)->getDetail($idu),
+            'data'    => $this->mng->getRepository(User::class)->getDetailAdmin($idu),
         ];
 
         return $this->render('admin/profil/view.html.twig', $data);

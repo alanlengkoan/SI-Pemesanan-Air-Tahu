@@ -17,6 +17,10 @@ security:
             entity:
                 class: App\Entity\User
                 property: username
+        kurir:
+            entity:
+                class: App\Entity\User
+                property: username
         user:
             entity:
                 class: App\Entity\User
@@ -25,6 +29,7 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        # untuk config admin
         admin_secured_area:
             pattern: /admin
             anonymous: ~
@@ -35,6 +40,18 @@ security:
                 default_target_path: admin
             logout:
                 path: app_logout
+        # untuk config kurir
+        kurir_secured_area:
+            pattern: /kurir
+            anonymous: ~
+            provider: kurir
+            form_login:
+                login_path: login_kurir
+                check_path: login_kurir
+                default_target_path: kurir
+            logout:
+                path: app_logout
+        # untuk config user
         user_secured_area:
             pattern: /
             anonymous: ~
@@ -56,4 +73,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN } # untuk admin
+        - { path: ^/kurir, roles: ROLE_KURIR } # untuk kurir
         - { path: ^/user, roles: ROLE_USER } # untuk user

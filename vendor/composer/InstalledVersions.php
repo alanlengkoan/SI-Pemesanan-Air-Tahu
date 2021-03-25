@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'aef33bc5e699708ef925c16ade36af1502fbbf19',
+    'reference' => '1251d3dbd30be7767e142801447efcbfe824346c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'aef33bc5e699708ef925c16ade36af1502fbbf19',
+      'reference' => '1251d3dbd30be7767e142801447efcbfe824346c',
     ),
     'beberlei/doctrineextensions' => 
     array (
@@ -626,12 +626,12 @@ private static $installed = array (
     ),
     'symfony/maker-bundle' => 
     array (
-      'pretty_version' => 'v1.25.0',
-      'version' => '1.25.0.0',
+      'pretty_version' => 'v1.30.2',
+      'version' => '1.30.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6d2da12632f5c8b9aa7b159f0bb46f245289434a',
+      'reference' => 'a395a85aa4ded6c1fa3da118d60329b64b6c2acd',
     ),
     'symfony/mime' => 
     array (

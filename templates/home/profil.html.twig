@@ -65,17 +65,37 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Jenis Kelamin</label>
+                                <div class="col-lg-9">
+                                    <select style="width: 100%" class="form-control" name="inpkelamin" id="inpkelamin">
+                                        <option value="">- Pilih -</option>
+                                        <option value="L" {{ (data.kelamin == "L" ? "selected" : "") }}>Laki - laki</option>
+                                        <option value="P" {{ (data.kelamin == "P" ? "selected" : "") }}>Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Email</label>
                                 <div class="col-lg-9">
-                                    <input class="form-control" type="email" name="inpemail" id="inpemail"
-                                        value="{{ data.email }}">
+                                    <input class="form-control" type="email" name="inpemail" id="inpemail" placeholder="Masukkan Email" value="{{ data.email }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">No. Hp</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" name="inptelepon" id="inptelepon" placeholder="Masukkan No. Hp" value="{{ data.telepon }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Alamat</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" name="inpalamat" id="inpalamat" placeholder="Masukkan Alamat">{{ data.alamat }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Username</label>
                                 <div class="col-lg-9">
-                                    <input class="form-control" type="text" name="inpusername" id="inpusername"
-                                        value="{{ data.username }}">
+                                    <input class="form-control" type="text" name="inpusername" id="inpusername" value="{{ data.username }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -177,6 +197,9 @@
 
             $('#inpnama').attr('required', 'required');
             $('#inpemail').attr('required', 'required');
+            $('#inpkelamin').attr('required', 'required');
+            $('#inptelepon').attr('required', 'required');
+            $('#inpalamat').attr('required', 'required');
             $('#inpusername').attr('required', 'required');
 
             if ($('#form-akun').parsley().isValid() == true) {

@@ -140,7 +140,7 @@ class KeranjangController extends AbstractController
 
                 $keranjang->setJumlah($jumlah[$i]);
                 $keranjang->setHarga($harga[$i]);
-                $keranjang->setSubTotal(substr($sub_total[$i], 0, -3) . '' . rand(111, 999));
+                $keranjang->setSubTotal($sub_total[$i]);
 
                 $this->mng->persist($keranjang);
                 $this->mng->flush();

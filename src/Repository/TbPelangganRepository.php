@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\TbPelanggan;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -14,37 +15,19 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TbPelangganRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private $mng;
+
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $mng)
     {
         parent::__construct($registry, TbPelanggan::class);
+        $this->mng = $mng;
     }
 
-    // /**
-    //  * @return TbPelanggan[] Returns an array of TbPelanggan objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    // untuk mengambil semua data pemesanan
+    public function getAll()
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $sql = "SELECT tp.id_pelanggan, tp.id_users, u.nama, tp.kelamin, tp.telepon, tp.alamat FROM App\Entity\TbPelanggan AS tp LEFT JOIN App\Entity\User AS u WITH tp.id_users = u.id_users ORDER BY u.nama ASC";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?TbPelanggan
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
