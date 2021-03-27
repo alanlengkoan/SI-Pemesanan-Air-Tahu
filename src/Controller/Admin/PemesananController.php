@@ -3,8 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\TbCod;
+use App\Entity\TbKurir;
 use App\Entity\TbPembayaran;
 use App\Entity\TbPemesanan;
+use App\Entity\TbPengantaran;
+use App\Entity\TbPengantaranDetail;
 use App\Service\MyfunctionHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
@@ -30,6 +33,7 @@ class PemesananController extends AbstractController
         $data = [
             'halaman'   => "Pemesanan",
             'pemesanan' => $this->mng->getRepository(TbPemesanan::class)->getAll(),
+            'kurir'     => $this->mng->getRepository(TbKurir::class)->getAll(),
         ];
 
         return $this->render('admin/pemesanan/view.html.twig', $data);
@@ -78,57 +82,53 @@ class PemesananController extends AbstractController
     }
 
     /**
-     * @Route("/admin/pemesanan/bayar/{kd}", name="pemesanan_bayar")
+     * @Route("/admin/pemesanan/tracking/{kd}", name="pemesanan_tracking")
      */
-    public function bayar(string $kd)
+    public function tracking(string $kd)
     {
-        // untuk pemesanan detail
-        $sql2 = "SELECT pd.sub_total FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = '$kd'";
-        $qry2 = $this->mng->createQuery($sql2);
-        $get2 = $qry2->getResult();
-
-        // untuk total
-        foreach ($get2 as $key => $value) {
-            $total[] = $value['sub_total'];
-        }
-
         $data = [
-            'halaman'  => "Bayar",
-            'kd_order' => $kd,
-            'total'    => array_sum($total),
+            'halaman'  => "Tracking & Chat Pemesanan",
+            'tracking' => $this->mng->getRepository(TbPengantaranDetail::class)->getRiwayat($kd),
         ];
 
-        return $this->render('admin/pemesanan/bayar.html.twig', $data);
+        return $this->render('admin/tracking/view.html.twig', $data);
     }
 
     /**
-     * @Route("/admin/pembayaran", name="pembayaran_cod")
+     * @Route("/admin/pemesanan/pilih_kurir", name="pemesanan_pilih_kurir")
      */
-    public function pembayaran(Request $post, MyfunctionHelper $myfun)
+    public function pilih_kurir(Request $post)
     {
         try {
-            $kd = $post->request->get('inpkkorder');
+            $id_users = $post->request->get('id_users');
+            $kd_pemesanan = $post->request->get('kd_pemesanan');
 
-            // untuk simpan data cod
-            $cod = $this->mng->getRepository(TbCod::class)->findOneBy(['kd_pemesanan' => $kd]);
-            $cod->setKdPemesanan($kd);
-            $cod->setNamaBayar($post->request->get('inpnamabayar'));
-            $cod->setJumlahBayar($myfun->removeSeparatorHarga($post->request->get('inpjumlahbayar')));
-            $cod->setTanggalBayar(date_create());
-            $cod->setUpd(date_create());
+            // untuk update tabel pemesanan
+            $pemesanan = $this->mng->getRepository(TbPemesanan::class)->findOneBy(['kd_pemesanan' => $kd_pemesanan]);
+            $pemesanan->setStatusPengantaran('1');
+            $pemesanan->setPilihKurir('y');
 
-            // untuk update pemesanan
-            $pemesanan = $this->mng->getRepository(TbPemesanan::class)->findOneBy(['kd_pemesanan' => $kd]);
-            $pemesanan->setStatusPembayaran('1');
-            $pemesanan->setUpd(date_create());
+            // untuk insert tabel pengantaran
+            $pengantaran = new TbPengantaran();
+            $pengantaran->setKdPemesanan($kd_pemesanan);
+            $pengantaran->setIdUsers($id_users);
+            $pengantaran->setIns(date_create());
+            $pengantaran->setUpd(date_create());
 
-            $this->mng->persist($cod);
+            // untuk simpan data detail pengantaran
+            $detail_pengantaran = new TbPengantaranDetail();
+            $detail_pengantaran->setKdPemesanan($kd_pemesanan);
+            $detail_pengantaran->setStatus('1');
+            $detail_pengantaran->setIns(date_create());
+
+            $this->mng->persist($pengantaran);
             $this->mng->persist($pemesanan);
+            $this->mng->persist($detail_pengantaran);
             $this->mng->flush();
 
-            $response = ['msg' => 'Transaksi berhasil diproses!'];
+            $response = ['title' => 'Berhasil!', 'text' => 'Berhasil dihapus!', 'type' => 'success', 'button' => 'Ok!'];
         } catch (Exception $e) {
-            $response = ['msg' => 'Transaksi gagal diproses!'];
+            $response = ['title' => 'Gagal!', 'text' => 'Gagal dihapus!', 'type' => 'error', 'button' => 'Ok!'];
         }
 
         return new JsonResponse($response);

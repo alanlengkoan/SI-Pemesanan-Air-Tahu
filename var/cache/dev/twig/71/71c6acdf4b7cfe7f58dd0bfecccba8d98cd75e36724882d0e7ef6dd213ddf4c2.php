@@ -144,7 +144,7 @@ class __TwigTemplate_156914bc65be19404ec20151f9620f7d1e9ca7eed877978f7025565bc4d
                     </div>
                     <hr>
                     <div class=\"table-responsive\">
-                        <table id=\"tabel_pelanggan\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
+                        <table id=\"tabel_kurir\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -315,7 +315,7 @@ class __TwigTemplate_156914bc65be19404ec20151f9620f7d1e9ca7eed877978f7025565bc4d
 <script>
     // untuk datatable
     var untukDataTabel = function() {
-        \$('#tabel_pelanggan').DataTable();
+        \$('#tabel_kurir').DataTable();
     }();
 
     // untuk tambah data
@@ -507,7 +507,7 @@ class __TwigTemplate_156914bc65be19404ec20151f9620f7d1e9ca7eed877978f7025565bc4d
                     </div>
                     <hr>
                     <div class=\"table-responsive\">
-                        <table id=\"tabel_pelanggan\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
+                        <table id=\"tabel_kurir\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -596,7 +596,7 @@ class __TwigTemplate_156914bc65be19404ec20151f9620f7d1e9ca7eed877978f7025565bc4d
 <script>
     // untuk datatable
     var untukDataTabel = function() {
-        \$('#tabel_pelanggan').DataTable();
+        \$('#tabel_kurir').DataTable();
     }();
 
     // untuk tambah data

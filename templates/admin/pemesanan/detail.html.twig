@@ -145,6 +145,16 @@
                                         <h4>Jumlah Transfer</h4>
                                     </label>
                                     <div class="input-group mb-3">
+                                        <input type="text" class="form-control-plaintext" placeholder="{{ (data_pembayaran_detail.jumlah_transfer == null) ? '-' : data_pembayaran_detail.jumlah_transfer|format_rp }}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <label for="username" class="text-dark">
+                                        <h4>Jumlah Transfer</h4>
+                                    </label>
+                                    <div class="input-group mb-3">
                                         <input type="text" name="inpjumlahtransfer" id="inpjumlahtransfer" {{ (data_pembayaran_detail.jumlah_transfer == null ? 'class="form-control" placeholder="Jumlah transfer" onkeydown="return justAngka(event)" onkeyup="javascript:this.value=autoSeparator(this.value);"' : 'class=form-control-plaintext placeholder='~data_pembayaran_detail.jumlah_transfer|format_rp~' readonly') }} />
                                         {% if data_pembayaran_detail.jumlah_transfer == null %}
                                         <div class="input-group-prepend">
@@ -181,6 +191,13 @@
                                         <a href="#" onclick="viewImage()">
                                             <img src="{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}" width="100" heigth="100" />
                                         </a>
+
+                                        <script>
+                                            // untuk lihat gambar pada tab baru
+                                            function viewImage(url) {
+                                                window.open("{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}");
+                                            }
+                                        </script>
                                     {% endif %}
                                 </div>
                             </div>
@@ -217,13 +234,6 @@
                                     <input type="text" class="form-control-plaintext" placeholder="{{ (data_pembayaran_cod.tanggal_bayar == null) ? '-' : data_pembayaran_cod.tanggal_bayar|date('H:i:s') }}" readonly>
                                 </div>
                             </div>
-                            {% if data_pemesanan.status_pembayaran == '0' %}
-                                 <div class="form-group">
-                                     <div class="col-xs-12"><br>
-                                        <a class="btn btn-lg btn-success btn-sm btn-rounded" href="/admin/pemesanan/bayar/{{ data_pemesanan.kd_pemesanan }}"><i class="fa fa-money"></i>&nbsp;Bayar</a>
-                                     </div>
-                                 </div>
-                            {% endif %}
                         {% endif %}
                     </form>
                 </div>
@@ -356,10 +366,5 @@
             x1 = x1.replace(rgx, '$1' + '.' + '$2');
         return x1 + x2;
     };
-
-    // untuk lihat gambar pada tab baru
-    function viewImage(url) {
-        window.open("{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}");
-    }
 </script>
 {% endblock %}

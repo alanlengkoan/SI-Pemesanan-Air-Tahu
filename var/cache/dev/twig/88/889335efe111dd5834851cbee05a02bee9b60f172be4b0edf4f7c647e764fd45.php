@@ -117,15 +117,19 @@ class __TwigTemplate_c1c2327067fcc6a3e4e82ac15c3f0180e95b991dcfcc9698e559fbfa064
                             <th>Jam Pemesanan</th>
                             <th>Metode Pembayaran</th>
                             <th>Status Pembayaran</th>
+                            <th>Status Pengantaran</th>
                             <th>Total</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         ";
-        // line 38
+        // line 39
+        $context["status_pengantaran"] = [0 => "Dikemas", 1 => "Dikirim", 2 => "Diterima"];
+        // line 40
+        echo "                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pemesanan"]) || array_key_exists("pemesanan", $context) ? $context["pemesanan"] : (function () { throw new RuntimeError('Variable "pemesanan" does not exist.', 38, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["pemesanan"]) || array_key_exists("pemesanan", $context) ? $context["pemesanan"] : (function () { throw new RuntimeError('Variable "pemesanan" does not exist.', 40, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -140,60 +144,68 @@ class __TwigTemplate_c1c2327067fcc6a3e4e82ac15c3f0180e95b991dcfcc9698e559fbfa064
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 39
+            // line 41
             echo "                        <tr>
                             <td>";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 40), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 42), "html", null, true);
             echo " </td>
                             <td>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 41), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 42), "html", null, true);
-            echo "</td>
-                            <td>";
             // line 43
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 43), "d-m-Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 43), "html", null, true);
             echo "</td>
                             <td>";
             // line 44
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 44), "H:m:s"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 44), "html", null, true);
             echo "</td>
                             <td>";
             // line 45
-            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "metode_pembayaran", [], "any", false, false, false, 45), "c"))) ? ("COD") : ("Transfer"));
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 45), "d-m-Y"), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 46
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 46), "H:m:s"), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 47
+            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "metode_pembayaran", [], "any", false, false, false, 47), "c"))) ? ("COD") : ("Transfer"));
             echo "</td>
                             <td>
                                 ";
-            // line 47
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "status_pembayaran", [], "any", false, false, false, 47), 0))) {
-                // line 48
+            // line 49
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 0))) {
+                // line 50
                 echo "                                Menunggu Pembayaran
                                 ";
-            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 49
-$context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 1))) {
-                // line 50
+            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 51
+$context["rows"], "status_pembayaran", [], "any", false, false, false, 51), 1))) {
+                // line 52
                 echo "                                Telah Melakukan Pembayaran
                                 ";
             } else {
-                // line 52
+                // line 54
                 echo "                                -
                                 ";
             }
-            // line 54
+            // line 56
             echo "                            </td>
+                            <td>
+                                <a href=\"tracking/";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 58), "html", null, true);
+            echo "\"><span aria-hidden=\"true\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["status_pengantaran"]) || array_key_exists("status_pengantaran", $context) ? $context["status_pengantaran"] : (function () { throw new RuntimeError('Variable "status_pengantaran" does not exist.', 58, $this->source); })()), twig_get_attribute($this->env, $this->source, $context["rows"], "status_pengantaran", [], "any", false, false, false, 58), [], "array", false, false, false, 58), "html", null, true);
+            echo "</span></a>
+                            </td>
                             <td>";
-            // line 55
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 55)), "html", null, true);
-            echo "</>
+            // line 60
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 60)), "html", null, true);
+            echo "</td>
                             <td>
                                 <a href=\"nota/";
-            // line 57
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 57), "html", null, true);
-            echo "\"><span aria-hidden=\"true\"><i class=\"fa fa-info\"></i></span></a>
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 62), "html", null, true);
+            echo "\"><span aria-hidden=\"true\"><i class=\"fa fa-motorcycle\"></i></span></a>
                             </td>
                         </tr>
                         ";
@@ -209,7 +221,7 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 1)))
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 66
         echo "                    </tbody>
                 </table>
             </div>
@@ -237,7 +249,7 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 1)))
 
     public function getDebugInfo()
     {
-        return array (  213 => 61,  195 => 57,  190 => 55,  187 => 54,  183 => 52,  179 => 50,  177 => 49,  174 => 48,  172 => 47,  167 => 45,  163 => 44,  159 => 43,  155 => 42,  151 => 41,  147 => 40,  144 => 39,  127 => 38,  105 => 18,  97 => 12,  88 => 7,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  225 => 66,  207 => 62,  202 => 60,  195 => 58,  191 => 56,  187 => 54,  183 => 52,  181 => 51,  178 => 50,  176 => 49,  171 => 47,  167 => 46,  163 => 45,  159 => 44,  155 => 43,  151 => 42,  148 => 41,  130 => 40,  128 => 39,  105 => 18,  97 => 12,  88 => 7,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -274,11 +286,13 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 1)))
                             <th>Jam Pemesanan</th>
                             <th>Metode Pembayaran</th>
                             <th>Status Pembayaran</th>
+                            <th>Status Pengantaran</th>
                             <th>Total</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% set status_pengantaran = ['Dikemas', 'Dikirim', 'Diterima'] %}
                         {% for rows in pemesanan %}
                         <tr>
                             <td>{{ loop.index }} </td>
@@ -296,9 +310,12 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 49), 1)))
                                 -
                                 {% endif %}
                             </td>
-                            <td>{{ rows.total|format_rp }}</>
                             <td>
-                                <a href=\"nota/{{ rows.kd_pemesanan }}\"><span aria-hidden=\"true\"><i class=\"fa fa-info\"></i></span></a>
+                                <a href=\"tracking/{{ rows.kd_pemesanan }}\"><span aria-hidden=\"true\">{{ status_pengantaran[rows.status_pengantaran] }}</span></a>
+                            </td>
+                            <td>{{ rows.total|format_rp }}</td>
+                            <td>
+                                <a href=\"nota/{{ rows.kd_pemesanan }}\"><span aria-hidden=\"true\"><i class=\"fa fa-motorcycle\"></i></span></a>
                             </td>
                         </tr>
                         {% endfor %}

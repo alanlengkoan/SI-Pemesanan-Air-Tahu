@@ -41,6 +41,16 @@ class TbPemesanan
      * @ORM\Column(type="string", columnDefinition="ENUM('0', '1', '2')")
      */
     private $status_pembayaran;
+    
+    /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('0', '1', '2')")
+     */
+    private $status_pengantaran;
+
+    /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('n', 'y')")
+     */
+    private $pilih_kurir;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -113,6 +123,30 @@ class TbPemesanan
     public function setStatusPembayaran(?string $status_pembayaran): self
     {
         $this->status_pembayaran = $status_pembayaran;
+
+        return $this;
+    }
+    
+    public function getStatusPengantaran(): ?string
+    {
+        return $this->status_pengantaran;
+    }
+
+    public function setStatusPengantaran(?string $status_pengantaran): self
+    {
+        $this->status_pengantaran = $status_pengantaran;
+
+        return $this;
+    }
+
+    public function getPilihKurir(): ?string
+    {
+        return $this->pilih_kurir;
+    }
+
+    public function setPilihKurir(?string $pilih_kurir): self
+    {
+        $this->pilih_kurir = $pilih_kurir;
 
         return $this;
     }

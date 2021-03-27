@@ -249,7 +249,7 @@ class __TwigTemplate_e13ed078646425ac8e77681d0b5c33e7b21a50c95648566e45fb7b487de
             echo "</span>
                             </p>
                             <p class=\"d-flex\">
-                                <span>Tanggal Transfer</span>
+                                <span>Bukti Transfer</span>
                                 <span>";
             // line 116
             if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 116, $this->source); })()), "bukti", [], "any", false, false, false, 116), null))) {
@@ -618,7 +618,7 @@ class __TwigTemplate_e13ed078646425ac8e77681d0b5c33e7b21a50c95648566e45fb7b487de
                                 <span>{{ (data_pembayaran_detail.tanggal_transfer == null) ? '-' : data_pembayaran_detail.tanggal_transfer|date('H:i:s') }}</span>
                             </p>
                             <p class=\"d-flex\">
-                                <span>Tanggal Transfer</span>
+                                <span>Bukti Transfer</span>
                                 <span>{% if (data_pembayaran_detail.bukti == null) %} - {% else %} <img
                                         src=\"{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}\" width=\"100\"
                                         heigth=\"100\" /> {% endif %}</span>

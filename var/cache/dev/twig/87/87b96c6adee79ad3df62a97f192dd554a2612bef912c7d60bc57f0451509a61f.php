@@ -278,20 +278,33 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Jumlah Transfer</h4>
                                     </label>
                                     <div class=\"input-group mb-3\">
-                                        <input type=\"text\" name=\"inpjumlahtransfer\" id=\"inpjumlahtransfer\" ";
+                                        <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
             // line 148
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 148, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 148), null))) ? (print ("class=\"form-control\" placeholder=\"Jumlah transfer\" onkeydown=\"return justAngka(event)\" onkeyup=\"javascript:this.value=autoSeparator(this.value);\"")) : (print (twig_escape_filter($this->env, (("class=form-control-plaintext placeholder=" . $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 148, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 148))) . " readonly"), "html", null, true))));
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 148, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 148), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 148, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 148)), "html", null, true))));
+            echo "\" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=\"form-group\">
+                                <div class=\"col-xs-6\">
+                                    <label for=\"username\" class=\"text-dark\">
+                                        <h4>Jumlah Transfer</h4>
+                                    </label>
+                                    <div class=\"input-group mb-3\">
+                                        <input type=\"text\" name=\"inpjumlahtransfer\" id=\"inpjumlahtransfer\" ";
+            // line 158
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 158, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 158), null))) ? (print ("class=\"form-control\" placeholder=\"Jumlah transfer\" onkeydown=\"return justAngka(event)\" onkeyup=\"javascript:this.value=autoSeparator(this.value);\"")) : (print (twig_escape_filter($this->env, (("class=form-control-plaintext placeholder=" . $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 158, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 158))) . " readonly"), "html", null, true))));
             echo " />
                                         ";
-            // line 149
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 149, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 149), null))) {
-                // line 150
+            // line 159
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 159, $this->source); })()), "jumlah_transfer", [], "any", false, false, false, 159), null))) {
+                // line 160
                 echo "                                        <div class=\"input-group-prepend\">
                                             <button class=\"btn btn-primary btn-outline\" id=\"btn-simpan\" type=\"button\"><i class=\"fa fa-save\"></i></button>
                                         </div>
                                         ";
             }
-            // line 154
+            // line 164
             echo "                                    </div>
                                 </div>
                             </div>
@@ -301,8 +314,8 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Tanggal Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 162
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 162, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 162), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 162, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 162), "d-m-Y"), "html", null, true))));
+            // line 172
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 172, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 172), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 172, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 172), "d-m-Y"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -312,8 +325,8 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Jam Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 170
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 170, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 170), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 170, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 170), "H:i:s"), "html", null, true))));
+            // line 180
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 180, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 180), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 180, $this->source); })()), "tanggal_transfer", [], "any", false, false, false, 180), "H:i:s"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -323,36 +336,46 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Bukti</h4>
                                     </label>
                                     ";
-            // line 178
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 178, $this->source); })()), "bukti", [], "any", false, false, false, 178), null))) {
-                // line 179
+            // line 188
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 188, $this->source); })()), "bukti", [], "any", false, false, false, 188), null))) {
+                // line 189
                 echo "                                        - 
                                     ";
             } else {
-                // line 181
+                // line 191
                 echo "                                        <a href=\"#\" onclick=\"viewImage()\">
                                             <img src=\"";
-                // line 182
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 182, $this->source); })()), "bukti", [], "any", false, false, false, 182))), "html", null, true);
+                // line 192
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 192, $this->source); })()), "bukti", [], "any", false, false, false, 192))), "html", null, true);
                 echo "\" width=\"100\" heigth=\"100\" />
                                         </a>
+
+                                        <script>
+                                            // untuk lihat gambar pada tab baru
+                                            function viewImage(url) {
+                                                window.open(\"";
+                // line 198
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 198, $this->source); })()), "bukti", [], "any", false, false, false, 198))), "html", null, true);
+                echo "\");
+                                            }
+                                        </script>
                                     ";
             }
-            // line 185
+            // line 202
             echo "                                </div>
                             </div>
                         ";
-        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,         // line 187
-(isset($context["data_pemesanan"]) || array_key_exists("data_pemesanan", $context) ? $context["data_pemesanan"] : (function () { throw new RuntimeError('Variable "data_pemesanan" does not exist.', 187, $this->source); })()), "metode_pembayaran", [], "any", false, false, false, 187), "c"))) {
-            // line 188
+        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,         // line 204
+(isset($context["data_pemesanan"]) || array_key_exists("data_pemesanan", $context) ? $context["data_pemesanan"] : (function () { throw new RuntimeError('Variable "data_pemesanan" does not exist.', 204, $this->source); })()), "metode_pembayaran", [], "any", false, false, false, 204), "c"))) {
+            // line 205
             echo "                            <div class=\"form-group\">
                                 <div class=\"col-xs-6\">
                                     <label for=\"username\" class=\"text-dark\">
                                         <h4>Jam Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 193
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 193, $this->source); })()), "nama_bayar", [], "any", false, false, false, 193), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 193, $this->source); })()), "nama_bayar", [], "any", false, false, false, 193), "html", null, true))));
+            // line 210
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 210, $this->source); })()), "nama_bayar", [], "any", false, false, false, 210), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 210, $this->source); })()), "nama_bayar", [], "any", false, false, false, 210), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -362,8 +385,8 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Jumlah Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 201
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 201, $this->source); })()), "jumlah_bayar", [], "any", false, false, false, 201), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 201, $this->source); })()), "jumlah_bayar", [], "any", false, false, false, 201)), "html", null, true))));
+            // line 218
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 218, $this->source); })()), "jumlah_bayar", [], "any", false, false, false, 218), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 218, $this->source); })()), "jumlah_bayar", [], "any", false, false, false, 218)), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -373,8 +396,8 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Tanggal Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 209
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 209, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 209), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 209, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 209), "d-m-Y"), "html", null, true))));
+            // line 226
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 226, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 226), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 226, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 226), "d-m-Y"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -384,38 +407,23 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Jam Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 217
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 217, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 217), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 217, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 217), "H:i:s"), "html", null, true))));
+            // line 234
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 234, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 234), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_cod"]) || array_key_exists("data_pembayaran_cod", $context) ? $context["data_pembayaran_cod"] : (function () { throw new RuntimeError('Variable "data_pembayaran_cod" does not exist.', 234, $this->source); })()), "tanggal_bayar", [], "any", false, false, false, 234), "H:i:s"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
-                            ";
-            // line 220
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["data_pemesanan"]) || array_key_exists("data_pemesanan", $context) ? $context["data_pemesanan"] : (function () { throw new RuntimeError('Variable "data_pemesanan" does not exist.', 220, $this->source); })()), "status_pembayaran", [], "any", false, false, false, 220), "0"))) {
-                // line 221
-                echo "                                 <div class=\"form-group\">
-                                     <div class=\"col-xs-12\"><br>
-                                        <a class=\"btn btn-lg btn-success btn-sm btn-rounded\" href=\"/admin/pemesanan/bayar/";
-                // line 223
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["data_pemesanan"]) || array_key_exists("data_pemesanan", $context) ? $context["data_pemesanan"] : (function () { throw new RuntimeError('Variable "data_pemesanan" does not exist.', 223, $this->source); })()), "kd_pemesanan", [], "any", false, false, false, 223), "html", null, true);
-                echo "\"><i class=\"fa fa-money\"></i>&nbsp;Bayar</a>
-                                     </div>
-                                 </div>
-                            ";
-            }
-            // line 227
-            echo "                        ";
+                        ";
         }
-        // line 228
+        // line 238
         echo "                    </form>
                 </div>
             </div>
         </div>
     </div>
     ";
-        // line 234
+        // line 244
         echo "    ";
-        // line 235
+        // line 245
         echo "    <div class=\"row\">
         <div class=\"col-12\">
             <div class=\"card\">
@@ -436,12 +444,12 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                             </thead>
                             <tbody>
                                 ";
-        // line 254
+        // line 264
         $context["sum"] = 0;
-        // line 255
+        // line 265
         echo "                                ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["data_pemesanan_detail"]) || array_key_exists("data_pemesanan_detail", $context) ? $context["data_pemesanan_detail"] : (function () { throw new RuntimeError('Variable "data_pemesanan_detail" does not exist.', 255, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["data_pemesanan_detail"]) || array_key_exists("data_pemesanan_detail", $context) ? $context["data_pemesanan_detail"] : (function () { throw new RuntimeError('Variable "data_pemesanan_detail" does not exist.', 265, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -456,34 +464,34 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 256
+            // line 266
             echo "                                ";
-            $context["sum"] = ((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 256, $this->source); })()) + twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 256));
-            // line 257
+            $context["sum"] = ((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 266, $this->source); })()) + twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 266));
+            // line 267
             echo "                                <tr>
                                     <td>";
-            // line 258
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 258), "html", null, true);
+            // line 268
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 268), "html", null, true);
             echo " </td>
                                     <td><img src=\"";
-            // line 259
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/produk/" . twig_get_attribute($this->env, $this->source, $context["rows"], "gambar", [], "any", false, false, false, 259))), "html", null, true);
+            // line 269
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/produk/" . twig_get_attribute($this->env, $this->source, $context["rows"], "gambar", [], "any", false, false, false, 269))), "html", null, true);
             echo "\" width=\"100\" heigth=\"100\" /></td>
                                     <td>";
-            // line 260
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 260), "html", null, true);
+            // line 270
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 270), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 261
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "jumlah", [], "any", false, false, false, 261), "html", null, true);
+            // line 271
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "jumlah", [], "any", false, false, false, 271), "html", null, true);
             echo "</td>
                                     <td align=\"center\">";
-            // line 262
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "harga", [], "any", false, false, false, 262)), "html", null, true);
+            // line 272
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "harga", [], "any", false, false, false, 272)), "html", null, true);
             echo "</td>
                                     <td align=\"center\"><span id=\"sub-total\">";
-            // line 263
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 263)), "html", null, true);
+            // line 273
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 273)), "html", null, true);
             echo "</span></td>
                                 </tr>
                                 ";
@@ -499,15 +507,15 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 266
+        // line 276
         echo "                                <tr>
                                     <td colspan=\"5\" align=\"center\">
                                         Total
                                     </td>
                                     <td align=\"center\">
                                         <span id=\"total\">";
-        // line 271
-        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 271, $this->source); })())), "html", null, true);
+        // line 281
+        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 281, $this->source); })())), "html", null, true);
         echo "</span>
                                     </td>
                                 </tr>
@@ -517,8 +525,8 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                     </td>
                                     <td align=\"center\">
                                         <span id=\"total\">";
-        // line 279
-        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 279, $this->source); })())), "html", null, true);
+        // line 289
+        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga((isset($context["sum"]) || array_key_exists("sum", $context) ? $context["sum"] : (function () { throw new RuntimeError('Variable "sum" does not exist.', 289, $this->source); })())), "html", null, true);
         echo "</span>
                                     </td>
                                 </tr>
@@ -533,7 +541,7 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
         </div>
     </div>
     ";
-        // line 293
+        // line 303
         echo "</div>
 ";
         
@@ -544,7 +552,7 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
 
     }
 
-    // line 297
+    // line 307
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -554,7 +562,7 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 298
+        // line 308
         echo "<script>
     var untukUbahAkun = function() {
         \$(document).on('click', '#btn-simpan', function(e) {
@@ -616,14 +624,6 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
             x1 = x1.replace(rgx, '\$1' + '.' + '\$2');
         return x1 + x2;
     };
-
-    // untuk lihat gambar pada tab baru
-    function viewImage(url) {
-        window.open(\"";
-        // line 362
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, (isset($context["data_pembayaran_detail"]) || array_key_exists("data_pembayaran_detail", $context) ? $context["data_pembayaran_detail"] : (function () { throw new RuntimeError('Variable "data_pembayaran_detail" does not exist.', 362, $this->source); })()), "bukti", [], "any", false, false, false, 362))), "html", null, true);
-        echo "\");
-    }
 </script>
 ";
         
@@ -646,7 +646,7 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
 
     public function getDebugInfo()
     {
-        return array (  624 => 362,  558 => 298,  548 => 297,  537 => 293,  521 => 279,  510 => 271,  503 => 266,  486 => 263,  482 => 262,  478 => 261,  474 => 260,  470 => 259,  466 => 258,  463 => 257,  460 => 256,  442 => 255,  440 => 254,  419 => 235,  417 => 234,  410 => 228,  407 => 227,  400 => 223,  396 => 221,  394 => 220,  388 => 217,  377 => 209,  366 => 201,  355 => 193,  348 => 188,  346 => 187,  342 => 185,  336 => 182,  333 => 181,  329 => 179,  327 => 178,  316 => 170,  305 => 162,  295 => 154,  289 => 150,  287 => 149,  283 => 148,  271 => 139,  260 => 131,  249 => 123,  238 => 115,  231 => 110,  229 => 109,  223 => 106,  212 => 98,  198 => 87,  187 => 79,  176 => 71,  165 => 63,  154 => 55,  143 => 47,  132 => 39,  121 => 31,  107 => 19,  104 => 17,  101 => 15,  94 => 10,  89 => 7,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  566 => 308,  556 => 307,  545 => 303,  529 => 289,  518 => 281,  511 => 276,  494 => 273,  490 => 272,  486 => 271,  482 => 270,  478 => 269,  474 => 268,  471 => 267,  468 => 266,  450 => 265,  448 => 264,  427 => 245,  425 => 244,  418 => 238,  411 => 234,  400 => 226,  389 => 218,  378 => 210,  371 => 205,  369 => 204,  365 => 202,  358 => 198,  349 => 192,  346 => 191,  342 => 189,  340 => 188,  329 => 180,  318 => 172,  308 => 164,  302 => 160,  300 => 159,  296 => 158,  283 => 148,  271 => 139,  260 => 131,  249 => 123,  238 => 115,  231 => 110,  229 => 109,  223 => 106,  212 => 98,  198 => 87,  187 => 79,  176 => 71,  165 => 63,  154 => 55,  143 => 47,  132 => 39,  121 => 31,  107 => 19,  104 => 17,  101 => 15,  94 => 10,  89 => 7,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -798,6 +798,16 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <h4>Jumlah Transfer</h4>
                                     </label>
                                     <div class=\"input-group mb-3\">
+                                        <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"{{ (data_pembayaran_detail.jumlah_transfer == null) ? '-' : data_pembayaran_detail.jumlah_transfer|format_rp }}\" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=\"form-group\">
+                                <div class=\"col-xs-6\">
+                                    <label for=\"username\" class=\"text-dark\">
+                                        <h4>Jumlah Transfer</h4>
+                                    </label>
+                                    <div class=\"input-group mb-3\">
                                         <input type=\"text\" name=\"inpjumlahtransfer\" id=\"inpjumlahtransfer\" {{ (data_pembayaran_detail.jumlah_transfer == null ? 'class=\"form-control\" placeholder=\"Jumlah transfer\" onkeydown=\"return justAngka(event)\" onkeyup=\"javascript:this.value=autoSeparator(this.value);\"' : 'class=form-control-plaintext placeholder='~data_pembayaran_detail.jumlah_transfer|format_rp~' readonly') }} />
                                         {% if data_pembayaran_detail.jumlah_transfer == null %}
                                         <div class=\"input-group-prepend\">
@@ -834,6 +844,13 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                         <a href=\"#\" onclick=\"viewImage()\">
                                             <img src=\"{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}\" width=\"100\" heigth=\"100\" />
                                         </a>
+
+                                        <script>
+                                            // untuk lihat gambar pada tab baru
+                                            function viewImage(url) {
+                                                window.open(\"{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}\");
+                                            }
+                                        </script>
                                     {% endif %}
                                 </div>
                             </div>
@@ -870,13 +887,6 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"{{ (data_pembayaran_cod.tanggal_bayar == null) ? '-' : data_pembayaran_cod.tanggal_bayar|date('H:i:s') }}\" readonly>
                                 </div>
                             </div>
-                            {% if data_pemesanan.status_pembayaran == '0' %}
-                                 <div class=\"form-group\">
-                                     <div class=\"col-xs-12\"><br>
-                                        <a class=\"btn btn-lg btn-success btn-sm btn-rounded\" href=\"/admin/pemesanan/bayar/{{ data_pemesanan.kd_pemesanan }}\"><i class=\"fa fa-money\"></i>&nbsp;Bayar</a>
-                                     </div>
-                                 </div>
-                            {% endif %}
                         {% endif %}
                     </form>
                 </div>
@@ -1009,11 +1019,6 @@ class __TwigTemplate_9517d70d35d74e6dde0e1db28077bbadf461722ae402342de78a67dd480
             x1 = x1.replace(rgx, '\$1' + '.' + '\$2');
         return x1 + x2;
     };
-
-    // untuk lihat gambar pada tab baru
-    function viewImage(url) {
-        window.open(\"{{ asset('uploads/bukti/'~data_pembayaran_detail.bukti) }}\");
-    }
 </script>
 {% endblock %}", "admin/pemesanan/detail.html.twig", "P:\\Project\\PHP\\si\\SI-Pemesanan-Air-Tahu\\templates\\admin\\pemesanan\\detail.html.twig");
     }
