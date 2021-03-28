@@ -387,85 +387,24 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
         // line 259
         echo "            <div class=\"col-6\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
                 <div class=\"chat-box bg-white\">
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test which is a new approach all
-                                    solutions</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3 m-2\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Test which is a new approach to have
-                                    all solutions</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test, which is a new approach to have
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3 m-2\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Apollo University, Delhi, India Test
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test, which is a new approach</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Apollo University, Delhi, India Test
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-                </div>
+                    ";
+        // line 262
+        echo "                    <div id=\"dom_chat\"></div>
+                    ";
+        // line 264
+        echo "                </div>
 
                 <!-- Typing area -->
-                <form action=\"#\" class=\"bg-light\">
+                <form id=\"form-send\" class=\"bg-light\" action=\"/user/send_chat\" method=\"POST\">
+                    <input type=\"hidden\" name=\"kd_pemesanan\" id=\"kd_pemesanan\" value=\"";
+        // line 268
+        echo twig_escape_filter($this->env, (isset($context["kd_pemesanan"]) || array_key_exists("kd_pemesanan", $context) ? $context["kd_pemesanan"] : (function () { throw new RuntimeError('Variable "kd_pemesanan" does not exist.', 268, $this->source); })()), "html", null, true);
+        echo "\" />
+                    
                     <div class=\"input-group\">
-                        <input type=\"text\" placeholder=\"Type a message\" aria-describedby=\"button-addon2\"
-                            class=\"form-control rounded-0 border-0 py-4 bg-light\">
+                        <input type=\"text\" name=\"pesan\" id=\"pesan\" aria-describedby=\"button-addon2\" class=\"form-control rounded-0 border-0 py-4 bg-light\" placeholder=\"Masukkan Pesan Anda\">
                         <div class=\"input-group-append\">
-                            <button id=\"button-addon2\" type=\"submit\" class=\"btn btn-default\">
+                            <button type=\"submit\" id=\"kirim\" class=\"btn btn-default\">
                                 <i class=\"fa fa-paper-plane\"></i>
                             </button>
                         </div>
@@ -473,7 +412,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
                 </form>
             </div>
             ";
-        // line 347
+        // line 281
         echo "        </div>
     </div>
     </div>
@@ -487,7 +426,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
 
     }
 
-    // line 353
+    // line 287
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -497,8 +436,10 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 354
-        echo "<script>
+        // line 288
+        echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
+
+<script>
     // untuk cetak
     var untukGetIdData = function() {
         \$(document).on('click', '#cetak', function () {
@@ -508,6 +449,68 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
             window.location = '/user/cetak/' + id;
         });
     }();
+
+    // load chat by ajax
+    \$.ajax({
+        type: 'GET',
+        url: '/user/load_chat/' + \$('#kd_pemesanan').val(),
+        dataType: 'html',
+        success: function (response) {
+            \$('#dom_chat').html(response);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+            alert(errorMsg);
+        }
+    });
+
+    function load_chat(kd_pemesanan) {
+        \$.ajax({
+            type: 'GET',
+            url: '/user/load_chat/' + kd_pemesanan,
+            dataType: 'html',
+            success: function (response) {
+                \$('#dom_chat').html(response);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+                alert(errorMsg);
+            }
+        });
+    }
+
+     // untuk tambah data
+    var untukTambahData = function() {
+        \$(document).on('submit', '#form-send', function(e) {
+            e.preventDefault();
+            \$('#pesan').attr('required', 'required')
+
+            if (\$('#form-send').parsley().isValid() == true) {
+                \$.ajax({
+                    method: \$(this).attr('method'),
+                    url: \$(this).attr('action'),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    dataType: 'html',
+                    beforeSend: function() {
+                        \$('#kirim').attr('disabled', 'disabled');
+                        \$('#kirim').html('<i class=\"fa fa-spinner\"></i>');
+                    },
+                    success: function(response) {
+                        \$('#dom_chat').html(response);
+                        \$('#pesan').val('');
+                        \$('#kirim').removeAttr('disabled');
+                        \$('#kirim').html('<i class=\"fa fa-paper-plane\"></i>');
+                    }
+                })
+            }
+        });
+    }();
+        
+    setInterval(function() {
+        load_chat(\$('#kd_pemesanan').val())
+    }, 5000);
 </script>
 ";
         
@@ -530,7 +533,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
 
     public function getDebugInfo()
     {
-        return array (  501 => 354,  491 => 353,  477 => 347,  388 => 259,  386 => 258,  381 => 254,  371 => 250,  362 => 246,  348 => 234,  343 => 233,  341 => 232,  336 => 229,  330 => 224,  322 => 218,  313 => 213,  303 => 211,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  440 => 288,  430 => 287,  416 => 281,  401 => 268,  395 => 264,  392 => 262,  388 => 259,  386 => 258,  381 => 254,  371 => 250,  362 => 246,  348 => 234,  343 => 233,  341 => 232,  336 => 229,  330 => 224,  322 => 218,  313 => 213,  303 => 211,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -795,85 +798,19 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
             {# begin:: chat #}
             <div class=\"col-6\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
                 <div class=\"chat-box bg-white\">
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test which is a new approach all
-                                    solutions</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3 m-2\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Test which is a new approach to have
-                                    all solutions</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test, which is a new approach to have
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3 m-2\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Apollo University, Delhi, India Test
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Sender Message-->
-                    <div class=\"media w-50 mb-3 m-2\"><img
-                            src=\"https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg\" alt=\"user\"
-                            width=\"50\" class=\"rounded-circle\">
-                        <div class=\"media-body ml-3\">
-                            <div class=\"bg-light rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-muted\">Test, which is a new approach</p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
-
-                    <!-- Reciever Message-->
-                    <div class=\"media w-50 ml-auto mb-3\">
-                        <div class=\"media-body\">
-                            <div class=\"bg-primary rounded py-2 px-3 mb-2\">
-                                <p class=\"text-small mb-0 text-white\">Apollo University, Delhi, India Test
-                                </p>
-                            </div>
-                            <p class=\"small text-muted\">12:00 PM | Aug 13</p>
-                        </div>
-                    </div>
+                    {# begin:: chat #}
+                    <div id=\"dom_chat\"></div>
+                    {# end:: chat #}
                 </div>
 
                 <!-- Typing area -->
-                <form action=\"#\" class=\"bg-light\">
+                <form id=\"form-send\" class=\"bg-light\" action=\"/user/send_chat\" method=\"POST\">
+                    <input type=\"hidden\" name=\"kd_pemesanan\" id=\"kd_pemesanan\" value=\"{{ kd_pemesanan }}\" />
+                    
                     <div class=\"input-group\">
-                        <input type=\"text\" placeholder=\"Type a message\" aria-describedby=\"button-addon2\"
-                            class=\"form-control rounded-0 border-0 py-4 bg-light\">
+                        <input type=\"text\" name=\"pesan\" id=\"pesan\" aria-describedby=\"button-addon2\" class=\"form-control rounded-0 border-0 py-4 bg-light\" placeholder=\"Masukkan Pesan Anda\">
                         <div class=\"input-group-append\">
-                            <button id=\"button-addon2\" type=\"submit\" class=\"btn btn-default\">
+                            <button type=\"submit\" id=\"kirim\" class=\"btn btn-default\">
                                 <i class=\"fa fa-paper-plane\"></i>
                             </button>
                         </div>
@@ -888,6 +825,8 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
 {% endblock %}
 
 {% block javascripts %}
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
+
 <script>
     // untuk cetak
     var untukGetIdData = function() {
@@ -898,6 +837,68 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
             window.location = '/user/cetak/' + id;
         });
     }();
+
+    // load chat by ajax
+    \$.ajax({
+        type: 'GET',
+        url: '/user/load_chat/' + \$('#kd_pemesanan').val(),
+        dataType: 'html',
+        success: function (response) {
+            \$('#dom_chat').html(response);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+            alert(errorMsg);
+        }
+    });
+
+    function load_chat(kd_pemesanan) {
+        \$.ajax({
+            type: 'GET',
+            url: '/user/load_chat/' + kd_pemesanan,
+            dataType: 'html',
+            success: function (response) {
+                \$('#dom_chat').html(response);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+                alert(errorMsg);
+            }
+        });
+    }
+
+     // untuk tambah data
+    var untukTambahData = function() {
+        \$(document).on('submit', '#form-send', function(e) {
+            e.preventDefault();
+            \$('#pesan').attr('required', 'required')
+
+            if (\$('#form-send').parsley().isValid() == true) {
+                \$.ajax({
+                    method: \$(this).attr('method'),
+                    url: \$(this).attr('action'),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    dataType: 'html',
+                    beforeSend: function() {
+                        \$('#kirim').attr('disabled', 'disabled');
+                        \$('#kirim').html('<i class=\"fa fa-spinner\"></i>');
+                    },
+                    success: function(response) {
+                        \$('#dom_chat').html(response);
+                        \$('#pesan').val('');
+                        \$('#kirim').removeAttr('disabled');
+                        \$('#kirim').html('<i class=\"fa fa-paper-plane\"></i>');
+                    }
+                })
+            }
+        });
+    }();
+        
+    setInterval(function() {
+        load_chat(\$('#kd_pemesanan').val())
+    }, 5000);
 </script>
 {% endblock %}", "home/tracking.html.twig", "P:\\Project\\PHP\\si\\SI-Pemesanan-Air-Tahu\\templates\\home\\tracking.html.twig");
     }

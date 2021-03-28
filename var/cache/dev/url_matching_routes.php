@@ -37,6 +37,7 @@ return [
         '/admin/pelanggan/res_pass' => [[['_route' => 'pelanggan_res_pass', '_controller' => 'App\\Controller\\Admin\\PelangganController::reset_password'], null, null, null, false, false, null]],
         '/admin/pembelian' => [[['_route' => 'pembelian', '_controller' => 'App\\Controller\\Admin\\PembelianController::index'], null, null, null, false, false, null]],
         '/admin/pemesanan' => [[['_route' => 'pemesanan', '_controller' => 'App\\Controller\\Admin\\PemesananController::index'], null, null, null, false, false, null]],
+        '/admin/pemesanan/send_chat' => [[['_route' => 'admin_send_chat', '_controller' => 'App\\Controller\\Admin\\PemesananController::send_chat'], null, null, null, false, false, null]],
         '/admin/pemesanan/pilih_kurir' => [[['_route' => 'pemesanan_pilih_kurir', '_controller' => 'App\\Controller\\Admin\\PemesananController::pilih_kurir'], null, null, null, false, false, null]],
         '/admin/pembayaran_transfer' => [[['_route' => 'pembayaran_cod', '_controller' => 'App\\Controller\\Admin\\PemesananController::pembayaran_transfer'], null, null, null, false, false, null]],
         '/admin/produk' => [[['_route' => 'produk', '_controller' => 'App\\Controller\\Admin\\ProdukController::index'], null, null, null, false, false, null]],
@@ -58,6 +59,7 @@ return [
         '/user/keranjang/del' => [[['_route' => 'keranjang_del', '_controller' => 'App\\Controller\\KeranjangController::del_cart'], null, null, null, false, false, null]],
         '/user/checkout' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\KeranjangController::checkout'], null, null, null, false, false, null]],
         '/user/finish' => [[['_route' => 'finish', '_controller' => 'App\\Controller\\KeranjangController::checkout_finish'], null, null, null, false, false, null]],
+        '/user/send_chat' => [[['_route' => 'send_chat', '_controller' => 'App\\Controller\\KeranjangController::send_chat'], null, null, null, false, false, null]],
         '/user/pembayaran' => [[['_route' => 'pembayaran_transfer', '_controller' => 'App\\Controller\\KeranjangController::pembayaran'], null, null, null, false, false, null]],
         '/kurir' => [[['_route' => 'kurir', '_controller' => 'App\\Controller\\Kurir\\DashboardController::index'], null, null, null, false, false, null]],
         '/kurir/pemesanan' => [[['_route' => 'kurir_pemesanan', '_controller' => 'App\\Controller\\Kurir\\PemesananController::index'], null, null, null, false, false, null]],
@@ -102,20 +104,22 @@ return [
                 .'|/admin/pemesanan/(?'
                     .'|detail/([^/]++)(*:204)'
                     .'|tracking/([^/]++)(*:229)'
+                    .'|load_chat/([^/]++)(*:255)'
                 .')'
                 .'|/user/(?'
-                    .'|nota/([^/]++)(*:260)'
+                    .'|nota/([^/]++)(*:286)'
                     .'|tra(?'
-                        .'|cking/([^/]++)(*:288)'
-                        .'|nsfer/([^/]++)(*:310)'
+                        .'|cking/([^/]++)(*:314)'
+                        .'|nsfer/([^/]++)(*:336)'
                     .')'
-                    .'|cetak/([^/]++)(*:333)'
+                    .'|load_chat/([^/]++)(*:363)'
+                    .'|cetak/([^/]++)(*:385)'
                 .')'
                 .'|/kurir/pemesanan/(?'
-                    .'|detail/([^/]++)(*:377)'
-                    .'|bayar/([^/]++)(*:399)'
+                    .'|detail/([^/]++)(*:429)'
+                    .'|bayar/([^/]++)(*:451)'
                 .')'
-                .'|/produk/detail/([^/]++)(*:431)'
+                .'|/produk/detail/([^/]++)(*:483)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -127,14 +131,16 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         204 => [[['_route' => 'pemesanan_detail', '_controller' => 'App\\Controller\\Admin\\PemesananController::detail'], ['kd'], null, null, false, true, null]],
-        229 => [[['_route' => 'pemesanan_tracking', '_controller' => 'App\\Controller\\Admin\\PemesananController::tracking'], ['kd'], null, null, false, true, null]],
-        260 => [[['_route' => 'nota', '_controller' => 'App\\Controller\\KeranjangController::nota'], ['kd'], null, null, false, true, null]],
-        288 => [[['_route' => 'tracking', '_controller' => 'App\\Controller\\KeranjangController::tracking'], ['kd'], null, null, false, true, null]],
-        310 => [[['_route' => 'transfer', '_controller' => 'App\\Controller\\KeranjangController::transfer'], ['kd'], null, null, false, true, null]],
-        333 => [[['_route' => 'cetak', '_controller' => 'App\\Controller\\KeranjangController::cetak'], ['kd'], null, null, false, true, null]],
-        377 => [[['_route' => 'kurir_pemesanan_detail', '_controller' => 'App\\Controller\\Kurir\\PemesananController::detail'], ['kd'], null, null, false, true, null]],
-        399 => [[['_route' => 'kurir_pemesanan_bayar', '_controller' => 'App\\Controller\\Kurir\\PemesananController::bayar'], ['kd'], null, null, false, true, null]],
-        431 => [
+        229 => [[['_route' => 'admin_tracking', '_controller' => 'App\\Controller\\Admin\\PemesananController::tracking'], ['kd'], null, null, false, true, null]],
+        255 => [[['_route' => 'admin_load_chat', '_controller' => 'App\\Controller\\Admin\\PemesananController::load_chat'], ['kd'], null, null, false, true, null]],
+        286 => [[['_route' => 'nota', '_controller' => 'App\\Controller\\KeranjangController::nota'], ['kd'], null, null, false, true, null]],
+        314 => [[['_route' => 'tracking', '_controller' => 'App\\Controller\\KeranjangController::tracking'], ['kd'], null, null, false, true, null]],
+        336 => [[['_route' => 'transfer', '_controller' => 'App\\Controller\\KeranjangController::transfer'], ['kd'], null, null, false, true, null]],
+        363 => [[['_route' => 'load_chat', '_controller' => 'App\\Controller\\KeranjangController::load_chat'], ['kd'], null, null, false, true, null]],
+        385 => [[['_route' => 'cetak', '_controller' => 'App\\Controller\\KeranjangController::cetak'], ['kd'], null, null, false, true, null]],
+        429 => [[['_route' => 'kurir_pemesanan_detail', '_controller' => 'App\\Controller\\Kurir\\PemesananController::detail'], ['kd'], null, null, false, true, null]],
+        451 => [[['_route' => 'kurir_pemesanan_bayar', '_controller' => 'App\\Controller\\Kurir\\PemesananController::bayar'], ['kd'], null, null, false, true, null]],
+        483 => [
             [['_route' => 'produk_det', '_controller' => 'App\\Controller\\ProdukController::detail'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

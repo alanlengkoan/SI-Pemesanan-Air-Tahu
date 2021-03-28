@@ -454,6 +454,11 @@
       <argument type="service" id="doctrine"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+    <service id="App\Repository\TbChatRepository" class="App\Repository\TbChatRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Repository\TbCodRepository" class="App\Repository\TbCodRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -2883,7 +2888,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.VRwfYnB"/>
+      <argument type="service" id=".service_locator.D5IW1qV"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4500,6 +4505,8 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TbBankRepository" class="App\Repository\TbBankRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TbBankRepository" class="App\Repository\TbBankRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TbChatRepository" class="App\Repository\TbChatRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TbChatRepository" class="App\Repository\TbChatRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TbCodRepository" class="App\Repository\TbCodRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TbCodRepository" class="App\Repository\TbCodRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TbKeranjangRepository" class="App\Repository\TbKeranjangRepository" autowire="true" abstract="true"/>
@@ -4976,10 +4983,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.VRwfYnB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.D5IW1qV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\TbBankRepository" type="service" id="App\Repository\TbBankRepository"/>
+        <argument key="App\Repository\TbChatRepository" type="service" id="App\Repository\TbChatRepository"/>
         <argument key="App\Repository\TbCodRepository" type="service" id="App\Repository\TbCodRepository"/>
         <argument key="App\Repository\TbKeranjangRepository" type="service" id="App\Repository\TbKeranjangRepository"/>
         <argument key="App\Repository\TbKurirRepository" type="service" id="App\Repository\TbKurirRepository"/>

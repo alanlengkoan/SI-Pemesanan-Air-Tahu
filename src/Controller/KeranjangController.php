@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\TbChat;
 use App\Entity\TbCod;
 use Xendit\Xendit;
 use Exception;
@@ -335,11 +336,43 @@ class KeranjangController extends AbstractController
     public function tracking(string $kd)
     {
         $data = [
-            'halaman'  => "Tracking & Chat Pemesanan",
-            'tracking' => $this->mng->getRepository(TbPengantaranDetail::class)->getRiwayat($kd),
+            'halaman'      => "Tracking & Chat Pemesanan",
+            'kd_pemesanan' => $kd,
+            'tracking'     => $this->mng->getRepository(TbPengantaranDetail::class)->getRiwayat($kd),
         ];
 
         return $this->render('home/tracking.html.twig', $data);
+    }
+
+    /**
+     * @Route("/user/load_chat/{kd}", name="load_chat")
+     */
+    public function load_chat(string $kd)
+    {
+        $data = [
+            'id_users' => $this->getUser()->id_users,
+            'chat'     => $this->mng->getRepository(TbChat::class)->getDetail($kd)
+        ];
+
+        return $this->render('home/chat.html.twig', $data);
+    }
+
+    /**
+     * @Route("/user/send_chat", name="send_chat")
+     */
+    public function send_chat(Request $post)
+    {
+        $chat = new TbChat();
+        $chat->setKdPemesanan($post->request->get('kd_pemesanan'));
+        $chat->setIdUsers($this->getUser()->id_users);
+        $chat->setPesan($post->request->get('pesan'));
+        $chat->setLevel('user');
+        $chat->setDateSend(date_create());
+
+        $this->mng->persist($chat);
+        $this->mng->flush();
+
+        return $this->load_chat($post->request->get('kd_pemesanan'));
     }
 
     /**
