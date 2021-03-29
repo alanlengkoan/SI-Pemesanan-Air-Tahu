@@ -133,77 +133,49 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\"
                                 data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                 <i class=\"fas fa-bell fa-fw\"></i>
-                                <!-- Counter - Alerts -->
-                                <span class=\"badge badge-danger badge-counter\">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"
-                                aria-labelledby=\"alertsDropdown\">
-                                <h6 class=\"dropdown-header\">
-                                    Alerts Center
+                                ";
+        // line 62
+        echo "                                <span class=\"badge badge-danger badge-counter count\">0</span>
+                                ";
+        // line 64
+        echo "                            </a>
+                            <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+                                ";
+        // line 67
+        echo "                                <h6 class=\"dropdown-header\">
+                                    Kosong
                                 </h6>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-primary\">
-                                            <i class=\"fas fa-file-alt text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 12, 2019</div>
-                                        <span class=\"font-weight-bold\">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-success\">
-                                            <i class=\"fas fa-donate text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 7, 2019</div>
-                                        \$290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-warning\">
-                                            <i class=\"fas fa-exclamation-triangle text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Show All Alerts</a>
-                            </div>
+                                <div id=\"notification\"></div>
+                                ";
+        // line 72
+        echo "                            </div>
                         </li>
                         ";
-        // line 107
+        // line 75
         echo "                        ";
-        // line 108
+        // line 76
         echo "                        <li class=\"nav-item dropdown\">
                             <a class=\"nav-link dropdown-toggle\" href=\"javascript:void(0)\" data-toggle=\"dropdown\"
                                 aria-haspopup=\"true\" aria-expanded=\"false\">
                                 <span class=\"text-dark\">";
-        // line 111
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 111, $this->source); })()), "user", [], "any", false, false, false, 111), "nama", [], "any", false, false, false, 111), "html", null, true);
+        // line 79
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "user", [], "any", false, false, false, 79), "nama", [], "any", false, false, false, 79), "html", null, true);
         echo "</span>
                                 <i data-feather=\"chevron-down\" class=\"svg-icon\"></i>
                             </a>
                             <div class=\"dropdown-menu dropdown-menu-right user-dd animated flipInY\">
                                 <a class=\"dropdown-item\" href=\"";
-        // line 115
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_profil");
         echo "\"><i data-feather=\"user\" class=\"svg-icon mr-2 ml-1\"></i>Profile</a>
                                 <a class=\"dropdown-item\" href=\"";
-        // line 116
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"> <i data-feather=\"power\" class=\"svg-icon mr-2 ml-1\"></i> Logout </a>
                             </div>
                         </li>
                         ";
-        // line 120
+        // line 88
         echo "                    </ul>
                 </div>
             </nav>
@@ -214,7 +186,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                     <ul id=\"sidebarnav\">
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 129
+        // line 97
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\">
                                 <i class=\"fa fa-tachometer\"></i>
@@ -225,7 +197,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Master </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 137
+        // line 105
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bank");
         echo "\">
                                 <i class=\"fa fa-bank\"></i>
@@ -234,7 +206,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 143
+        // line 111
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produk");
         echo "\">
                                 <i class=\"fas fa-tag\"></i>
@@ -243,7 +215,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 149
+        // line 117
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stock");
         echo "\">
                                 <i class=\"fa fa-houzz\"></i>
@@ -252,7 +224,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 155
+        // line 123
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pelanggan");
         echo "\">
                                 <i class=\"fa fa-users\"></i>
@@ -261,7 +233,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 161
+        // line 129
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_kurir");
         echo "\">
                                 <i class=\"fa fa-motorcycle\"></i>
@@ -272,7 +244,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Transaksi </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 169
+        // line 137
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pemesanan");
         echo "\">
                                 <i class=\"fa fa-shopping-cart\"></i>
@@ -281,7 +253,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 175
+        // line 143
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pembelian");
         echo "\">
                                 <i class=\"fa fa-shopping-bag\"></i>
@@ -292,7 +264,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Laporan </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 183
+        // line 151
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -301,7 +273,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 189
+        // line 157
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_bulanan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -310,7 +282,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 195
+        // line 163
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_tahunan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -324,12 +296,12 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
 
         <div class=\"page-wrapper\">
             ";
-        // line 207
+        // line 175
         echo "            ";
         $this->displayBlock('body', $context, $blocks);
-        // line 208
+        // line 176
         echo "            ";
-        // line 209
+        // line 177
         echo "            <footer class=\"footer text-center text-muted\">
                 Copyright &copy;
                 <script>
@@ -341,54 +313,115 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
     </div>
 
     ";
-        // line 220
+        // line 188
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 221
+        // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/app-style-switcher.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 222
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/feather.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 223
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 224
+        // line 192
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/sidebarmenu.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 225
+        // line 193
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/custom.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 226
+        // line 194
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/d3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 227
+        // line 195
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/c3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 228
+        // line 196
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 229
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
     ";
-        // line 232
-        echo "
+        // line 200
+        echo "    
+    <script>
+        load_notification()
+
+        function load_notification() {
+            \$.ajax({
+                type: 'GET',
+                url: '/admin/load_notification',
+                dataType: 'json',
+                success: function (response) {                    
+                    if (response.count > 0) {
+                        \$('.count').html(response.count)
+                        \$('.dropdown-header').html(\"Pemberitahuan baru\");
+
+                        const order = response.result;
+                        var html = \"\";
+                        
+                        order.forEach(function (object) {
+                            html += `
+                                <a class=\"dropdown-item d-flex align-items-center lihat\" data-id=\"` + object.kd_pemesanan + `\" href=\"/admin/pemesanan/detail/` + object.kd_pemesanan + `\">
+                                    <div class=\"mr-3\">
+                                        <div class=\"icon-circle bg-primary\">
+                                            <i class=\"fas fa-shopping-cart text-white\"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class=\"small text-gray-500\">` + format_date(object.tgl_pemesanan.date) + `</div>
+                                        <span class=\"font-weight-bold\">` + object.kd_pemesanan + ` | ` + object.nama + `</span>
+                                    </div>
+                                </a>
+                            `;
+                        });
+
+                        \$('#notification').html(html);
+                    } else {
+                        \$('.dropdown-header').html(\"Kosong\");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+                    console.log(errorMsg);
+                }
+            });
+        }
+
+        setInterval(function() {
+            load_notification()
+        }, 5000);
+
+        // untuk update baca pemberitahuan
+        \$(document).on('click', '.lihat', function(){
+            var ini = \$(this);
+            \$.post('/admin/read_notification', {kd_pemesanan: ini.data('id')});
+        });
+
+        function format_date(date) {
+            var date = new Date(date);
+            var result = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '-' + ('0' + (date.getMonth() + 1))) + '-' + date.getFullYear();
+            return result;
+        }
+    </script>
+
     ";
-        // line 233
+        // line 262
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 234
+        // line 263
         echo "</body>
 
 </html>";
@@ -437,7 +470,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
 
     }
 
-    // line 207
+    // line 175
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -455,7 +488,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
 
     }
 
-    // line 233
+    // line 262
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -485,7 +518,7 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
 
     public function getDebugInfo()
     {
-        return array (  459 => 233,  441 => 207,  423 => 28,  404 => 8,  392 => 234,  390 => 233,  387 => 232,  382 => 229,  378 => 228,  374 => 227,  370 => 226,  366 => 225,  362 => 224,  358 => 223,  354 => 222,  350 => 221,  345 => 220,  333 => 209,  331 => 208,  328 => 207,  314 => 195,  305 => 189,  296 => 183,  285 => 175,  276 => 169,  265 => 161,  256 => 155,  247 => 149,  238 => 143,  229 => 137,  218 => 129,  207 => 120,  201 => 116,  197 => 115,  190 => 111,  185 => 108,  183 => 107,  132 => 57,  119 => 46,  100 => 29,  98 => 28,  86 => 18,  82 => 16,  78 => 15,  74 => 14,  70 => 13,  65 => 12,  60 => 9,  56 => 8,  47 => 1,);
+        return array (  492 => 262,  474 => 175,  456 => 28,  437 => 8,  425 => 263,  423 => 262,  359 => 200,  354 => 197,  350 => 196,  346 => 195,  342 => 194,  338 => 193,  334 => 192,  330 => 191,  326 => 190,  322 => 189,  317 => 188,  305 => 177,  303 => 176,  300 => 175,  286 => 163,  277 => 157,  268 => 151,  257 => 143,  248 => 137,  237 => 129,  228 => 123,  219 => 117,  210 => 111,  201 => 105,  190 => 97,  179 => 88,  173 => 84,  169 => 83,  162 => 79,  157 => 76,  155 => 75,  151 => 72,  145 => 67,  141 => 64,  138 => 62,  132 => 57,  119 => 46,  100 => 29,  98 => 28,  86 => 18,  82 => 16,  78 => 15,  74 => 14,  70 => 13,  65 => 12,  60 => 9,  56 => 8,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -550,49 +583,17 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\"
                                 data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                 <i class=\"fas fa-bell fa-fw\"></i>
-                                <!-- Counter - Alerts -->
-                                <span class=\"badge badge-danger badge-counter\">3+</span>
+                                {# begin:: untuk jumlah notifikasi #}
+                                <span class=\"badge badge-danger badge-counter count\">0</span>
+                                {# end:: untuk jumlah notifikasi #}
                             </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"
-                                aria-labelledby=\"alertsDropdown\">
+                            <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+                                {# begin:: alert #}
                                 <h6 class=\"dropdown-header\">
-                                    Alerts Center
+                                    Kosong
                                 </h6>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-primary\">
-                                            <i class=\"fas fa-file-alt text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 12, 2019</div>
-                                        <span class=\"font-weight-bold\">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-success\">
-                                            <i class=\"fas fa-donate text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 7, 2019</div>
-                                        \$290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                                    <div class=\"mr-3\">
-                                        <div class=\"icon-circle bg-warning\">
-                                            <i class=\"fas fa-exclamation-triangle text-white\"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class=\"small text-gray-500\">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Show All Alerts</a>
+                                <div id=\"notification\"></div>
+                                {# end:: alert #}
                             </div>
                         </li>
                         {# end:: notifikasi #}
@@ -721,6 +722,67 @@ class __TwigTemplate_8d8251b0309964240e523cb5b32de2b7abb573bdbd70b035b3236c53934
     <script src=\"{{ asset('assets/admin/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}\"></script>
     <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
     {# end:: asset public js #}
+    
+    <script>
+        load_notification()
+
+        function load_notification() {
+            \$.ajax({
+                type: 'GET',
+                url: '/admin/load_notification',
+                dataType: 'json',
+                success: function (response) {                    
+                    if (response.count > 0) {
+                        \$('.count').html(response.count)
+                        \$('.dropdown-header').html(\"Pemberitahuan baru\");
+
+                        const order = response.result;
+                        var html = \"\";
+                        
+                        order.forEach(function (object) {
+                            html += `
+                                <a class=\"dropdown-item d-flex align-items-center lihat\" data-id=\"` + object.kd_pemesanan + `\" href=\"/admin/pemesanan/detail/` + object.kd_pemesanan + `\">
+                                    <div class=\"mr-3\">
+                                        <div class=\"icon-circle bg-primary\">
+                                            <i class=\"fas fa-shopping-cart text-white\"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class=\"small text-gray-500\">` + format_date(object.tgl_pemesanan.date) + `</div>
+                                        <span class=\"font-weight-bold\">` + object.kd_pemesanan + ` | ` + object.nama + `</span>
+                                    </div>
+                                </a>
+                            `;
+                        });
+
+                        \$('#notification').html(html);
+                    } else {
+                        \$('.dropdown-header').html(\"Kosong\");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+                    console.log(errorMsg);
+                }
+            });
+        }
+
+        setInterval(function() {
+            load_notification()
+        }, 5000);
+
+        // untuk update baca pemberitahuan
+        \$(document).on('click', '.lihat', function(){
+            var ini = \$(this);
+            \$.post('/admin/read_notification', {kd_pemesanan: ini.data('id')});
+        });
+
+        function format_date(date) {
+            var date = new Date(date);
+            var result = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '-' + ('0' + (date.getMonth() + 1))) + '-' + date.getFullYear();
+            return result;
+        }
+    </script>
 
     {% block javascripts %}{% endblock %}
 </body>

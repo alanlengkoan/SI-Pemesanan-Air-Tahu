@@ -292,7 +292,7 @@ class __TwigTemplate_5ed615dd5c1cd2bcd1f0adb93891ac6cad4b4923505f67c7f7ab15d65a8
     <div class=\"row\">
         ";
         // line 192
-        echo "        <div class=\"col-6\">
+        echo "        <div class=\"col-lg-6 col-sm-12\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <div id=\"tracking\">
@@ -346,7 +346,7 @@ class __TwigTemplate_5ed615dd5c1cd2bcd1f0adb93891ac6cad4b4923505f67c7f7ab15d65a8
         // line 223
         echo "        ";
         // line 224
-        echo "        <div class=\"col-6\">
+        echo "        <div class=\"col-lg-6 col-sm-12\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <div class=\"chat-box scrollable position-relative ps-container ps-theme-default ps-active-y\" style=\"height: calc(100vh - 111px);\" data-ps-id=\"a475d3a6-233d-f8ba-8041-00b453cd6a3b\">
@@ -700,7 +700,7 @@ class __TwigTemplate_5ed615dd5c1cd2bcd1f0adb93891ac6cad4b4923505f67c7f7ab15d65a8
 <div class=\"container-fluid\">
     <div class=\"row\">
         {# begin:: chat #}
-        <div class=\"col-6\">
+        <div class=\"col-lg-6 col-sm-12\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <div id=\"tracking\">
@@ -732,7 +732,7 @@ class __TwigTemplate_5ed615dd5c1cd2bcd1f0adb93891ac6cad4b4923505f67c7f7ab15d65a8
         </div>
         {# end:: chat #}
         {# begin:: chat #}
-        <div class=\"col-6\">
+        <div class=\"col-lg-6 col-sm-12\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <div class=\"chat-box scrollable position-relative ps-container ps-theme-default ps-active-y\" style=\"height: calc(100vh - 111px);\" data-ps-id=\"a475d3a6-233d-f8ba-8041-00b453cd6a3b\">

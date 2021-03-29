@@ -211,6 +211,7 @@ class KeranjangController extends AbstractController
             $pemesanan->setMetodePembayaran($inpmetodepembayaran);
             $pemesanan->setStatusPembayaran('0');
             $pemesanan->setStatusPengantaran('0');
+            $pemesanan->setStatusLihat('belum-lihat');
             $pemesanan->setPilihKurir('n');
             $pemesanan->setIns(date_create());
             $pemesanan->setUpd(date_create());

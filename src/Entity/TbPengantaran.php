@@ -28,6 +28,11 @@ class TbPengantaran
     private $id_users;
 
     /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('belum-lihat', 'lihat')")
+     */
+    private $status_lihat;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $ins;
@@ -62,6 +67,18 @@ class TbPengantaran
     public function setIdUsers(?int $id_users): self
     {
         $this->id_users = $id_users;
+
+        return $this;
+    }
+
+    public function getStatusLihat(): ?string
+    {
+        return $this->status_lihat;
+    }
+
+    public function setStatusLihat(?string $status_lihat): self
+    {
+        $this->status_lihat = $status_lihat;
 
         return $this;
     }

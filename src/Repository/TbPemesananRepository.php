@@ -31,6 +31,22 @@ class TbPemesananRepository extends ServiceEntityRepository
         return $qry;
     }
 
+    // untuk mengambil semua data pemesanan yg belum di lihat
+    public function getLihatNotifikasi()
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE p.status_lihat = 'belum-lihat'";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+    
+    // untuk mengambil semua data pemesanan yg belum di lihat untuk kurir
+    public function getLihatNotifikasiKurir($id)
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, p.tgl_pemesanan, u.nama, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\TbPengantaran tp WITH p.kd_pemesanan = tp.kd_pemesanan LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE tp.id_users = '$id' AND tp.status_lihat = 'belum-lihat'";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+
     // untuk mengambil riwayat pemesanan user
     public function getRiwayat($iduser)
     {

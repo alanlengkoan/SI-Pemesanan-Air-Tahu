@@ -333,7 +333,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
         <div class=\"row\">
             ";
         // line 229
-        echo "            <div class=\"col-6\">
+        echo "            <div class=\"col-lg-6 col-sm-12\">
                 <div id=\"tracking\">
                     <div class=\"tracking-list\">
                         ";
@@ -385,7 +385,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
         // line 258
         echo "            ";
         // line 259
-        echo "            <div class=\"col-6\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
+        echo "            <div class=\"col-lg-6 col-sm-12\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
                 <div class=\"chat-box bg-white\">
                     ";
         // line 262
@@ -393,12 +393,10 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
                     ";
         // line 264
         echo "                </div>
-
-                <!-- Typing area -->
                 <form id=\"form-send\" class=\"bg-light\" action=\"/user/send_chat\" method=\"POST\">
                     <input type=\"hidden\" name=\"kd_pemesanan\" id=\"kd_pemesanan\" value=\"";
-        // line 268
-        echo twig_escape_filter($this->env, (isset($context["kd_pemesanan"]) || array_key_exists("kd_pemesanan", $context) ? $context["kd_pemesanan"] : (function () { throw new RuntimeError('Variable "kd_pemesanan" does not exist.', 268, $this->source); })()), "html", null, true);
+        // line 266
+        echo twig_escape_filter($this->env, (isset($context["kd_pemesanan"]) || array_key_exists("kd_pemesanan", $context) ? $context["kd_pemesanan"] : (function () { throw new RuntimeError('Variable "kd_pemesanan" does not exist.', 266, $this->source); })()), "html", null, true);
         echo "\" />
                     
                     <div class=\"input-group\">
@@ -412,7 +410,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
                 </form>
             </div>
             ";
-        // line 281
+        // line 279
         echo "        </div>
     </div>
     </div>
@@ -426,7 +424,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
 
     }
 
-    // line 287
+    // line 285
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -436,7 +434,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 288
+        // line 286
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
 
 <script>
@@ -533,7 +531,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
 
     public function getDebugInfo()
     {
-        return array (  440 => 288,  430 => 287,  416 => 281,  401 => 268,  395 => 264,  392 => 262,  388 => 259,  386 => 258,  381 => 254,  371 => 250,  362 => 246,  348 => 234,  343 => 233,  341 => 232,  336 => 229,  330 => 224,  322 => 218,  313 => 213,  303 => 211,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  438 => 286,  428 => 285,  414 => 279,  399 => 266,  395 => 264,  392 => 262,  388 => 259,  386 => 258,  381 => 254,  371 => 250,  362 => 246,  348 => 234,  343 => 233,  341 => 232,  336 => 229,  330 => 224,  322 => 218,  313 => 213,  303 => 211,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -766,7 +764,7 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
     <div class=\"container\">
         <div class=\"row\">
             {# begin:: tracking #}
-            <div class=\"col-6\">
+            <div class=\"col-lg-6 col-sm-12\">
                 <div id=\"tracking\">
                     <div class=\"tracking-list\">
                         {% set status_pengantaran = ['Dikemas', 'Dikirim', 'Diterima'] %}
@@ -796,14 +794,12 @@ class __TwigTemplate_68b6fbb22c8d243d7c6ee101abc221ceb4a69bb429c752ed7b9031ca5f1
             </div>
             {# end:: tracking #}
             {# begin:: chat #}
-            <div class=\"col-6\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
+            <div class=\"col-lg-6 col-sm-12\" style=\"border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;\">
                 <div class=\"chat-box bg-white\">
                     {# begin:: chat #}
                     <div id=\"dom_chat\"></div>
                     {# end:: chat #}
                 </div>
-
-                <!-- Typing area -->
                 <form id=\"form-send\" class=\"bg-light\" action=\"/user/send_chat\" method=\"POST\">
                     <input type=\"hidden\" name=\"kd_pemesanan\" id=\"kd_pemesanan\" value=\"{{ kd_pemesanan }}\" />
                     

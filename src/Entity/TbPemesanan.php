@@ -48,6 +48,11 @@ class TbPemesanan
     private $status_pengantaran;
 
     /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('belum-lihat', 'lihat')")
+     */
+    private $status_lihat;
+
+    /**
      * @ORM\Column(type="string", columnDefinition="ENUM('n', 'y')")
      */
     private $pilih_kurir;
@@ -135,6 +140,18 @@ class TbPemesanan
     public function setStatusPengantaran(?string $status_pengantaran): self
     {
         $this->status_pengantaran = $status_pengantaran;
+
+        return $this;
+    }
+
+    public function getStatusLihat(): ?string
+    {
+        return $this->status_lihat;
+    }
+
+    public function setStatusLihat(?string $status_lihat): self
+    {
+        $this->status_lihat = $status_lihat;
 
         return $this;
     }

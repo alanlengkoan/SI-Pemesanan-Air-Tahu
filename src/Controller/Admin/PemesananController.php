@@ -144,6 +144,7 @@ class PemesananController extends AbstractController
             $pengantaran = new TbPengantaran();
             $pengantaran->setKdPemesanan($kd_pemesanan);
             $pengantaran->setIdUsers($id_users);
+            $pengantaran->setStatusLihat('belum-lihat');
             $pengantaran->setIns(date_create());
             $pengantaran->setUpd(date_create());
 

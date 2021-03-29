@@ -226,7 +226,7 @@
     <div class="container">
         <div class="row">
             {# begin:: tracking #}
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-12">
                 <div id="tracking">
                     <div class="tracking-list">
                         {% set status_pengantaran = ['Dikemas', 'Dikirim', 'Diterima'] %}
@@ -256,14 +256,12 @@
             </div>
             {# end:: tracking #}
             {# begin:: chat #}
-            <div class="col-6" style="border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;">
+            <div class="col-lg-6 col-sm-12" style="border: 1px solid #e5e5e5; padding-right: 0px; padding-left: 0px;">
                 <div class="chat-box bg-white">
                     {# begin:: chat #}
                     <div id="dom_chat"></div>
                     {# end:: chat #}
                 </div>
-
-                <!-- Typing area -->
                 <form id="form-send" class="bg-light" action="/user/send_chat" method="POST">
                     <input type="hidden" name="kd_pemesanan" id="kd_pemesanan" value="{{ kd_pemesanan }}" />
                     
