@@ -60,6 +60,10 @@
                                         <button type="button" class="btn btn-outline-success btn-sm btn-rounded" id="pilih-kurir" data-id="{{ rows.kd_pemesanan }}" data-toggle="modal" data-target="#modalPilihKurir">
                                             <i class="fas fa-tasks"></i>&nbsp;Pilih Kurir
                                         </button>                                        
+                                        {% else %}
+                                        <a class="btn btn-outline-warning btn-sm btn-rounded" href="pemesanan/ulasan/{{ rows.kd_pemesanan }}"> 
+                                            <i class="fas fa-star"></i>&nbsp;Ulasan
+                                        </a>
                                         {% endif %}
                                     </td>
                                     <td>{{ rows.kd_pemesanan }}</td>

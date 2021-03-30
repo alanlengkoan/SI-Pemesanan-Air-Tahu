@@ -83,6 +83,19 @@ class PemesananController extends AbstractController
     }
 
     /**
+     * @Route("/admin/pemesanan/ulasan/{kd}", name="admin_ulasan")
+     */
+    public function ulasan(string $kd)
+    {
+        $data = [
+            'halaman'      => "Detail Komentar",
+            'pemesanan'    => $this->mng->getRepository(TbPemesanan::class)->findOneBy(['kd_pemesanan' => $kd])
+        ];
+
+        return $this->render('admin/pemesanan/ulasan.html.twig', $data);
+    }
+
+    /**
      * @Route("/admin/pemesanan/tracking/{kd}", name="admin_tracking")
      */
     public function tracking(string $kd)

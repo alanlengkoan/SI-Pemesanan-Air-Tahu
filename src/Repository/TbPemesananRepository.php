@@ -47,6 +47,14 @@ class TbPemesananRepository extends ServiceEntityRepository
         return $qry;
     }
 
+    // untuk mengambil semua data pemesanan yg belum di beri rating
+    public function getRating($id)
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir FROM App\Entity\TbPemesanan p WHERE p.id_users = '$id' AND p.status_pengantaran = '2' AND p.bintang IS NULL AND p.komentar IS NULL";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+
     // untuk mengambil riwayat pemesanan user
     public function getRiwayat($iduser)
     {

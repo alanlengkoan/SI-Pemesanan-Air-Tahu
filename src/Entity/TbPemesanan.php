@@ -58,6 +58,16 @@ class TbPemesanan
     private $pilih_kurir;
 
     /**
+     * @ORM\Column(type="string", length=5, nullable=true)
+     */
+    private $bintang;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $komentar;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $ins;
@@ -164,6 +174,30 @@ class TbPemesanan
     public function setPilihKurir(?string $pilih_kurir): self
     {
         $this->pilih_kurir = $pilih_kurir;
+
+        return $this;
+    }
+
+    public function getBintang(): ?string
+    {
+        return $this->bintang;
+    }
+
+    public function setBintang(?string $bintang): self
+    {
+        $this->bintang = $bintang;
+
+        return $this;
+    }
+
+    public function getKomentar(): ?string
+    {
+        return $this->komentar;
+    }
+
+    public function setKomentar(?string $komentar): self
+    {
+        $this->komentar = $komentar;
 
         return $this;
     }
