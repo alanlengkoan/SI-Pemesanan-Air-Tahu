@@ -104,6 +104,7 @@ class __TwigTemplate_b67197514d7e9abd6a70b168732cbd08bcd564e9ae114eda13a6a740339
                                     <th>Jam Pemesanan</th>
                                     <th>Metode Pembayaran</th>
                                     <th>Status Pembayaran</th>
+                                    <th>Status Pengantaran</th>
                                     <th>Total</th>
                                     <th>Jumlah Transfer</th>
                                     <th>Jumlah Bayar</th>
@@ -111,7 +112,10 @@ class __TwigTemplate_b67197514d7e9abd6a70b168732cbd08bcd564e9ae114eda13a6a740339
                             </thead>
                             <tbody>
                                 ";
-        // line 47
+        // line 48
+        $context["status_pengantaran"] = [0 => "Dikemas", 1 => "Dikirim", 2 => "Diterima"];
+        // line 49
+        echo "                                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["pemesanan"] ?? null));
         $context['loop'] = [
@@ -128,66 +132,100 @@ class __TwigTemplate_b67197514d7e9abd6a70b168732cbd08bcd564e9ae114eda13a6a740339
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 48
+            // line 50
             echo "                                <tr>
                                     <td>";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 49), "html", null, true);
-            echo " </td>
-                                    <td>
-                                        <a class=\"btn btn-outline-info btn-sm btn-rounded\" style=\"width: 100%\" href=\"pemesanan/detail/";
             // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 51), "html", null, true);
-            echo "\" target=\"_blank\"><i class=\"fas fa-info-circle\"></i>&nbsp;Detail</a>
-                                    </td>
-                                    <td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 51), "html", null, true);
+            echo " </td>
+                                    <td align=\"center\">
+                                        <a class=\"btn btn-outline-info btn-sm btn-rounded\" href=\"pemesanan/detail/";
             // line 53
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 53), "html", null, true);
-            echo "</td>
-                                    <td>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 54), "html", null, true);
-            echo "</td>
-                                    <td>";
-            // line 55
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 55), "d-m-Y"), "html", null, true);
-            echo "</td>
-                                    <td>";
+            echo "\" target=\"_blank\">
+                                            <i class=\"fas fa-info-circle\"></i>&nbsp;Detail
+                                        </a>
+                                        <a class=\"btn btn-outline-secondary btn-sm btn-rounded\" href=\"pemesanan/tracking/";
             // line 56
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 56), "H:m:s"), "html", null, true);
-            echo "</td>
-                                    <td>";
-            // line 57
-            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "metode_pembayaran", [], "any", false, false, false, 57), "c"))) ? ("COD") : ("Transfer"));
-            echo "</td>
-                                    <td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 56), "html", null, true);
+            echo "\">
+                                            <i class=\"fas fa-check\"></i>&nbsp;Tracking
+                                        </a>
                                         ";
             // line 59
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "status_pembayaran", [], "any", false, false, false, 59), 0))) {
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "pilih_kurir", [], "any", false, false, false, 59), "n"))) {
                 // line 60
-                echo "                                        Menunggu Pembayaran
-                                        ";
-            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 61
-$context["rows"], "status_pembayaran", [], "any", false, false, false, 61), 1))) {
-                // line 62
-                echo "                                        Telah Melakukan Pembayaran
+                echo "                                        <button type=\"button\" class=\"btn btn-outline-success btn-sm btn-rounded\" id=\"pilih-kurir\" data-id=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 60), "html", null, true);
+                echo "\" data-toggle=\"modal\" data-target=\"#modalPilihKurir\">
+                                            <i class=\"fas fa-tasks\"></i>&nbsp;Pilih Kurir
+                                        </button>                                        
                                         ";
             } else {
                 // line 64
+                echo "                                        <a class=\"btn btn-outline-warning btn-sm btn-rounded\" href=\"pemesanan/ulasan/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 64), "html", null, true);
+                echo "\"> 
+                                            <i class=\"fas fa-star\"></i>&nbsp;Ulasan
+                                        </a>
+                                        ";
+            }
+            // line 68
+            echo "                                    </td>
+                                    <td>";
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 69), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 70), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 71
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 71), "d-m-Y"), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 72
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 72), "H:m:s"), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 73
+            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "metode_pembayaran", [], "any", false, false, false, 73), "c"))) ? ("COD") : ("Transfer"));
+            echo "</td>
+                                    <td>
+                                        ";
+            // line 75
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "status_pembayaran", [], "any", false, false, false, 75), 0))) {
+                // line 76
+                echo "                                        Menunggu Pembayaran
+                                        ";
+            } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 77
+$context["rows"], "status_pembayaran", [], "any", false, false, false, 77), 1))) {
+                // line 78
+                echo "                                        Telah Melakukan Pembayaran
+                                        ";
+            } else {
+                // line 80
                 echo "                                        -
                                         ";
             }
-            // line 66
-            echo "                                    <td>";
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 66)), "html", null, true);
+            // line 82
+            echo "                                    </td>
+                                    <td>";
+            // line 83
+            echo twig_escape_filter($this->env, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = ($context["status_pengantaran"] ?? null)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4[twig_get_attribute($this->env, $this->source, $context["rows"], "status_pengantaran", [], "any", false, false, false, 83)] ?? null) : null), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 67
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "transfer", [], "any", false, false, false, 67)), "html", null, true);
+            // line 84
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 84)), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 68
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "bayar", [], "any", false, false, false, 68)), "html", null, true);
+            // line 85
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "transfer", [], "any", false, false, false, 85)), "html", null, true);
+            echo "</td>
+                                    <td>";
+            // line 86
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "bayar", [], "any", false, false, false, 86)), "html", null, true);
             echo "</td>
                                 </tr>
                                 ";
@@ -203,7 +241,7 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 61), 1)))
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 89
         echo "                            </tbody>
                         </table>
                     </div>
@@ -212,21 +250,116 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 61), 1)))
         </div>
     </div>
     ";
-        // line 79
+        // line 97
         echo "</div>
+
+";
+        // line 100
+        echo "<div class=\"modal fade\" id=\"modalPilihKurir\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"
+    aria-hidden=\"true\">
+    <div class=\"modal-dialog modal-lg\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Data Kurir</h5>
+                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                    <span aria-hidden=\"true\">&times;</span>
+                </button>
+            </div>
+            <div class=\"modal-body\">
+                <table id=\"tabel_kurir\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Aksi</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>No. Hp</th>
+                            <th>Alamat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ";
+        // line 123
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["kurir"] ?? null));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
+            // line 124
+            echo "                        <tr>
+                            <td>";
+            // line 125
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 125), "html", null, true);
+            echo ".</td>
+                            <td>
+                                <button class=\"btn btn-outline-secondary btn-sm btn-rounded pilih-kurir-ini\" id=\"pilih-kurir-ini\" data-id_users=\"";
+            // line 127
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "id_users", [], "any", false, false, false, 127), "html", null, true);
+            echo "\">
+                                    <i class=\"fas fa-check\"></i>&nbsp;Pilih
+                                </button>
+                            </td>
+                            <td>";
+            // line 131
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 131), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 132
+            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 132), null))) ? ("-") : ((((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 132), "L"))) ? ("Laki - laki") : ("Perempuan"))));
+            echo "</td>
+                            <td>";
+            // line 133
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 133), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 133), "html", null, true))));
+            echo "</td>
+                            <td>";
+            // line 134
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 134), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 134), "html", null, true))));
+            echo "</td>
+                        </tr>
+                        ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 137
+        echo "                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 ";
     }
 
-    // line 83
+    // line 147
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 84
+        // line 148
         echo "<script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/datatables.net/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 85
+        // line 149
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/pages/datatable/datatable-basic.init.js"), "html", null, true);
         echo "\"></script>
 
@@ -234,6 +367,60 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 61), 1)))
     // untuk datatable
     var untukDataTabel = function() {
         \$('#tabel_pemesanan').DataTable();
+        \$('#tabel_kurir').DataTable();
+    }();
+
+    // untuk pilih kurir
+    var untukPilihKurir = function() {
+        \$(document).on('click', '#pilih-kurir', function() {
+            var ini = \$(this);
+            let id = ini.data('id');
+            \$('.pilih-kurir-ini').attr('data-kd_pemesanan', id);
+        });
+        
+        \$(document).on('click', '#pilih-kurir-ini', function() {
+            var ini = \$(this);
+            let id_users = ini.data('id_users');
+            let kd_pemesanan = ini.data('kd_pemesanan');
+            
+            swal({
+                title: \"Apakah Anda yakin ingin memilih kurir tersebut?\",
+                text: \"Akun yang telah dipilih tidak dapat diubah!\",
+                icon: \"warning\",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((del) => {
+                if (del) {
+                    \$.ajax({
+                        type: \"post\",
+                        url: \"pemesanan/pilih_kurir\",
+                        dataType: 'json',
+                        data: {
+                            id_users: id_users,
+                            kd_pemesanan: kd_pemesanan
+                        },
+                        beforeSend: function () {
+                            ini.attr('disabled', 'disabled');
+                            ini.html('<i class=\"fas fa-spinner\"></i>&nbsp;Menunggu');
+                        },
+                        success: function (response) {
+                            swal({
+                                title: response.title,
+                                text: response.text,
+                                icon: response.type,
+                                button: response.button,
+                            })
+                            .then((value) => {
+                                location.reload();
+                            });
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+        });
     }();
 </script>
 ";
@@ -251,7 +438,7 @@ $context["rows"], "status_pembayaran", [], "any", false, false, false, 61), 1)))
 
     public function getDebugInfo()
     {
-        return array (  230 => 85,  225 => 84,  221 => 83,  216 => 79,  207 => 71,  190 => 68,  186 => 67,  181 => 66,  177 => 64,  173 => 62,  171 => 61,  168 => 60,  166 => 59,  161 => 57,  157 => 56,  153 => 55,  149 => 54,  145 => 53,  140 => 51,  135 => 49,  132 => 48,  115 => 47,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
+        return array (  363 => 149,  358 => 148,  354 => 147,  344 => 137,  327 => 134,  323 => 133,  319 => 132,  315 => 131,  308 => 127,  303 => 125,  300 => 124,  283 => 123,  258 => 100,  254 => 97,  245 => 89,  228 => 86,  224 => 85,  220 => 84,  216 => 83,  213 => 82,  209 => 80,  205 => 78,  203 => 77,  200 => 76,  198 => 75,  193 => 73,  189 => 72,  185 => 71,  181 => 70,  177 => 69,  174 => 68,  166 => 64,  158 => 60,  156 => 59,  150 => 56,  144 => 53,  139 => 51,  136 => 50,  118 => 49,  116 => 48,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

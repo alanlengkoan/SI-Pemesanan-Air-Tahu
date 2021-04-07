@@ -139,22 +139,54 @@ class __TwigTemplate_27bbe0070f758804d248d5963e4ea095e740340803c3a89cebc577926a1
                                 </div>
                             </div>
                             <div class=\"form-group row\">
+                                <label class=\"col-lg-3 col-form-label form-control-label\">Jenis Kelamin</label>
+                                <div class=\"col-lg-9\">
+                                    <select style=\"width: 100%\" class=\"form-control\" name=\"inpkelamin\" id=\"inpkelamin\">
+                                        <option value=\"\">- Pilih -</option>
+                                        <option value=\"L\" ";
+        // line 72
+        echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "kelamin", [], "any", false, false, false, 72), "L"))) ? ("selected") : (""));
+        echo ">Laki - laki</option>
+                                        <option value=\"P\" ";
+        // line 73
+        echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "kelamin", [], "any", false, false, false, 73), "P"))) ? ("selected") : (""));
+        echo ">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=\"form-group row\">
                                 <label class=\"col-lg-3 col-form-label form-control-label\">Email</label>
                                 <div class=\"col-lg-9\">
-                                    <input class=\"form-control\" type=\"email\" name=\"inpemail\" id=\"inpemail\"
-                                        value=\"";
-        // line 71
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "email", [], "any", false, false, false, 71), "html", null, true);
+                                    <input class=\"form-control\" type=\"email\" name=\"inpemail\" id=\"inpemail\" placeholder=\"Masukkan Email\" value=\"";
+        // line 80
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "email", [], "any", false, false, false, 80), "html", null, true);
         echo "\">
+                                </div>
+                            </div>
+                            <div class=\"form-group row\">
+                                <label class=\"col-lg-3 col-form-label form-control-label\">No. Hp</label>
+                                <div class=\"col-lg-9\">
+                                    <input class=\"form-control\" type=\"text\" name=\"inptelepon\" id=\"inptelepon\" placeholder=\"Masukkan No. Hp\" value=\"";
+        // line 86
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "telepon", [], "any", false, false, false, 86), "html", null, true);
+        echo "\">
+                                </div>
+                            </div>
+                            <div class=\"form-group row\">
+                                <label class=\"col-lg-3 col-form-label form-control-label\">Alamat</label>
+                                <div class=\"col-lg-9\">
+                                    <textarea class=\"form-control\" name=\"inpalamat\" id=\"inpalamat\" placeholder=\"Masukkan Alamat\">";
+        // line 92
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "alamat", [], "any", false, false, false, 92), "html", null, true);
+        echo "</textarea>
                                 </div>
                             </div>
                             <div class=\"form-group row\">
                                 <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>
                                 <div class=\"col-lg-9\">
-                                    <input class=\"form-control\" type=\"text\" name=\"inpusername\" id=\"inpusername\"
-                                        value=\"";
-        // line 78
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "username", [], "any", false, false, false, 78), "html", null, true);
+                                    <input class=\"form-control\" type=\"text\" name=\"inpusername\" id=\"inpusername\" value=\"";
+        // line 98
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "username", [], "any", false, false, false, 98), "html", null, true);
         echo "\">
                                 </div>
                             </div>
@@ -172,7 +204,7 @@ class __TwigTemplate_27bbe0070f758804d248d5963e4ea095e740340803c3a89cebc577926a1
                     <div class=\"tab-pane\" id=\"keamanan\">
                        <form role=\"form\" action=\"/profil/upd_keamanan\" id=\"form-keamanan\" method=\"post\">
                            <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 94
+        // line 114
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("add"), "html", null, true);
         echo "\">
 
@@ -216,11 +248,11 @@ class __TwigTemplate_27bbe0070f758804d248d5963e4ea095e740340803c3a89cebc577926a1
 ";
     }
 
-    // line 135
+    // line 155
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 136
+        // line 156
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
 <script>
     // untuk upload foto
@@ -265,6 +297,9 @@ class __TwigTemplate_27bbe0070f758804d248d5963e4ea095e740340803c3a89cebc577926a1
 
             \$('#inpnama').attr('required', 'required');
             \$('#inpemail').attr('required', 'required');
+            \$('#inpkelamin').attr('required', 'required');
+            \$('#inptelepon').attr('required', 'required');
+            \$('#inpalamat').attr('required', 'required');
             \$('#inpusername').attr('required', 'required');
 
             if (\$('#form-akun').parsley().isValid() == true) {
@@ -346,7 +381,7 @@ class __TwigTemplate_27bbe0070f758804d248d5963e4ea095e740340803c3a89cebc577926a1
 
     public function getDebugInfo()
     {
-        return array (  224 => 136,  220 => 135,  176 => 94,  157 => 78,  147 => 71,  137 => 64,  129 => 59,  109 => 43,  107 => 42,  101 => 39,  80 => 20,  66 => 9,  62 => 7,  56 => 5,  49 => 3,  38 => 1,);
+        return array (  256 => 156,  252 => 155,  208 => 114,  189 => 98,  180 => 92,  171 => 86,  162 => 80,  152 => 73,  148 => 72,  137 => 64,  129 => 59,  109 => 43,  107 => 42,  101 => 39,  80 => 20,  66 => 9,  62 => 7,  56 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

@@ -66,10 +66,10 @@ class TbPemesanan extends \App\Entity\TbPemesanan implements \Doctrine\ORM\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'kd_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_users', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'tgl_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'metode_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'ins', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'upd'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'kd_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_users', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'tgl_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'metode_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pengantaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_lihat', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'pilih_kurir', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'bintang', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'komentar', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'ins', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'upd'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'kd_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_users', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'tgl_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'metode_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'ins', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'upd'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'kd_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'id_users', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'tgl_pemesanan', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'metode_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pembayaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_pengantaran', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'status_lihat', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'pilih_kurir', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'bintang', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'komentar', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'ins', '' . "\0" . 'App\\Entity\\TbPemesanan' . "\0" . 'upd'];
     }
 
     /**
@@ -295,6 +295,116 @@ class TbPemesanan extends \App\Entity\TbPemesanan implements \Doctrine\ORM\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatusPembayaran', [$status_pembayaran]);
 
         return parent::setStatusPembayaran($status_pembayaran);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatusPengantaran(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatusPengantaran', []);
+
+        return parent::getStatusPengantaran();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatusPengantaran(?string $status_pengantaran): \App\Entity\TbPemesanan
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatusPengantaran', [$status_pengantaran]);
+
+        return parent::setStatusPengantaran($status_pengantaran);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatusLihat(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatusLihat', []);
+
+        return parent::getStatusLihat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatusLihat(?string $status_lihat): \App\Entity\TbPemesanan
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatusLihat', [$status_lihat]);
+
+        return parent::setStatusLihat($status_lihat);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPilihKurir(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPilihKurir', []);
+
+        return parent::getPilihKurir();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPilihKurir(?string $pilih_kurir): \App\Entity\TbPemesanan
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPilihKurir', [$pilih_kurir]);
+
+        return parent::setPilihKurir($pilih_kurir);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBintang(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBintang', []);
+
+        return parent::getBintang();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBintang(?string $bintang): \App\Entity\TbPemesanan
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBintang', [$bintang]);
+
+        return parent::setBintang($bintang);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getKomentar(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getKomentar', []);
+
+        return parent::getKomentar();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setKomentar(?string $komentar): \App\Entity\TbPemesanan
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setKomentar', [$komentar]);
+
+        return parent::setKomentar($komentar);
     }
 
     /**

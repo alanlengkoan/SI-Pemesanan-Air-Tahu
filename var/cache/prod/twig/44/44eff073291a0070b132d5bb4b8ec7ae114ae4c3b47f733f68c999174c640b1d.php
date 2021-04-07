@@ -121,27 +121,56 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                       <h3 class=\"page-title text-truncate text-dark font-weight-medium\">Sistem Informasi Penjualan Air Tahu</h3>
                     </ul>
                     <ul class=\"navbar-nav float-right\">
-                        <li class=\"nav-item dropdown\">
+                        ";
+        // line 57
+        echo "                        <li class=\"nav-item dropdown no-arrow mx-1\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\"
+                                data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                                <i class=\"fas fa-bell fa-fw\"></i>
+                                ";
+        // line 62
+        echo "                                <span class=\"badge badge-danger badge-counter count\">0</span>
+                                ";
+        // line 64
+        echo "                            </a>
+                            <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+                                ";
+        // line 67
+        echo "                                <h6 class=\"dropdown-header\">
+                                    Kosong
+                                </h6>
+                                <div id=\"notification\"></div>
+                                ";
+        // line 72
+        echo "                            </div>
+                        </li>
+                        ";
+        // line 75
+        echo "                        ";
+        // line 76
+        echo "                        <li class=\"nav-item dropdown\">
                             <a class=\"nav-link dropdown-toggle\" href=\"javascript:void(0)\" data-toggle=\"dropdown\"
                                 aria-haspopup=\"true\" aria-expanded=\"false\">
                                 <span class=\"text-dark\">";
-        // line 59
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, false, false, 59), "nama", [], "any", false, false, false, 59), "html", null, true);
+        // line 79
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, false, false, 79), "nama", [], "any", false, false, false, 79), "html", null, true);
         echo "</span>
                                 <i data-feather=\"chevron-down\" class=\"svg-icon\"></i>
                             </a>
                             <div class=\"dropdown-menu dropdown-menu-right user-dd animated flipInY\">
                                 <a class=\"dropdown-item\" href=\"";
-        // line 63
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_profil");
         echo "\"><i data-feather=\"user\" class=\"svg-icon mr-2 ml-1\"></i>Profile</a>
                                 <a class=\"dropdown-item\" href=\"";
-        // line 64
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"> <i data-feather=\"power\" class=\"svg-icon mr-2 ml-1\"></i> Logout </a>
                             </div>
                         </li>
-                    </ul>
+                        ";
+        // line 88
+        echo "                    </ul>
                 </div>
             </nav>
         </header>
@@ -151,7 +180,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                     <ul id=\"sidebarnav\">
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 76
+        // line 97
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\">
                                 <i class=\"fa fa-tachometer\"></i>
@@ -162,7 +191,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Master </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 84
+        // line 105
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bank");
         echo "\">
                                 <i class=\"fa fa-bank\"></i>
@@ -171,7 +200,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 90
+        // line 111
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produk");
         echo "\">
                                 <i class=\"fas fa-tag\"></i>
@@ -180,18 +209,36 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 96
+        // line 117
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stock");
         echo "\">
                                 <i class=\"fa fa-houzz\"></i>
                                 <span class=\"hide-menu\"> Stock </span>
                             </a>
                         </li>
+                        <li class=\"sidebar-item\">
+                            <a class=\"sidebar-link sidebar-link\" href=\"";
+        // line 123
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pelanggan");
+        echo "\">
+                                <i class=\"fa fa-users\"></i>
+                                <span class=\"hide-menu\"> Pelanggan </span>
+                            </a>
+                        </li>
+                        <li class=\"sidebar-item\">
+                            <a class=\"sidebar-link sidebar-link\" href=\"";
+        // line 129
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_kurir");
+        echo "\">
+                                <i class=\"fa fa-motorcycle\"></i>
+                                <span class=\"hide-menu\"> Kurir </span>
+                            </a>
+                        </li>
                         <li class=\"list-divider\"></li>
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Transaksi </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 104
+        // line 137
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pemesanan");
         echo "\">
                                 <i class=\"fa fa-shopping-cart\"></i>
@@ -200,7 +247,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 110
+        // line 143
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pembelian");
         echo "\">
                                 <i class=\"fa fa-shopping-bag\"></i>
@@ -211,7 +258,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         <li class=\"nav-small-cap\"><span class=\"hide-menu\"> Laporan </span></li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 118
+        // line 151
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -220,7 +267,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 124
+        // line 157
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_bulanan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -229,7 +276,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                         </li>
                         <li class=\"sidebar-item\">
                             <a class=\"sidebar-link sidebar-link\" href=\"";
-        // line 130
+        // line 163
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_tahunan");
         echo "\">
                                 <i class=\"fa fa-file\"></i>
@@ -243,12 +290,12 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
 
         <div class=\"page-wrapper\">
             ";
-        // line 142
+        // line 175
         echo "            ";
         $this->displayBlock('body', $context, $blocks);
-        // line 143
+        // line 176
         echo "            ";
-        // line 144
+        // line 177
         echo "            <footer class=\"footer text-center text-muted\">
                 Copyright &copy;
                 <script>
@@ -260,54 +307,115 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
     </div>
 
     ";
-        // line 155
+        // line 188
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 156
+        // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/app-style-switcher.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 157
+        // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/feather.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 158
+        // line 191
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 159
+        // line 192
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/sidebarmenu.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 160
+        // line 193
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/custom.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 161
+        // line 194
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/d3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 162
+        // line 195
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/c3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 163
+        // line 196
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 164
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
     ";
-        // line 167
-        echo "
+        // line 200
+        echo "    
+    <script>
+        load_notification()
+
+        function load_notification() {
+            \$.ajax({
+                type: 'GET',
+                url: '/admin/load_notification',
+                dataType: 'json',
+                success: function (response) {                    
+                    if (response.count > 0) {
+                        \$('.count').html(response.count)
+                        \$('.dropdown-header').html(\"Pemberitahuan baru\");
+
+                        const order = response.result;
+                        var html = \"\";
+                        
+                        order.forEach(function (object) {
+                            html += `
+                                <a class=\"dropdown-item d-flex align-items-center lihat\" data-id=\"` + object.kd_pemesanan + `\" href=\"/admin/pemesanan/detail/` + object.kd_pemesanan + `\">
+                                    <div class=\"mr-3\">
+                                        <div class=\"icon-circle bg-primary\">
+                                            <i class=\"fas fa-shopping-cart text-white\"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class=\"small text-gray-500\">` + format_date(object.tgl_pemesanan.date) + `</div>
+                                        <span class=\"font-weight-bold\">` + object.kd_pemesanan + ` | ` + object.nama + `</span>
+                                    </div>
+                                </a>
+                            `;
+                        });
+
+                        \$('#notification').html(html);
+                    } else {
+                        \$('.dropdown-header').html(\"Kosong\");
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Request Ajax Gagal : ' + xhr.responseText;
+                    console.log(errorMsg);
+                }
+            });
+        }
+
+        setInterval(function() {
+            load_notification()
+        }, 5000);
+
+        // untuk update baca pemberitahuan
+        \$(document).on('click', '.lihat', function(){
+            var ini = \$(this);
+            \$.post('/admin/read_notification', {kd_pemesanan: ini.data('id')});
+        });
+
+        function format_date(date) {
+            var date = new Date(date);
+            var result = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '-' + ('0' + (date.getMonth() + 1))) + '-' + date.getFullYear();
+            return result;
+        }
+    </script>
+
     ";
-        // line 168
+        // line 262
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 169
+        // line 263
         echo "</body>
 
 </html>";
@@ -326,13 +434,13 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
         $macros = $this->macros;
     }
 
-    // line 142
+    // line 175
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 168
+    // line 262
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -350,7 +458,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
 
     public function getDebugInfo()
     {
-        return array (  336 => 168,  330 => 142,  324 => 28,  317 => 8,  311 => 169,  309 => 168,  306 => 167,  301 => 164,  297 => 163,  293 => 162,  289 => 161,  285 => 160,  281 => 159,  277 => 158,  273 => 157,  269 => 156,  264 => 155,  252 => 144,  250 => 143,  247 => 142,  233 => 130,  224 => 124,  215 => 118,  204 => 110,  195 => 104,  184 => 96,  175 => 90,  166 => 84,  155 => 76,  140 => 64,  136 => 63,  129 => 59,  113 => 46,  94 => 29,  92 => 28,  80 => 18,  76 => 16,  72 => 15,  68 => 14,  64 => 13,  59 => 12,  54 => 9,  50 => 8,  41 => 1,);
+        return array (  444 => 262,  438 => 175,  432 => 28,  425 => 8,  419 => 263,  417 => 262,  353 => 200,  348 => 197,  344 => 196,  340 => 195,  336 => 194,  332 => 193,  328 => 192,  324 => 191,  320 => 190,  316 => 189,  311 => 188,  299 => 177,  297 => 176,  294 => 175,  280 => 163,  271 => 157,  262 => 151,  251 => 143,  242 => 137,  231 => 129,  222 => 123,  213 => 117,  204 => 111,  195 => 105,  184 => 97,  173 => 88,  167 => 84,  163 => 83,  156 => 79,  151 => 76,  149 => 75,  145 => 72,  139 => 67,  135 => 64,  132 => 62,  126 => 57,  113 => 46,  94 => 29,  92 => 28,  80 => 18,  76 => 16,  72 => 15,  68 => 14,  64 => 13,  59 => 12,  54 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()

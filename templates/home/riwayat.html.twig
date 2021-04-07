@@ -30,11 +30,13 @@
                             <th>Jam Pemesanan</th>
                             <th>Metode Pembayaran</th>
                             <th>Status Pembayaran</th>
+                            <th>Status Pengantaran</th>
                             <th>Total</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% set status_pengantaran = ['Dikemas', 'Dikirim', 'Diterima'] %}
                         {% for rows in pemesanan %}
                         <tr>
                             <td>{{ loop.index }} </td>
@@ -52,9 +54,12 @@
                                 -
                                 {% endif %}
                             </td>
-                            <td>{{ rows.total|format_rp }}</>
                             <td>
-                                <a href="nota/{{ rows.kd_pemesanan }}"><span aria-hidden="true"><i class="fa fa-info"></i></span></a>
+                                <a href="tracking/{{ rows.kd_pemesanan }}"><span aria-hidden="true">{{ status_pengantaran[rows.status_pengantaran] }}</span></a>
+                            </td>
+                            <td>{{ rows.total|format_rp }}</td>
+                            <td>
+                                <a href="nota/{{ rows.kd_pemesanan }}"><span aria-hidden="true"><i class="fa fa-motorcycle"></i></span></a>
                             </td>
                         </tr>
                         {% endfor %}

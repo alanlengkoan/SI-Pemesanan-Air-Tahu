@@ -1,0 +1,132 @@
+{% extends 'kurir/layout_kurir.html.twig' %}
+
+{% block title %}Bayar{% endblock %}
+
+{% block body %}
+{# begin:: head #}
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-7 align-self-center">
+            <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">{{ halaman }}</h2>
+        </div>
+    </div>
+</div>
+{# end:: head #}
+
+{# begin:: body #}
+<div class="container-fluid">
+    {# begin:: form #}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Form</h3>
+                    <hr>
+                    <p><i>Note :</i> Silahkan bayar sesuai dengan total yang tertera!</p>
+                    <form id="form-add" action="/kurir/pembayaran" method="post">
+                        
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('submit') }}">
+                        <input type="hidden" name="inpkkorder" id="inpkkorder" value="{{ kd_order }}" />
+
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="username" class="text-dark">
+                                    <h4>Kode Order</h4>
+                                </label>
+                                <input type="text" class="form-control-plaintext" placeholder="{{ kd_order }}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="username" class="text-dark">
+                                    <h4>Total</h4>
+                                </label>
+                                <input type="text" class="form-control-plaintext" placeholder="{{ total|format_rp }}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4 class="card-title">Nama *</h4>
+                            <input type="text" class="form-control form-control-sm" name="inpnamabayar" id="inpnamabayar" placeholder="Masukkan Nama Penyetor" />
+                            <div id="error"></div>
+                            <br>
+                            <h4 class="card-title">Jumlah Bayar *</h4>
+                            <input type="text" class="form-control form-control-sm" name="inpjumlahbayar" id="inpjumlahbayar" onkeydown="return justAngka(event)" onkeyup="javascript:this.value=autoSeparator(this.value);" placeholder="Masukkan Jumlah Bayar" />
+                            <div id="error"></div>
+                        </div>
+                        <button type="submit" id="add" class="btn btn-outline-primary btn-sm btn-rounded">
+                            <i class="fas fa-plus"></i>&nbsp;Proses
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# end:: form #}
+</div>
+{# end:: body #}
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+
+<script>
+    // untuk tambah data
+    var untukTambahData = function () {
+        $('#form-add').submit(function (e) {
+            e.preventDefault();
+
+            $('#inpnamabayar').attr('required', 'required');
+            $('#inpjumlahbayar').attr('required', 'required');
+
+            if ($('#form-add').parsley().isValid() == true) {
+                $.ajax({
+                    method: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('#add').attr('disabled', 'disabled');
+                        $('#add').html('Waiting...');
+                    },
+                    success: function (data) {
+                        alert(data.msg);
+                        window.location = '/kurir/pemesanan/detail/'+$('#inpkkorder').val();
+                    }
+                })
+            }
+        });
+    }();
+
+    // untuk angka
+	function justAngka(e) {
+		if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190, 77]) !== -1 ||
+			(e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+			(e.keyCode >= 35 && e.keyCode <= 40)) {
+			return;
+		}
+		if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+			e.preventDefault();
+		}
+	};
+
+    // untuk format harga
+	function autoSeparator(Num) {
+		Num += '';
+		Num = Num.replace('.', '');
+		Num = Num.replace('.', '');
+		Num = Num.replace('.', '');
+		Num = Num.replace('.', '');
+		Num = Num.replace('.', '');
+		Num = Num.replace('.', '');
+		x = Num.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? '.' + x[1] : '';
+		var rgx = /(\d+)(\d{3})/;
+		while (rgx.test(x1))
+			x1 = x1.replace(rgx, '$1' + '.' + '$2');
+		return x1 + x2;
+	};
+</script>
+{% endblock %}

@@ -41,6 +41,31 @@ class TbPemesanan
      * @ORM\Column(type="string", columnDefinition="ENUM('0', '1', '2')")
      */
     private $status_pembayaran;
+    
+    /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('0', '1', '2')")
+     */
+    private $status_pengantaran;
+
+    /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('belum-lihat', 'lihat')")
+     */
+    private $status_lihat;
+
+    /**
+     * @ORM\Column(type="string", columnDefinition="ENUM('n', 'y')")
+     */
+    private $pilih_kurir;
+
+    /**
+     * @ORM\Column(type="string", length=5, nullable=true)
+     */
+    private $bintang;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $komentar;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -113,6 +138,66 @@ class TbPemesanan
     public function setStatusPembayaran(?string $status_pembayaran): self
     {
         $this->status_pembayaran = $status_pembayaran;
+
+        return $this;
+    }
+    
+    public function getStatusPengantaran(): ?string
+    {
+        return $this->status_pengantaran;
+    }
+
+    public function setStatusPengantaran(?string $status_pengantaran): self
+    {
+        $this->status_pengantaran = $status_pengantaran;
+
+        return $this;
+    }
+
+    public function getStatusLihat(): ?string
+    {
+        return $this->status_lihat;
+    }
+
+    public function setStatusLihat(?string $status_lihat): self
+    {
+        $this->status_lihat = $status_lihat;
+
+        return $this;
+    }
+
+    public function getPilihKurir(): ?string
+    {
+        return $this->pilih_kurir;
+    }
+
+    public function setPilihKurir(?string $pilih_kurir): self
+    {
+        $this->pilih_kurir = $pilih_kurir;
+
+        return $this;
+    }
+
+    public function getBintang(): ?string
+    {
+        return $this->bintang;
+    }
+
+    public function setBintang(?string $bintang): self
+    {
+        $this->bintang = $bintang;
+
+        return $this;
+    }
+
+    public function getKomentar(): ?string
+    {
+        return $this->komentar;
+    }
+
+    public function setKomentar(?string $komentar): self
+    {
+        $this->komentar = $komentar;
 
         return $this;
     }

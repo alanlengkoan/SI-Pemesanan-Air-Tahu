@@ -42,8 +42,8 @@ class __TwigTemplate_fc77f563d6dfafde50ca567a88c893688dcdfed1583a21cefad725f9ac6
     <table id=\"tabel_laporan\" class=\"table table-striped table-bordered display no-wrap\" style=\"width:100%\">
         <thead>
             <tr>
-                <th>Kode Order</th>
                 <th>Nama</th>
+                <th>Kode Order</th>
                 <th>Tanggal Pembelian</th>
                 <th>Jam Pembelian</th>
                 <th>Total Pembelian</th>

@@ -26,7 +26,31 @@ class TbPemesananRepository extends ServiceEntityRepository
     // untuk mengambil semua data pemesanan
     public function getAll()
     {
-        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, ( SELECT SUM( pd.sub_total ) FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = p.kd_pemesanan ) as total, ( SELECT SUM( pe.jumlah_transfer ) FROM App\Entity\TbPembayaran pe WHERE pe.kd_pemesanan = p.kd_pemesanan ) as transfer, ( SELECT SUM( c.jumlah_bayar ) FROM App\Entity\TbCod c WHERE c.kd_pemesanan = p.kd_pemesanan ) as bayar FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users";
+        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir, ( SELECT SUM( pd.sub_total ) FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = p.kd_pemesanan ) as total, ( SELECT SUM( pe.jumlah_transfer ) FROM App\Entity\TbPembayaran pe WHERE pe.kd_pemesanan = p.kd_pemesanan ) as transfer, ( SELECT SUM( c.jumlah_bayar ) FROM App\Entity\TbCod c WHERE c.kd_pemesanan = p.kd_pemesanan ) as bayar FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+
+    // untuk mengambil semua data pemesanan yg belum di lihat
+    public function getLihatNotifikasi()
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE p.status_lihat = 'belum-lihat'";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+    
+    // untuk mengambil semua data pemesanan yg belum di lihat untuk kurir
+    public function getLihatNotifikasiKurir($id)
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, p.tgl_pemesanan, u.nama, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\TbPengantaran tp WITH p.kd_pemesanan = tp.kd_pemesanan LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE tp.id_users = '$id' AND tp.status_lihat = 'belum-lihat'";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+
+    // untuk mengambil semua data pemesanan yg belum di beri rating
+    public function getRating($id)
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir FROM App\Entity\TbPemesanan p WHERE p.id_users = '$id' AND p.status_pengantaran = '2' AND p.bintang IS NULL AND p.komentar IS NULL";
         $qry = $this->mng->createQuery($sql)->getResult();
         return $qry;
     }
@@ -34,7 +58,7 @@ class TbPemesananRepository extends ServiceEntityRepository
     // untuk mengambil riwayat pemesanan user
     public function getRiwayat($iduser)
     {
-        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, ( SELECT SUM( pd.sub_total ) FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = p.kd_pemesanan ) as total FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE p.id_users = '$iduser'";
+        $sql = "SELECT p.id_users, p.kd_pemesanan, u.nama, p.tgl_pemesanan, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, ( SELECT SUM( pd.sub_total ) FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = p.kd_pemesanan ) as total FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE p.id_users = '$iduser'";
         $qry = $this->mng->createQuery($sql)->getResult();
         return $qry;
     }
@@ -67,6 +91,14 @@ class TbPemesananRepository extends ServiceEntityRepository
     public function getReportPembelianTahunan($tahun)
     {
         $sql = "SELECT u.nama AS customer, p.kd_pemesanan, p.tgl_pemesanan, SUM(pd.sub_total) AS total, ( SELECT SUM( pe.jumlah_transfer ) FROM App\Entity\TbPembayaran pe WHERE pe.kd_pemesanan = p.kd_pemesanan ) as transfer, ( SELECT SUM( c.jumlah_bayar ) FROM App\Entity\TbCod c WHERE c.kd_pemesanan = p.kd_pemesanan ) as bayar FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\TbPemesananDetail pd WITH p.kd_pemesanan = pd.kd_pemesanan LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE YEAR(p.tgl_pemesanan) = '$tahun' GROUP BY u.nama, p.kd_pemesanan, p.tgl_pemesanan";
+        $qry = $this->mng->createQuery($sql)->getResult();
+        return $qry;
+    }
+
+    // untuk mengambil data pemesanan kurir
+    public function getPemesananKurir($id)
+    {
+        $sql = "SELECT p.id_users, p.kd_pemesanan, p.tgl_pemesanan, u.nama, p.metode_pembayaran, p.status_pembayaran, p.status_pengantaran, p.pilih_kurir, ( SELECT SUM( pd.sub_total ) FROM App\Entity\TbPemesananDetail pd WHERE pd.kd_pemesanan = p.kd_pemesanan ) as total FROM App\Entity\TbPemesanan p LEFT JOIN App\Entity\TbPengantaran tp WITH p.kd_pemesanan = tp.kd_pemesanan LEFT JOIN App\Entity\User u WITH p.id_users = u.id_users WHERE tp.id_users = '$id'";
         $qry = $this->mng->createQuery($sql)->getResult();
         return $qry;
     }

@@ -29,3 +29,8 @@ services:
     App\Controller\Admin\:
         resource: '../src/Controller/Admin'
         tags: ['controller.service_arguments']
+
+    # untuk controller kurir
+    App\Controller\Kurir\:
+        resource: '../src/Controller/Kurir'
+        tags: ['controller.service_arguments']

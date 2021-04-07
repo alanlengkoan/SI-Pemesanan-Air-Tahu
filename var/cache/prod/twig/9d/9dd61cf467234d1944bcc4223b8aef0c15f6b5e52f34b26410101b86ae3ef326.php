@@ -119,24 +119,21 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                                     </label>
                                 </div>
 
-                                <div class=\"form-group row\">
-                                    <label class=\"col-lg-3 col-form-label form-control-label\"></label>
-                                    <div class=\"col-lg-9\">
-                                        <button type=\"submit\" id=\"add\" class=\"btn btn-primary btn-sm btn-rounded\">
-                                            <i class=\"fas fa-plus\"></i>&nbsp;Simpan
-                                        </button>
-                                    </div>
+                                <div class=\"form-group text-center\">
+                                    <button type=\"submit\" id=\"add\" class=\"btn btn-primary btn-sm btn-rounded\">
+                                        <i class=\"fas fa-plus\"></i>&nbsp;Simpan
+                                    </button>
                                 </div>
                             </form>
                         </div>
                         ";
-        // line 63
+        // line 60
         echo "                        ";
-        // line 64
+        // line 61
         echo "                        <div class=\"tab-pane\" id=\"akun\">
                             <form role=\"form\" action=\"/admin/profil/upd_akun\" id=\"form-akun\" method=\"post\">
                                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 66
+        // line 63
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("add"), "html", null, true);
         echo "\">
 
@@ -144,8 +141,8 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                                     <label class=\"col-lg-3 col-form-label form-control-label\">Nama</label>
                                     <div class=\"col-lg-9\">
                                         <input class=\"form-control\" type=\"text\" name=\"inpnama\" id=\"inpnama\" value=\"";
-        // line 71
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "nama", [], "any", false, false, false, 71), "html", null, true);
+        // line 68
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "nama", [], "any", false, false, false, 68), "html", null, true);
         echo "\">
                                     </div>
                                 </div>
@@ -154,8 +151,8 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                                     <div class=\"col-lg-9\">
                                         <input class=\"form-control\" type=\"email\" name=\"inpemail\" id=\"inpemail\"
                                             value=\"";
-        // line 78
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "email", [], "any", false, false, false, 78), "html", null, true);
+        // line 75
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "email", [], "any", false, false, false, 75), "html", null, true);
         echo "\">
                                     </div>
                                 </div>
@@ -164,8 +161,8 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                                     <div class=\"col-lg-9\">
                                         <input class=\"form-control\" type=\"text\" name=\"inpusername\" id=\"inpusername\"
                                             value=\"";
-        // line 85
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "username", [], "any", false, false, false, 85), "html", null, true);
+        // line 82
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "username", [], "any", false, false, false, 82), "html", null, true);
         echo "\">
                                     </div>
                                 </div>
@@ -180,13 +177,13 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                             </form>
                         </div>
                         ";
-        // line 99
+        // line 96
         echo "                        ";
-        // line 100
+        // line 97
         echo "                        <div class=\"tab-pane\" id=\"keamanan\">
                             <form role=\"form\" action=\"/admin/profil/upd_keamanan\" id=\"form-keamanan\" method=\"post\">
                                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 102
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("add"), "html", null, true);
         echo "\">
 
@@ -220,7 +217,7 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
                             </form>
                         </div>
                         ";
-        // line 134
+        // line 131
         echo "                    </div>
                 </div>
             </div>
@@ -230,11 +227,11 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
 ";
     }
 
-    // line 143
+    // line 140
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 144
+        // line 141
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
 <script>
     // untuk upload foto
@@ -360,7 +357,7 @@ class __TwigTemplate_1f03865851db4d0e8273bba8860e1b071ffcf2635b0c857ce6c0ddb80ac
 
     public function getDebugInfo()
     {
-        return array (  238 => 144,  234 => 143,  224 => 134,  190 => 102,  186 => 100,  184 => 99,  168 => 85,  158 => 78,  148 => 71,  140 => 66,  136 => 64,  134 => 63,  112 => 44,  110 => 43,  104 => 40,  100 => 38,  81 => 20,  78 => 18,  71 => 13,  66 => 10,  62 => 8,  56 => 5,  49 => 3,  38 => 1,);
+        return array (  235 => 141,  231 => 140,  221 => 131,  187 => 99,  183 => 97,  181 => 96,  165 => 82,  155 => 75,  145 => 68,  137 => 63,  133 => 61,  131 => 60,  112 => 44,  110 => 43,  104 => 40,  100 => 38,  81 => 20,  78 => 18,  71 => 13,  66 => 10,  62 => 8,  56 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

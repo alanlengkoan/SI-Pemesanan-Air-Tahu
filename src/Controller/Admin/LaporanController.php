@@ -60,7 +60,7 @@ class LaporanController extends AbstractController
                         $data[$value['customer']][] = [
                             'kode_order'        => $value['kd_pemesanan'],
                             'customer'          => $value['customer'],
-                            'tanggal_pembelian' => $value['tgl_pemesanan']->format('m-d-Y'),
+                            'tanggal_pembelian' => $value['tgl_pemesanan']->format('d-m-Y'),
                             'jam_pembelian'     => $value['tgl_pemesanan']->format('H:i:s'),
                             'total_pembelian'   => $value['total'],
                             'total_bayar'       => ($total == 0) ? 0 : $total,
@@ -107,7 +107,7 @@ class LaporanController extends AbstractController
                 $results[$value['customer']][] = [
                     'kode_order'        => $value['kd_pemesanan'],
                     'customer'          => $value['customer'],
-                    'tanggal_pembelian' => $value['tgl_pemesanan']->format('m-d-Y'),
+                    'tanggal_pembelian' => $value['tgl_pemesanan']->format('d-m-Y'),
                     'jam_pembelian'     => $value['tgl_pemesanan']->format('H:i:s'),
                     'total_pembelian'   => $value['total'],
                     'total_bayar'       => ($total == 0) ? 0 : $total,
@@ -179,7 +179,7 @@ class LaporanController extends AbstractController
                         $data[$value['customer']][] = [
                             'kode_order'        => $value['kd_pemesanan'],
                             'customer'          => $value['customer'],
-                            'tanggal_pembelian' => $value['tgl_pemesanan']->format('m-d-Y'),
+                            'tanggal_pembelian' => $value['tgl_pemesanan']->format('d-m-Y'),
                             'jam_pembelian'     => $value['tgl_pemesanan']->format('H:i:s'),
                             'total_pembelian'   => $value['total'],
                             'total_bayar'       => ($total == 0) ? 0 : $total,

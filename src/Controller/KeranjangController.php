@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\TbChat;
 use App\Entity\TbCod;
 use Xendit\Xendit;
 use Exception;
@@ -10,6 +11,7 @@ use App\Entity\TbPelanggan;
 use App\Entity\TbPembayaran;
 use App\Entity\TbPemesanan;
 use App\Entity\TbPemesananDetail;
+use App\Entity\TbPengantaranDetail;
 use App\Entity\TbProduk;
 use App\Entity\User;
 use App\Service\MyfunctionHelper;
@@ -140,7 +142,7 @@ class KeranjangController extends AbstractController
 
                 $keranjang->setJumlah($jumlah[$i]);
                 $keranjang->setHarga($harga[$i]);
-                $keranjang->setSubTotal(substr($sub_total[$i], 0, -3) . '' . rand(111, 999));
+                $keranjang->setSubTotal($sub_total[$i]);
 
                 $this->mng->persist($keranjang);
                 $this->mng->flush();
@@ -208,8 +210,17 @@ class KeranjangController extends AbstractController
             $pemesanan->setTglPemesanan(date_create());
             $pemesanan->setMetodePembayaran($inpmetodepembayaran);
             $pemesanan->setStatusPembayaran('0');
+            $pemesanan->setStatusPengantaran('0');
+            $pemesanan->setStatusLihat('belum-lihat');
+            $pemesanan->setPilihKurir('n');
             $pemesanan->setIns(date_create());
             $pemesanan->setUpd(date_create());
+
+            // untuk simpan data detail pengantaran
+            $detail_pengantaran = new TbPengantaranDetail();
+            $detail_pengantaran->setKdPemesanan($inpkodeorder);
+            $detail_pengantaran->setStatus('0');
+            $detail_pengantaran->setIns(date_create());
 
             // untuk simpan data pembayaran
             if ($inpmetodepembayaran == 't') {
@@ -264,6 +275,7 @@ class KeranjangController extends AbstractController
             $this->mng->persist($user);
             $this->mng->persist($pelanggan);
             $this->mng->persist($pemesanan);
+            $this->mng->persist($detail_pengantaran);
             $this->mng->flush();
 
             // apa bila berhasil
@@ -316,6 +328,52 @@ class KeranjangController extends AbstractController
 
         // apa bila berhasil
         return $this->render('home/nota.html.twig', $data);
+    }
+   
+    /**
+     * @Route("/user/tracking/{kd}", name="tracking")
+     */
+    // untuk tracking pesanan
+    public function tracking(string $kd)
+    {
+        $data = [
+            'halaman'      => "Tracking & Chat Pemesanan",
+            'kd_pemesanan' => $kd,
+            'tracking'     => $this->mng->getRepository(TbPengantaranDetail::class)->getRiwayat($kd),
+        ];
+
+        return $this->render('home/tracking.html.twig', $data);
+    }
+
+    /**
+     * @Route("/user/load_chat/{kd}", name="load_chat")
+     */
+    public function load_chat(string $kd)
+    {
+        $data = [
+            'id_users' => $this->getUser()->id_users,
+            'chat'     => $this->mng->getRepository(TbChat::class)->getDetail($kd)
+        ];
+
+        return $this->render('home/chat.html.twig', $data);
+    }
+
+    /**
+     * @Route("/user/send_chat", name="send_chat")
+     */
+    public function send_chat(Request $post)
+    {
+        $chat = new TbChat();
+        $chat->setKdPemesanan($post->request->get('kd_pemesanan'));
+        $chat->setIdUsers($this->getUser()->id_users);
+        $chat->setPesan($post->request->get('pesan'));
+        $chat->setLevel('user');
+        $chat->setDateSend(date_create());
+
+        $this->mng->persist($chat);
+        $this->mng->flush();
+
+        return $this->load_chat($post->request->get('kd_pemesanan'));
     }
 
     /**

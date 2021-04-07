@@ -38,10 +38,26 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-    // untuk mengambil detail gereja dan user
-    public function getDetail($id)
+    // untuk mengambil detail admin
+    public function getDetailAdmin($id)
     {
         $sql = "SELECT u.id_users, u.nama, u.email, u.foto, u.username FROM App\Entity\User u WHERE u.id_users='$id'";
+        $qry = $this->mng->createQuery($sql)->getOneOrNullResult();
+        return $qry;
+    }
+
+    // untuk mengambil detail pelanggan
+    public function getDetailPelanggan($id)
+    {
+        $sql = "SELECT u.id_users, u.nama, u.email, u.foto, u.username, tp.id_pelanggan, tp.kelamin, tp.telepon, tp.alamat FROM App\Entity\User AS u LEFT JOIN App\Entity\TbPelanggan AS tp WITH u.id_users = tp.id_users WHERE u.id_users='$id'";
+        $qry = $this->mng->createQuery($sql)->getOneOrNullResult();
+        return $qry;
+    }
+    
+    // untuk mengambil detail kurir
+    public function getDetailKurir($id)
+    {
+        $sql = "SELECT u.id_users, u.nama, u.email, u.foto, u.username, tk.id_kurir, tk.kelamin, tk.telepon, tk.alamat FROM App\Entity\User AS u LEFT JOIN App\Entity\TbKurir AS tk WITH u.id_users = tk.id_users WHERE u.id_users='$id'";
         $qry = $this->mng->createQuery($sql)->getOneOrNullResult();
         return $qry;
     }

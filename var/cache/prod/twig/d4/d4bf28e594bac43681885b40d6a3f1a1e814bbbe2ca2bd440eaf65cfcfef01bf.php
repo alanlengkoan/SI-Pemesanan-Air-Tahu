@@ -248,20 +248,33 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Jumlah Transfer</h4>
                                     </label>
                                     <div class=\"input-group mb-3\">
-                                        <input type=\"text\" name=\"inpjumlahtransfer\" id=\"inpjumlahtransfer\" ";
+                                        <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
             // line 148
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 148), null))) ? (print ("class=\"form-control\" placeholder=\"Jumlah transfer\" onkeydown=\"return justAngka(event)\" onkeyup=\"javascript:this.value=autoSeparator(this.value);\"")) : (print (twig_escape_filter($this->env, (("class=form-control-plaintext placeholder=" . $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 148))) . " readonly"), "html", null, true))));
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 148), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 148)), "html", null, true))));
+            echo "\" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=\"form-group\">
+                                <div class=\"col-xs-6\">
+                                    <label for=\"username\" class=\"text-dark\">
+                                        <h4>Jumlah Transfer</h4>
+                                    </label>
+                                    <div class=\"input-group mb-3\">
+                                        <input type=\"text\" name=\"inpjumlahtransfer\" id=\"inpjumlahtransfer\" ";
+            // line 158
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 158), null))) ? (print ("class=\"form-control\" placeholder=\"Jumlah transfer\" onkeydown=\"return justAngka(event)\" onkeyup=\"javascript:this.value=autoSeparator(this.value);\"")) : (print (twig_escape_filter($this->env, (("class=form-control-plaintext placeholder=" . $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 158))) . " readonly"), "html", null, true))));
             echo " />
                                         ";
-            // line 149
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 149), null))) {
-                // line 150
+            // line 159
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "jumlah_transfer", [], "any", false, false, false, 159), null))) {
+                // line 160
                 echo "                                        <div class=\"input-group-prepend\">
                                             <button class=\"btn btn-primary btn-outline\" id=\"btn-simpan\" type=\"button\"><i class=\"fa fa-save\"></i></button>
                                         </div>
                                         ";
             }
-            // line 154
+            // line 164
             echo "                                    </div>
                                 </div>
                             </div>
@@ -271,8 +284,8 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Tanggal Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 162
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 162), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 162), "d-m-Y"), "html", null, true))));
+            // line 172
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 172), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 172), "d-m-Y"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -282,8 +295,8 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Jam Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 170
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 170), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 170), "H:i:s"), "html", null, true))));
+            // line 180
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 180), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "tanggal_transfer", [], "any", false, false, false, 180), "H:i:s"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -293,29 +306,46 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Bukti</h4>
                                     </label>
                                     ";
-            // line 178
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "bukti", [], "any", false, false, false, 178), null))) {
-                echo " - ";
+            // line 188
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "bukti", [], "any", false, false, false, 188), null))) {
+                // line 189
+                echo "                                        - 
+                                    ";
             } else {
-                echo " <img src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "bukti", [], "any", false, false, false, 178))), "html", null, true);
-                echo "\" width=\"100\" heigth=\"100\" /> ";
+                // line 191
+                echo "                                        <a href=\"#\" onclick=\"viewImage()\">
+                                            <img src=\"";
+                // line 192
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "bukti", [], "any", false, false, false, 192))), "html", null, true);
+                echo "\" width=\"100\" heigth=\"100\" />
+                                        </a>
+
+                                        <script>
+                                            // untuk lihat gambar pada tab baru
+                                            function viewImage(url) {
+                                                window.open(\"";
+                // line 198
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/bukti/" . twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_detail"] ?? null), "bukti", [], "any", false, false, false, 198))), "html", null, true);
+                echo "\");
+                                            }
+                                        </script>
+                                    ";
             }
-            // line 179
+            // line 202
             echo "                                </div>
                             </div>
                         ";
-        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,         // line 181
-($context["data_pemesanan"] ?? null), "metode_pembayaran", [], "any", false, false, false, 181), "c"))) {
-            // line 182
+        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,         // line 204
+($context["data_pemesanan"] ?? null), "metode_pembayaran", [], "any", false, false, false, 204), "c"))) {
+            // line 205
             echo "                            <div class=\"form-group\">
                                 <div class=\"col-xs-6\">
                                     <label for=\"username\" class=\"text-dark\">
                                         <h4>Jam Transfer</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 187
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "nama_bayar", [], "any", false, false, false, 187), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "nama_bayar", [], "any", false, false, false, 187), "html", null, true))));
+            // line 210
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "nama_bayar", [], "any", false, false, false, 210), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "nama_bayar", [], "any", false, false, false, 210), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -325,8 +355,8 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Jumlah Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 195
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "jumlah_bayar", [], "any", false, false, false, 195), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "jumlah_bayar", [], "any", false, false, false, 195)), "html", null, true))));
+            // line 218
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "jumlah_bayar", [], "any", false, false, false, 218), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "jumlah_bayar", [], "any", false, false, false, 218)), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -336,8 +366,8 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Tanggal Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 203
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 203), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 203), "d-m-Y"), "html", null, true))));
+            // line 226
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 226), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 226), "d-m-Y"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
@@ -347,38 +377,23 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                         <h4>Jam Bayar</h4>
                                     </label>
                                     <input type=\"text\" class=\"form-control-plaintext\" placeholder=\"";
-            // line 211
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 211), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 211), "H:i:s"), "html", null, true))));
+            // line 234
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 234), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pembayaran_cod"] ?? null), "tanggal_bayar", [], "any", false, false, false, 234), "H:i:s"), "html", null, true))));
             echo "\" readonly>
                                 </div>
                             </div>
-                            ";
-            // line 214
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, ($context["data_pemesanan"] ?? null), "status_pembayaran", [], "any", false, false, false, 214), "0"))) {
-                // line 215
-                echo "                                 <div class=\"form-group\">
-                                     <div class=\"col-xs-12\"><br>
-                                        <a class=\"btn btn-lg btn-success btn-sm btn-rounded\" href=\"/admin/pemesanan/bayar/";
-                // line 217
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["data_pemesanan"] ?? null), "kd_pemesanan", [], "any", false, false, false, 217), "html", null, true);
-                echo "\"><i class=\"fa fa-money\"></i>&nbsp;Bayar</a>
-                                     </div>
-                                 </div>
-                            ";
-            }
-            // line 221
-            echo "                        ";
+                        ";
         }
-        // line 222
+        // line 238
         echo "                    </form>
                 </div>
             </div>
         </div>
     </div>
     ";
-        // line 228
+        // line 244
         echo "    ";
-        // line 229
+        // line 245
         echo "    <div class=\"row\">
         <div class=\"col-12\">
             <div class=\"card\">
@@ -399,9 +414,9 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                             </thead>
                             <tbody>
                                 ";
-        // line 248
+        // line 264
         $context["sum"] = 0;
-        // line 249
+        // line 265
         echo "                                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["data_pemesanan_detail"] ?? null));
@@ -419,34 +434,34 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 250
+            // line 266
             echo "                                ";
-            $context["sum"] = (($context["sum"] ?? null) + twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 250));
-            // line 251
+            $context["sum"] = (($context["sum"] ?? null) + twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 266));
+            // line 267
             echo "                                <tr>
                                     <td>";
-            // line 252
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 252), "html", null, true);
+            // line 268
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 268), "html", null, true);
             echo " </td>
                                     <td><img src=\"";
-            // line 253
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/produk/" . twig_get_attribute($this->env, $this->source, $context["rows"], "gambar", [], "any", false, false, false, 253))), "html", null, true);
+            // line 269
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/produk/" . twig_get_attribute($this->env, $this->source, $context["rows"], "gambar", [], "any", false, false, false, 269))), "html", null, true);
             echo "\" width=\"100\" heigth=\"100\" /></td>
                                     <td>";
-            // line 254
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 254), "html", null, true);
+            // line 270
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 270), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 255
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "jumlah", [], "any", false, false, false, 255), "html", null, true);
+            // line 271
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "jumlah", [], "any", false, false, false, 271), "html", null, true);
             echo "</td>
                                     <td align=\"center\">";
-            // line 256
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "harga", [], "any", false, false, false, 256)), "html", null, true);
+            // line 272
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "harga", [], "any", false, false, false, 272)), "html", null, true);
             echo "</td>
                                     <td align=\"center\"><span id=\"sub-total\">";
-            // line 257
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 257)), "html", null, true);
+            // line 273
+            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 273)), "html", null, true);
             echo "</span></td>
                                 </tr>
                                 ";
@@ -462,14 +477,14 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 260
+        // line 276
         echo "                                <tr>
                                     <td colspan=\"5\" align=\"center\">
                                         Total
                                     </td>
                                     <td align=\"center\">
                                         <span id=\"total\">";
-        // line 265
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["sum"] ?? null)), "html", null, true);
         echo "</span>
                                     </td>
@@ -480,7 +495,7 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
                                     </td>
                                     <td align=\"center\">
                                         <span id=\"total\">";
-        // line 273
+        // line 289
         echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["sum"] ?? null)), "html", null, true);
         echo "</span>
                                     </td>
@@ -496,16 +511,16 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
         </div>
     </div>
     ";
-        // line 287
+        // line 303
         echo "</div>
 ";
     }
 
-    // line 291
+    // line 307
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 292
+        // line 308
         echo "<script>
     var untukUbahAkun = function() {
         \$(document).on('click', '#btn-simpan', function(e) {
@@ -583,7 +598,7 @@ class __TwigTemplate_cc70f4f6faa9d3d732ae1e7e2a815400b49db15cc24149a18e909d02819
 
     public function getDebugInfo()
     {
-        return array (  509 => 292,  505 => 291,  500 => 287,  484 => 273,  473 => 265,  466 => 260,  449 => 257,  445 => 256,  441 => 255,  437 => 254,  433 => 253,  429 => 252,  426 => 251,  423 => 250,  405 => 249,  403 => 248,  382 => 229,  380 => 228,  373 => 222,  370 => 221,  363 => 217,  359 => 215,  357 => 214,  351 => 211,  340 => 203,  329 => 195,  318 => 187,  311 => 182,  309 => 181,  305 => 179,  297 => 178,  286 => 170,  275 => 162,  265 => 154,  259 => 150,  257 => 149,  253 => 148,  241 => 139,  230 => 131,  219 => 123,  208 => 115,  201 => 110,  199 => 109,  193 => 106,  182 => 98,  168 => 87,  157 => 79,  146 => 71,  135 => 63,  124 => 55,  113 => 47,  102 => 39,  91 => 31,  77 => 19,  74 => 17,  71 => 15,  64 => 10,  59 => 7,  55 => 5,  48 => 3,  37 => 1,);
+        return array (  524 => 308,  520 => 307,  515 => 303,  499 => 289,  488 => 281,  481 => 276,  464 => 273,  460 => 272,  456 => 271,  452 => 270,  448 => 269,  444 => 268,  441 => 267,  438 => 266,  420 => 265,  418 => 264,  397 => 245,  395 => 244,  388 => 238,  381 => 234,  370 => 226,  359 => 218,  348 => 210,  341 => 205,  339 => 204,  335 => 202,  328 => 198,  319 => 192,  316 => 191,  312 => 189,  310 => 188,  299 => 180,  288 => 172,  278 => 164,  272 => 160,  270 => 159,  266 => 158,  253 => 148,  241 => 139,  230 => 131,  219 => 123,  208 => 115,  201 => 110,  199 => 109,  193 => 106,  182 => 98,  168 => 87,  157 => 79,  146 => 71,  135 => 63,  124 => 55,  113 => 47,  102 => 39,  91 => 31,  77 => 19,  74 => 17,  71 => 15,  64 => 10,  59 => 7,  55 => 5,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
