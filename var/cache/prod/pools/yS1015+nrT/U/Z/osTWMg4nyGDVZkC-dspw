@@ -1,0 +1,43 @@
+<?php //%255Ba688d8ad092a259d12498172429e0975%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.nama_bayar AS nama_bayar_0, t0_.jumlah_bayar AS jumlah_bayar_1, t0_.tanggal_bayar AS tanggal_bayar_2 FROM tb_cod t0_ WHERE t0_.kd_pemesanan = \'ODR-010\'',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'nama_bayar_0' => 'nama_bayar',
+                    'jumlah_bayar_1' => 'jumlah_bayar',
+                    'tanggal_bayar_2' => 'tanggal_bayar',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'nama_bayar_0' => 'string',
+                    'jumlah_bayar_1' => 'integer',
+                    'tanggal_bayar_2' => 'datetime',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

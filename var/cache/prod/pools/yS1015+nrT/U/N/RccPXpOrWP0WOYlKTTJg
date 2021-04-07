@@ -1,0 +1,47 @@
+<?php //%255Bfe8da18271001d5ed2b23caeb0d40bf9%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.id_stock AS id_stock_0, t1_.kd_produk AS kd_produk_1, t1_.nama AS nama_2, t0_.stock AS stock_3, t0_.ins AS ins_4 FROM tb_stock t0_ LEFT JOIN tb_produk t1_ ON (t0_.kd_produk = t1_.kd_produk)',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'id_stock_0' => 'id_stock',
+                    'kd_produk_1' => 'kd_produk',
+                    'nama_2' => 'nama',
+                    'stock_3' => 'stock',
+                    'ins_4' => 'ins',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'id_stock_0' => 'integer',
+                    'kd_produk_1' => 'string',
+                    'nama_2' => 'string',
+                    'stock_3' => 'integer',
+                    'ins_4' => 'datetime',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

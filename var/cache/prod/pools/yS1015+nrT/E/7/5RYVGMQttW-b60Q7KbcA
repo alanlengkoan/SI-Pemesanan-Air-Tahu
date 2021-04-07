@@ -1,0 +1,49 @@
+<?php //%255B6e83368aa5f54d7e5223cbc997e05805%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.id_users AS id_users_0, t0_.kelamin AS kelamin_1, t0_.telepon AS telepon_2, t0_.alamat AS alamat_3, u1_.nama AS nama_4, u1_.email AS email_5 FROM tb_pelanggan t0_ LEFT JOIN user u1_ ON (t0_.id_users = u1_.id_users) WHERE t0_.id_users = \'96450925\'',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'id_users_0' => 'id_users',
+                    'kelamin_1' => 'kelamin',
+                    'telepon_2' => 'telepon',
+                    'alamat_3' => 'alamat',
+                    'nama_4' => 'nama',
+                    'email_5' => 'email',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'id_users_0' => 'integer',
+                    'kelamin_1' => 'string',
+                    'telepon_2' => 'string',
+                    'alamat_3' => 'text',
+                    'nama_4' => 'string',
+                    'email_5' => 'string',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,49 @@
+<?php //%255Bfb4d53a00dfe38b06d83dbc389a0f44d%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT u0_.nama AS nama_0, t1_.kd_pemesanan AS kd_pemesanan_1, t1_.tgl_pemesanan AS tgl_pemesanan_2, SUM(t2_.sub_total) AS sclr_3, (SELECT SUM(t3_.jumlah_transfer) AS sclr_5 FROM tb_pembayaran t3_ WHERE t3_.kd_pemesanan = t1_.kd_pemesanan) AS sclr_4, (SELECT SUM(t4_.jumlah_bayar) AS sclr_7 FROM tb_cod t4_ WHERE t4_.kd_pemesanan = t1_.kd_pemesanan) AS sclr_6 FROM tb_pemesanan t1_ LEFT JOIN tb_pemesanan_detail t2_ ON (t1_.kd_pemesanan = t2_.kd_pemesanan) LEFT JOIN user u0_ ON (t1_.id_users = u0_.id_users) WHERE (t1_.tgl_pemesanan BETWEEN \'2021-03-01\' AND \'2021-03-12\') GROUP BY u0_.nama, t1_.kd_pemesanan, t1_.tgl_pemesanan',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'nama_0' => 'customer',
+                    'kd_pemesanan_1' => 'kd_pemesanan',
+                    'tgl_pemesanan_2' => 'tgl_pemesanan',
+                    'sclr_3' => 'total',
+                    'sclr_4' => 'transfer',
+                    'sclr_6' => 'bayar',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'nama_0' => 'string',
+                    'kd_pemesanan_1' => 'string',
+                    'tgl_pemesanan_2' => 'datetime',
+                    'sclr_3' => 'string',
+                    'sclr_4' => 'string',
+                    'sclr_6' => 'string',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,49 @@
+<?php //%255B80937bbda5ea59f42727a85c65c746af%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.id_keranjang AS id_keranjang_0, t1_.gambar AS gambar_1, t1_.nama AS nama_2, t0_.jumlah AS jumlah_3, t0_.harga AS harga_4, t0_.sub_total AS sub_total_5 FROM tb_keranjang t0_ LEFT JOIN tb_produk t1_ ON (t0_.kd_produk = t1_.kd_produk) WHERE t0_.id_user = \'96450925\'',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'id_keranjang_0' => 'id_keranjang',
+                    'gambar_1' => 'gambar',
+                    'nama_2' => 'nama',
+                    'jumlah_3' => 'jumlah',
+                    'harga_4' => 'harga',
+                    'sub_total_5' => 'sub_total',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'id_keranjang_0' => 'integer',
+                    'gambar_1' => 'string',
+                    'nama_2' => 'string',
+                    'jumlah_3' => 'integer',
+                    'harga_4' => 'integer',
+                    'sub_total_5' => 'integer',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
