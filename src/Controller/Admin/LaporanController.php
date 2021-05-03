@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\TbPelanggan;
 use App\Entity\TbPemesanan;
 use App\Service\MyfunctionHelper;
 use DateTime;
@@ -370,6 +371,38 @@ class LaporanController extends AbstractController
         // untuk membuat pdf
         $dompdf = new Dompdf();
         $html = $this->render('admin/laporan_tahunan/export.html.twig', $data)->getContent();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream('laporan-bulanan.pdf', ['Attachment' => true]);
+        exit(0);
+    }
+
+    /**
+     * @Route("/admin/l_pelanggan", name="laporan_pelanggan")
+     */
+    public function laporanPelanggan()
+    {
+        $data = [
+            'halaman'   => "Laporan Pelanggan",
+            'pelanggan' => $this->mng->getRepository(TbPelanggan::class)->getAll(),
+        ];
+
+        return $this->render('admin/laporan_pelanggan/view.html.twig', $data);
+    }
+
+    /**
+     * @Route("/admin/l_pelanggan/export", name="export_laporan_pelanggan")
+     */
+    public function exportCustomer()
+    {
+        $data = [
+            'pelanggan' => $this->mng->getRepository(TbPelanggan::class)->getAll(),
+        ];
+
+        // untuk membuat pdf
+        $dompdf = new Dompdf();
+        $html = $this->render('admin/laporan_pelanggan/export.html.twig', $data)->getContent();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'potrait');
         $dompdf->render();

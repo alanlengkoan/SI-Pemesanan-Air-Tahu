@@ -29,6 +29,8 @@ return [
         '/admin/l_tahunan' => [[['_route' => 'laporan_tahunan', '_controller' => 'App\\Controller\\Admin\\LaporanController::laporanTahunan'], null, null, null, false, false, null]],
         '/admin/l_tahunan/lihat' => [[['_route' => 'lihat_laporan_tahunan', '_controller' => 'App\\Controller\\Admin\\LaporanController::showYear'], null, null, null, false, false, null]],
         '/admin/l_tahunan/export' => [[['_route' => 'export_laporan_tahunan', '_controller' => 'App\\Controller\\Admin\\LaporanController::exportYear'], null, null, null, false, false, null]],
+        '/admin/l_pelanggan' => [[['_route' => 'laporan_pelanggan', '_controller' => 'App\\Controller\\Admin\\LaporanController::laporanPelanggan'], null, null, null, false, false, null]],
+        '/admin/l_pelanggan/export' => [[['_route' => 'export_laporan_pelanggan', '_controller' => 'App\\Controller\\Admin\\LaporanController::exportCustomer'], null, null, null, false, false, null]],
         '/admin/pelanggan' => [[['_route' => 'pelanggan', '_controller' => 'App\\Controller\\Admin\\PelangganController::index'], null, null, null, false, false, null]],
         '/admin/pelanggan/del' => [[['_route' => 'pelanggan_del', '_controller' => 'App\\Controller\\Admin\\PelangganController::del'], null, null, null, false, false, null]],
         '/admin/pelanggan/res_pass' => [[['_route' => 'pelanggan_res_pass', '_controller' => 'App\\Controller\\Admin\\PelangganController::reset_password'], null, null, null, false, false, null]],

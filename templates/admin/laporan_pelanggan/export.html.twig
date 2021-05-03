@@ -1,0 +1,64 @@
+<!-- CSS -->
+<style media="screen">
+    .judul {
+        padding: 4mm;
+        text-align: center;
+    }
+
+    .nama {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-family: times;
+    }
+
+    p {
+        margin: 0;
+    }
+</style>
+<!-- CSS -->
+
+<div class="judul">
+    <table align="center">
+        <tr>
+            <td align="center">
+                <h3>LAPORAN PELANGGAN</h3>
+                <h3>AIR TAHU SUPER</h3>
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>No. Hp</th>
+                <th>Alamat</th>
+            </tr>
+        </thead>
+        {% for rows in pelanggan %}
+        <tr>
+            <td>{{ loop.index }}.</td>
+            <td>{{ rows.nama }}</td>
+            <td>{{ (rows.kelamin == null ? "-" : (rows.kelamin == "L" ? "Laki - laki" : "Perempuan")) }}</td>
+            <td>{{ (rows.telepon == null ? "-" : rows.telepon) }}</td>
+            <td>{{ (rows.alamat == null ? "-" : rows.alamat) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

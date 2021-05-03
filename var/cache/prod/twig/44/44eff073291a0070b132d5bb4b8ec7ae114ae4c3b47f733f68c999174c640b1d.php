@@ -283,6 +283,15 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
                                 <span class=\"hide-menu\"> Laporan Tahunan</span>
                             </a>
                         </li>
+                        <li class=\"sidebar-item\">
+                            <a class=\"sidebar-link sidebar-link\" href=\"";
+        // line 169
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_pelanggan");
+        echo "\">
+                                <i class=\"fa fa-users\"></i>
+                                <span class=\"hide-menu\"> Laporan Pelanggan </span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -290,12 +299,12 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
 
         <div class=\"page-wrapper\">
             ";
-        // line 175
+        // line 181
         echo "            ";
         $this->displayBlock('body', $context, $blocks);
-        // line 176
+        // line 182
         echo "            ";
-        // line 177
+        // line 183
         echo "            <footer class=\"footer text-center text-muted\">
                 Copyright &copy;
                 <script>
@@ -307,49 +316,49 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
     </div>
 
     ";
-        // line 188
+        // line 194
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 189
+        // line 195
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/app-style-switcher.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 190
+        // line 196
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/feather.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 191
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 192
+        // line 198
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/sidebarmenu.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 193
+        // line 199
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/custom.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 194
+        // line 200
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/d3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 195
+        // line 201
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/c3/c3.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 196
+        // line 202
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 197
+        // line 203
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\"></script>
     <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
     ";
-        // line 200
+        // line 206
         echo "    
     <script>
         load_notification()
@@ -413,9 +422,9 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
     </script>
 
     ";
-        // line 262
+        // line 268
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 263
+        // line 269
         echo "</body>
 
 </html>";
@@ -434,13 +443,13 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
         $macros = $this->macros;
     }
 
-    // line 175
+    // line 181
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 262
+    // line 268
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -458,7 +467,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
 
     public function getDebugInfo()
     {
-        return array (  444 => 262,  438 => 175,  432 => 28,  425 => 8,  419 => 263,  417 => 262,  353 => 200,  348 => 197,  344 => 196,  340 => 195,  336 => 194,  332 => 193,  328 => 192,  324 => 191,  320 => 190,  316 => 189,  311 => 188,  299 => 177,  297 => 176,  294 => 175,  280 => 163,  271 => 157,  262 => 151,  251 => 143,  242 => 137,  231 => 129,  222 => 123,  213 => 117,  204 => 111,  195 => 105,  184 => 97,  173 => 88,  167 => 84,  163 => 83,  156 => 79,  151 => 76,  149 => 75,  145 => 72,  139 => 67,  135 => 64,  132 => 62,  126 => 57,  113 => 46,  94 => 29,  92 => 28,  80 => 18,  76 => 16,  72 => 15,  68 => 14,  64 => 13,  59 => 12,  54 => 9,  50 => 8,  41 => 1,);
+        return array (  453 => 268,  447 => 181,  441 => 28,  434 => 8,  428 => 269,  426 => 268,  362 => 206,  357 => 203,  353 => 202,  349 => 201,  345 => 200,  341 => 199,  337 => 198,  333 => 197,  329 => 196,  325 => 195,  320 => 194,  308 => 183,  306 => 182,  303 => 181,  289 => 169,  280 => 163,  271 => 157,  262 => 151,  251 => 143,  242 => 137,  231 => 129,  222 => 123,  213 => 117,  204 => 111,  195 => 105,  184 => 97,  173 => 88,  167 => 84,  163 => 83,  156 => 79,  151 => 76,  149 => 75,  145 => 72,  139 => 67,  135 => 64,  132 => 62,  126 => 57,  113 => 46,  94 => 29,  92 => 28,  80 => 18,  76 => 16,  72 => 15,  68 => 14,  64 => 13,  59 => 12,  54 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()

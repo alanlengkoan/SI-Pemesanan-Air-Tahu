@@ -24,6 +24,8 @@ return [
     'laporan_tahunan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::laporanTahunan'], [], [['text', '/admin/l_tahunan']], [], []],
     'lihat_laporan_tahunan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::showYear'], [], [['text', '/admin/l_tahunan/lihat']], [], []],
     'export_laporan_tahunan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::exportYear'], [], [['text', '/admin/l_tahunan/export']], [], []],
+    'laporan_pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::laporanPelanggan'], [], [['text', '/admin/l_pelanggan']], [], []],
+    'export_laporan_pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::exportCustomer'], [], [['text', '/admin/l_pelanggan/export']], [], []],
     'pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\PelangganController::index'], [], [['text', '/admin/pelanggan']], [], []],
     'pelanggan_del' => [[], ['_controller' => 'App\\Controller\\Admin\\PelangganController::del'], [], [['text', '/admin/pelanggan/del']], [], []],
     'pelanggan_res_pass' => [[], ['_controller' => 'App\\Controller\\Admin\\PelangganController::reset_password'], [], [['text', '/admin/pelanggan/res_pass']], [], []],
