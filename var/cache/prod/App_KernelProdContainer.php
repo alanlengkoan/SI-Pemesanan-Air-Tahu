@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelProdContainer::class, false)) {
 
 return new \ContainerMOF4rSf\App_KernelProdContainer([
     'container.build_hash' => 'MOF4rSf',
-    'container.build_id' => '8bcd5796',
-    'container.build_time' => 1620236406,
+    'container.build_id' => '2822c66d',
+    'container.build_time' => 1620236461,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerMOF4rSf');
