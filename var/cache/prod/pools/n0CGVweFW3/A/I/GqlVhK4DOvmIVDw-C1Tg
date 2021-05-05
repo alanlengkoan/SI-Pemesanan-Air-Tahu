@@ -1,0 +1,128 @@
+<?php //%255BApp%255CEntity%255CTbPemesananDetail%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\TbPemesananDetail',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\TbPemesananDetail',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\TbPemesananDetailRepository',
+            ],
+            'identifier' => [
+                [
+                    'id_pemesanan_detail',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id_pemesanan_detail' => [
+                        'fieldName' => 'id_pemesanan_detail',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id_pemesanan_detail',
+                    ],
+                    'kd_pemesanan' => [
+                        'fieldName' => 'kd_pemesanan',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 10,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'kd_pemesanan',
+                    ],
+                    'kd_produk' => [
+                        'fieldName' => 'kd_produk',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 10,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'kd_produk',
+                    ],
+                    'jumlah' => [
+                        'fieldName' => 'jumlah',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'jumlah',
+                    ],
+                    'harga' => [
+                        'fieldName' => 'harga',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'harga',
+                    ],
+                    'sub_total' => [
+                        'fieldName' => 'sub_total',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'sub_total',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id_pemesanan_detail' => 'id_pemesanan_detail',
+                    'kd_pemesanan' => 'kd_pemesanan',
+                    'kd_produk' => 'kd_produk',
+                    'jumlah' => 'jumlah',
+                    'harga' => 'harga',
+                    'sub_total' => 'sub_total',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id_pemesanan_detail' => 'id_pemesanan_detail',
+                    'kd_pemesanan' => 'kd_pemesanan',
+                    'kd_produk' => 'kd_produk',
+                    'jumlah' => 'jumlah',
+                    'harga' => 'harga',
+                    'sub_total' => 'sub_total',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'tb_pemesanan_detail',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
