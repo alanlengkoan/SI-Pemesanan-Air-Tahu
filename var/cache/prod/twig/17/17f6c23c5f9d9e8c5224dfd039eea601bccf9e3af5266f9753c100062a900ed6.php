@@ -180,40 +180,27 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 64
         echo "                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th colspan=\"4\" style=\"text-align: center;\">Total</th>
-                                <th>";
-        // line 68
-        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["tot_pembelian"] ?? null)), "html", null, true);
-        echo "</th>
-                                <th>";
-        // line 69
-        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["tot_bayar"] ?? null)), "html", null, true);
-        echo "</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
     </div>
     ";
-        // line 78
+        // line 71
         echo "</div>
 ";
     }
 
-    // line 82
+    // line 75
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 83
+        // line 76
         echo "<script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/datatables.net/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 84
+        // line 77
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/pages/datatable/datatable-basic.init.js"), "html", null, true);
         echo "\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
@@ -239,7 +226,7 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
 
     public function getDebugInfo()
     {
-        return array (  217 => 84,  212 => 83,  208 => 82,  203 => 78,  192 => 69,  188 => 68,  182 => 64,  165 => 61,  161 => 60,  157 => 59,  153 => 58,  146 => 54,  141 => 52,  138 => 51,  121 => 50,  100 => 32,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
+        return array (  204 => 77,  199 => 76,  195 => 75,  190 => 71,  182 => 64,  165 => 61,  161 => 60,  157 => 59,  153 => 58,  146 => 54,  141 => 52,  138 => 51,  121 => 50,  100 => 32,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
