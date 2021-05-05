@@ -1,0 +1,74 @@
+<!-- CSS -->
+<style media="screen">
+    .judul {
+        padding: 4mm;
+        text-align: center;
+    }
+
+    .nama {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-family: times;
+    }
+
+    p {
+        margin: 0;
+    }
+</style>
+<!-- CSS -->
+
+<div class="judul">
+    <table align="center">
+        <tr>
+            <td align="center">
+                <h3>LAPORAN DETAIL PELANGGAN</h3>
+                <h3>AIR TAHU SUPER</h3>
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Kode Pemesanan</th>
+                <th>Nama</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        {% set total = 0 %}
+        <tbody>
+            {% for rows in data %}
+            {% set total = total + rows.total  %}
+            <tr>
+                <td>{{ loop.index }}.</td>
+                <td>{{ rows.kd_pemesanan }}</td>
+                <td>{{ rows.nama }}</td>
+                <td>{{ rows.tgl_pemesanan|date('m-d-Y') }}</td>
+                <td>{{ rows.total|format_rp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4" style="text-align: center;">Total</th>
+                <th>{{ total|format_rp }}</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

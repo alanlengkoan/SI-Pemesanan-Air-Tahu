@@ -108,6 +108,7 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
                         <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>Aksi</th>
                                 <th>Nama</th>
                                 <th>Jenis Kelamin</th>
                                 <th>No. Hp</th>
@@ -116,7 +117,7 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
                         </thead>
                         <tbody>
                             ";
-        // line 49
+        // line 50
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["pelanggan"] ?? null));
         $context['loop'] = [
@@ -133,27 +134,35 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 50
+            // line 51
             echo "                            <tr>
                                 <td>";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 51), "html", null, true);
-            echo ".</td>
-                                <td>";
             // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 52), "html", null, true);
-            echo "</td>
-                                <td>";
-            // line 53
-            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 53), null))) ? ("-") : ((((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 53), "L"))) ? ("Laki - laki") : ("Perempuan"))));
-            echo "</td>
-                                <td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 52), "html", null, true);
+            echo ".</td>
+                                <td>
+                                    <a href=\"l_pelanggan/detail/";
             // line 54
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 54), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 54), "html", null, true))));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "id_users", [], "any", false, false, false, 54), "html", null, true);
+            echo "\" class=\"btn btn-outline-success btn-sm btn-rounded\">
+                                        <i class=\"fas fa-print\"></i>&nbsp;Cetak Detail
+                                    </a>
+                                </td>
+                                <td>";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 58), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 55
-            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 55), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 55), "html", null, true))));
+            // line 59
+            echo (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 59), null))) ? ("-") : ((((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "kelamin", [], "any", false, false, false, 59), "L"))) ? ("Laki - laki") : ("Perempuan"))));
+            echo "</td>
+                                <td>";
+            // line 60
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 60), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "telepon", [], "any", false, false, false, 60), "html", null, true))));
+            echo "</td>
+                                <td>";
+            // line 61
+            (((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 61), null))) ? (print ("-")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "alamat", [], "any", false, false, false, 61), "html", null, true))));
             echo "</td>
                             </tr>
                             ";
@@ -169,29 +178,42 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 64
         echo "                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan=\"4\" style=\"text-align: center;\">Total</th>
+                                <th>";
+        // line 68
+        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["tot_pembelian"] ?? null)), "html", null, true);
+        echo "</th>
+                                <th>";
+        // line 69
+        echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["tot_bayar"] ?? null)), "html", null, true);
+        echo "</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
     </div>
     ";
-        // line 65
+        // line 78
         echo "</div>
 ";
     }
 
-    // line 69
+    // line 82
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 70
+        // line 83
         echo "<script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/extra-libs/datatables.net/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 71
+        // line 84
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/dist/js/pages/datatable/datatable-basic.init.js"), "html", null, true);
         echo "\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js\"></script>
@@ -217,7 +239,7 @@ class __TwigTemplate_6f089f15e6baf221a0e93a1362232e2718dcb8948ce17cd46fee8c19fbe
 
     public function getDebugInfo()
     {
-        return array (  195 => 71,  190 => 70,  186 => 69,  181 => 65,  173 => 58,  156 => 55,  152 => 54,  148 => 53,  144 => 52,  140 => 51,  137 => 50,  120 => 49,  100 => 32,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
+        return array (  217 => 84,  212 => 83,  208 => 82,  203 => 78,  192 => 69,  188 => 68,  182 => 64,  165 => 61,  161 => 60,  157 => 59,  153 => 58,  146 => 54,  141 => 52,  138 => 51,  121 => 50,  100 => 32,  89 => 23,  86 => 21,  83 => 19,  76 => 14,  71 => 11,  67 => 9,  60 => 6,  56 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

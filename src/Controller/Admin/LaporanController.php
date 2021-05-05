@@ -392,6 +392,25 @@ class LaporanController extends AbstractController
     }
 
     /**
+     * @Route("/admin/l_pelanggan/detail/{id}", name="detail_laporan_pelanggan")
+     */
+    public function cetakDetailPelanggan(string $id)
+    {
+        $data = [
+            'data' => $this->mng->getRepository(TbPemesanan::class)->getRiwayat($id),
+        ];
+
+        // untuk membuat pdf
+        $dompdf = new Dompdf();
+        $html = $this->render('admin/laporan_pelanggan/detail.html.twig', $data)->getContent();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream('laporan-bulanan.pdf', ['Attachment' => true]);
+        exit(0);
+    }
+
+    /**
      * @Route("/admin/l_pelanggan/export", name="export_laporan_pelanggan")
      */
     public function exportCustomer()

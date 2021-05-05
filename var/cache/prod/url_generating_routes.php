@@ -25,6 +25,7 @@ return [
     'lihat_laporan_tahunan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::showYear'], [], [['text', '/admin/l_tahunan/lihat']], [], []],
     'export_laporan_tahunan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::exportYear'], [], [['text', '/admin/l_tahunan/export']], [], []],
     'laporan_pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::laporanPelanggan'], [], [['text', '/admin/l_pelanggan']], [], []],
+    'detail_laporan_pelanggan' => [['id'], ['_controller' => 'App\\Controller\\Admin\\LaporanController::cetakDetailPelanggan'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/l_pelanggan/detail']], [], []],
     'export_laporan_pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\LaporanController::exportCustomer'], [], [['text', '/admin/l_pelanggan/export']], [], []],
     'pelanggan' => [[], ['_controller' => 'App\\Controller\\Admin\\PelangganController::index'], [], [['text', '/admin/pelanggan']], [], []],
     'pelanggan_del' => [[], ['_controller' => 'App\\Controller\\Admin\\PelangganController::del'], [], [['text', '/admin/pelanggan/del']], [], []],

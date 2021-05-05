@@ -39,6 +39,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>Aksi</th>
                                 <th>Nama</th>
                                 <th>Jenis Kelamin</th>
                                 <th>No. Hp</th>
@@ -49,6 +50,11 @@
                             {% for rows in pelanggan %}
                             <tr>
                                 <td>{{ loop.index }}.</td>
+                                <td>
+                                    <a href="l_pelanggan/detail/{{ rows.id_users }}" class="btn btn-outline-success btn-sm btn-rounded">
+                                        <i class="fas fa-print"></i>&nbsp;Cetak Detail
+                                    </a>
+                                </td>
                                 <td>{{ rows.nama }}</td>
                                 <td>{{ (rows.kelamin == null ? "-" : (rows.kelamin == "L" ? "Laki - laki" : "Perempuan")) }}</td>
                                 <td>{{ (rows.telepon == null ? "-" : rows.telepon) }}</td>
@@ -56,6 +62,13 @@
                             </tr>
                             {% endfor %}
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="4" style="text-align: center;">Total</th>
+                                <th>{{ tot_pembelian|format_rp }}</th>
+                                <th>{{ tot_bayar|format_rp }}</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

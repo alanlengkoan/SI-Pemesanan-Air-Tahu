@@ -288,7 +288,7 @@ class __TwigTemplate_96c1075728a298eb32d44be4cfe8215c94aee5a782fea71aeeba86acc7d
         // line 169
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("laporan_pelanggan");
         echo "\">
-                                <i class=\"fa fa-users\"></i>
+                                <i class=\"fa fa-file\"></i>
                                 <span class=\"hide-menu\"> Laporan Pelanggan </span>
                             </a>
                         </li>
