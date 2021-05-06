@@ -1,0 +1,116 @@
+<?php //%255BApp%255CEntity%255CTbStock%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\TbStock',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\TbStock',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\TbStockRepository',
+            ],
+            'identifier' => [
+                [
+                    'id_stock',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id_stock' => [
+                        'fieldName' => 'id_stock',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id_stock',
+                    ],
+                    'kd_produk' => [
+                        'fieldName' => 'kd_produk',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 10,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'kd_produk',
+                    ],
+                    'stock' => [
+                        'fieldName' => 'stock',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'stock',
+                    ],
+                    'ins' => [
+                        'fieldName' => 'ins',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'ins',
+                    ],
+                    'upd' => [
+                        'fieldName' => 'upd',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'upd',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id_stock' => 'id_stock',
+                    'kd_produk' => 'kd_produk',
+                    'stock' => 'stock',
+                    'ins' => 'ins',
+                    'upd' => 'upd',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id_stock' => 'id_stock',
+                    'kd_produk' => 'kd_produk',
+                    'stock' => 'stock',
+                    'ins' => 'ins',
+                    'upd' => 'upd',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'tb_stock',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
