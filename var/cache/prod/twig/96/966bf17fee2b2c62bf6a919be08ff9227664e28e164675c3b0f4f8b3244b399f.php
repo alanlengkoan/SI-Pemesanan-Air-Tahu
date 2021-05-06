@@ -77,23 +77,25 @@ class __TwigTemplate_810f696aa8e9ad9662b55351123c54e3bd45ec4f552179726bcdf89ccc0
     </table>
     <hr>
 
-    <table align=\"center\" border=\"1\">
+    <table align=\"center\" border=\"1\" cellspacing=\"0\">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Kode Pemesanan</th>
-                <th>Nama</th>
                 <th>Tanggal Pemesanan</th>
-                <th>Total</th>
+                <th>Produk</th>
+                <th>Jumlah</th>
+                <th>Harga</th>
+                <th>Sub Total</th>
             </tr>
         </thead>
         ";
-        // line 54
+        // line 56
         $context["total"] = 0;
-        // line 55
+        // line 57
         echo "        <tbody>
             ";
-        // line 56
+        // line 58
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["data"] ?? null));
         $context['loop'] = [
@@ -109,33 +111,61 @@ class __TwigTemplate_810f696aa8e9ad9662b55351123c54e3bd45ec4f552179726bcdf89ccc0
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
-            // line 57
-            echo "            ";
-            $context["total"] = (($context["total"] ?? null) + twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 57));
-            // line 58
-            echo "            <tr>
-                <td>";
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
             // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 59), "html", null, true);
-            echo ".</td>
-                <td>";
+            echo "            <tr>
+                <td rowspan=\"";
             // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "kd_pemesanan", [], "any", false, false, false, 60), "html", null, true);
-            echo "</td>
-                <td>";
+            echo twig_escape_filter($this->env, (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["value"], "detail", [], "any", false, false, false, 60)) + 1), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 60), "html", null, true);
+            echo ".</td>
+                <td rowspan=\"";
             // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 61), "html", null, true);
+            echo twig_escape_filter($this->env, (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["value"], "detail", [], "any", false, false, false, 61)) + 1), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["value"], "kd_order", [], "any", false, false, false, 61), "html", null, true);
             echo "</td>
-                <td>";
+                <td rowspan=\"";
             // line 62
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "tgl_pemesanan", [], "any", false, false, false, 62), "m-d-Y"), "html", null, true);
+            echo twig_escape_filter($this->env, (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["value"], "detail", [], "any", false, false, false, 62)) + 1), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["value"], "tgl_pemesanan", [], "any", false, false, false, 62), "d-m-Y"), "html", null, true);
             echo "</td>
-                <td>";
+                ";
             // line 63
-            echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "total", [], "any", false, false, false, 63)), "html", null, true);
-            echo "</td>
-            </tr>
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["value"], "detail", [], "any", false, false, false, 63));
+            foreach ($context['_seq'] as $context["_key"] => $context["rows"]) {
+                // line 64
+                echo "                    ";
+                $context["total"] = (($context["total"] ?? null) + twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 64));
+                // line 65
+                echo "                    <tr>
+                        <td>";
+                // line 66
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "nama", [], "any", false, false, false, 66), "html", null, true);
+                echo "</td>
+                        <td>";
+                // line 67
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rows"], "jumlah", [], "any", false, false, false, 67), "html", null, true);
+                echo "</td>
+                        <td>";
+                // line 68
+                echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "harga", [], "any", false, false, false, 68)), "html", null, true);
+                echo "</td>
+                        <td>";
+                // line 69
+                echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(twig_get_attribute($this->env, $this->source, $context["rows"], "sub_total", [], "any", false, false, false, 69)), "html", null, true);
+                echo "</td>
+                    </tr>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 72
+            echo "            </tr>
             ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -147,15 +177,15 @@ class __TwigTemplate_810f696aa8e9ad9662b55351123c54e3bd45ec4f552179726bcdf89ccc0
             }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rows'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 66
+        // line 74
         echo "        </tbody>
         <tfoot>
             <tr>
-                <th colspan=\"4\" style=\"text-align: center;\">Total</th>
+                <th colspan=\"6\" style=\"text-align: center;\">Total</th>
                 <th>";
-        // line 70
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getRuntime('App\Twig\AppRuntime')->separatorHarga(($context["total"] ?? null)), "html", null, true);
         echo "</th>
             </tr>
@@ -176,7 +206,7 @@ class __TwigTemplate_810f696aa8e9ad9662b55351123c54e3bd45ec4f552179726bcdf89ccc0
 
     public function getDebugInfo()
     {
-        return array (  159 => 70,  153 => 66,  136 => 63,  132 => 62,  128 => 61,  124 => 60,  120 => 59,  117 => 58,  114 => 57,  97 => 56,  94 => 55,  92 => 54,  37 => 1,);
+        return array (  189 => 78,  183 => 74,  168 => 72,  159 => 69,  155 => 68,  151 => 67,  147 => 66,  144 => 65,  141 => 64,  137 => 63,  131 => 62,  125 => 61,  119 => 60,  116 => 59,  99 => 58,  96 => 57,  94 => 56,  37 => 1,);
     }
 
     public function getSourceContext()

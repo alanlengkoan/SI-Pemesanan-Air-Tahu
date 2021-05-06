@@ -41,32 +41,40 @@
     </table>
     <hr>
 
-    <table align="center" border="1">
+    <table align="center" border="1" cellspacing="0">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Kode Pemesanan</th>
-                <th>Nama</th>
                 <th>Tanggal Pemesanan</th>
-                <th>Total</th>
+                <th>Produk</th>
+                <th>Jumlah</th>
+                <th>Harga</th>
+                <th>Sub Total</th>
             </tr>
         </thead>
         {% set total = 0 %}
         <tbody>
-            {% for rows in data %}
-            {% set total = total + rows.total  %}
+            {% for key, value in data %}
             <tr>
-                <td>{{ loop.index }}.</td>
-                <td>{{ rows.kd_pemesanan }}</td>
-                <td>{{ rows.nama }}</td>
-                <td>{{ rows.tgl_pemesanan|date('m-d-Y') }}</td>
-                <td>{{ rows.total|format_rp }}</td>
+                <td rowspan="{{ value.detail|length + 1 }}">{{ loop.index }}.</td>
+                <td rowspan="{{ value.detail|length + 1 }}">{{ value.kd_order }}</td>
+                <td rowspan="{{ value.detail|length + 1 }}">{{ value.tgl_pemesanan|date('d-m-Y') }}</td>
+                {% for rows in value.detail %}
+                    {% set total = total + rows.sub_total  %}
+                    <tr>
+                        <td>{{ rows.nama }}</td>
+                        <td>{{ rows.jumlah }}</td>
+                        <td>{{ rows.harga|format_rp }}</td>
+                        <td>{{ rows.sub_total|format_rp }}</td>
+                    </tr>
+                {% endfor %}
             </tr>
             {% endfor %}
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="4" style="text-align: center;">Total</th>
+                <th colspan="6" style="text-align: center;">Total</th>
                 <th>{{ total|format_rp }}</th>
             </tr>
         </tfoot>

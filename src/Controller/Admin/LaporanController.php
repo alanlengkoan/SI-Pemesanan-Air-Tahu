@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\TbPelanggan;
 use App\Entity\TbPemesanan;
+use App\Entity\TbPemesananDetail;
 use App\Service\MyfunctionHelper;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -396,8 +397,20 @@ class LaporanController extends AbstractController
      */
     public function cetakDetailPelanggan(string $id)
     {
+        $result = $this->mng->getRepository(TbPemesanan::class)->getRiwayat($id);
+        
+        foreach ($result as $key => $value) {
+            $detail = $this->mng->getRepository(TbPemesananDetail::class)->getDetailPemesanan($value['kd_pemesanan']);
+
+            $resultDetail[] = [
+                'kd_order'      => $value['kd_pemesanan'],
+                'tgl_pemesanan' => $value['tgl_pemesanan'],
+                'detail'        => $detail
+            ];
+        }
+
         $data = [
-            'data' => $this->mng->getRepository(TbPemesanan::class)->getRiwayat($id),
+            'data' => $resultDetail
         ];
 
         // untuk membuat pdf
