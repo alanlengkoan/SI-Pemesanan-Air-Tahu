@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelProdContainer::class, false)) {
 
 return new \ContainerFxZ2uIU\App_KernelProdContainer([
     'container.build_hash' => 'FxZ2uIU',
-    'container.build_id' => '1b7913be',
-    'container.build_time' => 1620303715,
+    'container.build_id' => '29cd2f35',
+    'container.build_time' => 1620304592,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerFxZ2uIU');
