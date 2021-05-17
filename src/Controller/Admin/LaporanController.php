@@ -403,9 +403,10 @@ class LaporanController extends AbstractController
             $detail = $this->mng->getRepository(TbPemesananDetail::class)->getDetailPemesanan($value['kd_pemesanan']);
 
             $resultDetail[] = [
-                'kd_order'      => $value['kd_pemesanan'],
-                'tgl_pemesanan' => $value['tgl_pemesanan'],
-                'detail'        => $detail
+                'kd_order'       => $value['kd_pemesanan'],
+                'tgl_pemesanan'  => $value['tgl_pemesanan'],
+                'nama_pelanggan' => $value['nama'],
+                'detail'         => $detail
             ];
         }
 

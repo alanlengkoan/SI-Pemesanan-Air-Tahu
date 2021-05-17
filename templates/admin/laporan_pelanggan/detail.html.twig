@@ -46,6 +46,7 @@
             <tr>
                 <th>No.</th>
                 <th>Kode Pemesanan</th>
+                <th>Nama Pelanggan</th>
                 <th>Tanggal Pemesanan</th>
                 <th>Produk</th>
                 <th>Jumlah</th>
@@ -59,6 +60,7 @@
             <tr>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ loop.index }}.</td>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ value.kd_order }}</td>
+                <td rowspan="{{ value.detail|length + 1 }}">{{ value.nama_pelanggan }}</td>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ value.tgl_pemesanan|date('d-m-Y') }}</td>
                 {% for rows in value.detail %}
                     {% set total = total + rows.sub_total  %}
