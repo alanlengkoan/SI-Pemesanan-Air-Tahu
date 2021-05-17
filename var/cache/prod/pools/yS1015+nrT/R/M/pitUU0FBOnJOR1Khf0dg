@@ -1,0 +1,57 @@
+<?php //%255B58bc0e0a6b24e7593c2f8eb8a6345ff2%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.id_produk AS id_produk_0, t0_.kd_produk AS kd_produk_1, t0_.nama AS nama_2, t0_.satuan AS satuan_3, (SELECT SUM(t1_.stock) AS sclr_5 FROM tb_stock t1_ WHERE t1_.kd_produk = t0_.kd_produk) AS sclr_4, (SELECT SUM(t2_.jumlah) AS sclr_7 FROM tb_pemesanan_detail t2_ WHERE t2_.kd_produk = t0_.kd_produk) AS sclr_6, (SELECT SUM(t3_.jumlah) AS sclr_9 FROM tb_keranjang t3_ WHERE t3_.kd_produk = t0_.kd_produk) AS sclr_8, t0_.harga AS harga_10, t0_.gambar AS gambar_11, t0_.tentang AS tentang_12 FROM tb_produk t0_ WHERE t0_.kd_produk = \'KDP-001\'',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'id_produk_0' => 'id_produk',
+                    'kd_produk_1' => 'kd_produk',
+                    'nama_2' => 'nama',
+                    'satuan_3' => 'satuan',
+                    'sclr_4' => 'stock',
+                    'sclr_6' => 'jumlah',
+                    'sclr_8' => 'jumlah_keranjang',
+                    'harga_10' => 'harga',
+                    'gambar_11' => 'gambar',
+                    'tentang_12' => 'tentang',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'id_produk_0' => 'integer',
+                    'kd_produk_1' => 'string',
+                    'nama_2' => 'string',
+                    'satuan_3' => 'string',
+                    'sclr_4' => 'string',
+                    'sclr_6' => 'string',
+                    'sclr_8' => 'string',
+                    'harga_10' => 'integer',
+                    'gambar_11' => 'string',
+                    'tentang_12' => 'text',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
