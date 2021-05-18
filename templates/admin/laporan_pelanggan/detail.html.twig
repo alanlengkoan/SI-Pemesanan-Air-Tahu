@@ -40,13 +40,42 @@
         </tr>
     </table>
     <hr>
+    <h3>Detail Pelanggan</h3>
+    <table align="center">
+        <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td>{{ pelanggan.nama }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>:</td>
+            <td>{{ pelanggan.email }}</td>
+        </tr>
+        <tr>
+            <td>No. Hp</td>
+            <td>:</td>
+            <td>{{ pelanggan.telepon }}</td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td>{{ (pelanggan.kelamin == "L" ? "Laki - laki" : "Perempuan") }}</td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td>{{ pelanggan.alamat }}</td>
+        </tr>
+    </table>
 
+    <br>
+    <h3>Detail Order</h3>
     <table align="center" border="1" cellspacing="0">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Kode Pemesanan</th>
-                <th>Nama Pelanggan</th>
                 <th>Tanggal Pemesanan</th>
                 <th>Produk</th>
                 <th>Jumlah</th>
@@ -60,7 +89,6 @@
             <tr>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ loop.index }}.</td>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ value.kd_order }}</td>
-                <td rowspan="{{ value.detail|length + 1 }}">{{ value.nama_pelanggan }}</td>
                 <td rowspan="{{ value.detail|length + 1 }}">{{ value.tgl_pemesanan|date('d-m-Y') }}</td>
                 {% for rows in value.detail %}
                     {% set total = total + rows.sub_total  %}
