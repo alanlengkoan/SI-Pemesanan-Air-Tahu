@@ -1,0 +1,47 @@
+<?php //%255Bf6f982b2f70bac082eedbb3f7aaff792%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT t0_.kd_produk AS kd_produk_0, t1_.nama AS nama_1, t0_.jumlah AS jumlah_2, t0_.harga AS harga_3, t0_.sub_total AS sub_total_4 FROM tb_pemesanan_detail t0_ LEFT JOIN tb_produk t1_ ON (t0_.kd_produk = t1_.kd_produk) WHERE t0_.kd_pemesanan = \'ODR-003\'',
+            ],
+        ],
+        'stdClass' => [
+            'scalarMappings' => [
+                2 => [
+                    'kd_produk_0' => 'kd_produk',
+                    'nama_1' => 'nama',
+                    'jumlah_2' => 'jumlah',
+                    'harga_3' => 'harga',
+                    'sub_total_4' => 'sub_total',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'kd_produk_0' => 'string',
+                    'nama_1' => 'string',
+                    'jumlah_2' => 'integer',
+                    'harga_3' => 'integer',
+                    'sub_total_4' => 'integer',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
